@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VSpaze Technologies-About Us</title>
+     <!-- FontAwesome CDN for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+          body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+             
+            scroll-behavior: smooth;
+            animation: backgroundShift 10s infinite alternate;
+        }
+       @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+      header {
+    background: #4a47a3;
+    color: white;
+    padding: 10px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 98%;
+    height: 60px;
+    z-index: 1000;
+    animation: slideDown 4s ease-in-out;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    max-height: 100px; /* Adjust logo size */
+    height: 150px;
+    width: 100px;
+    border-radius: 50%;
+    margin-top: 2%;
+}
+
+header nav {
+    display: flex; /* Ensure nav is a flex container */
+    justify-content: flex-end; /* Push links to the right */
+    align-items: center; /* Align links vertically */
+}
+
+header nav a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    margin: 0 13px;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+header nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+header nav a:hover {
+    color: #00bcd4;
+}
+
+header nav a:hover::after {
+    width: 100%;
+}
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            width: auto;
+             
+        }
+        .logo {
+            margin: 20px 0;
+             
+        }
+        .logo img {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            margin-top: 100px;
+        }
+        .heading {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #F7C358;
+        }
+        .description {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 20px 0;
+            color: black;
+            margin-right: 20%;
+            margin-left: 20%;
+        }
+        .unique {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .unique h3 {
+            color: #F7C358;
+        }
+        .unique ul {
+            list-style: none;
+            padding: 0;
+            
+            color: black;
+        }
+        .unique ul li {
+            margin: 10px 0;
+        }
+ 
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+        }
+   
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+         header {
+    background: #4a47a3;
+    color: white;
+    padding: 5px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 95%;
+    height: 40px;
+    z-index: 1000;
+    animation: slideDown 4s ease-in-out;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    max-height: 70px; /* Adjust logo size */
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    margin-top: 3%;
+}
+
+header nav {
+    display: flex; /* Ensure nav is a flex container */
+    justify-content: flex-end; /* Push links to the right */
+    align-items: center; /* Align links vertically */
+    margin-right: 4%;
+}
+
+header nav a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+    font-size: 12px;
+    
+    transition: color 0.3s ease;
+}
+
+header nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+}
+
+header nav a:hover {
+    color: #00bcd4;
+}
+
+header nav a:hover::after {
+    width: 100%;
+}
+    .container {
+        padding: 15px;
+         
+    }
+
+    .logo img {
+        width: 200px;
+        height: 200px;
+        margin-top: 50px;
+    }
+
+    .heading {
+        font-size: 18px;
+    }
+
+    .description {
+        font-size: 12px;
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+
+    .unique h3 {
+        font-size: 13px;
+    }
+
+    .unique ul li {
+        font-size: 12px;
+    }
+ 
+    footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 8px;
+            width: auto;
+            background: #333;
+            color: white;
+        }
+    }
+    </style>
+</head>
+<body>
+   <header>
+    <div class="logo">
+        <img src="https://assets.onecompiler.app/42y68y97m/4359nzr9t/file.png" alt="Logo" />
+    </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#">Services</a>
+        <a href="chartbot.html">Help Desk</a>
+        <a href="#">Contact</a>
+        <a href="#">About Us</a>
+    </nav>
+</header>
+
+     
+    <div class="container">
+        <div class="logo">
+            <img src="	https://assets.onecompiler.app/42y68y97m/433zxpj73/WhatsApp%20Image%202024-12-25%20at%2012.45.50%20AM.jpeg" alt="VSpaze Logo">
+        </div>
+        <div class="heading">About Us</div>
+        <div class="description">
+            A dynamic software solutions and digital marketing agency committed to delivering premium-quality results tailored to your business needs. As a startup, we strive to establish ourselves by offering exceptional services at reasonable prices.
+        </div>
+        <div class="unique">
+            <h3>What Makes Us Unique:</h3>
+            <ul>
+                <li> <strong>Premium Quality Output:</strong>  We ensure that every project meets the highest standards of quality.</li>
+                <li><strong>Reasonable Pricing:</strong>  Our services are designed to be cost-effective without compromising quality.</li>
+                <li> <strong>Responsive Websites & Applications:</strong>  We specialize in creating user-friendly, fully responsive websites and applications.</li>
+                <li><strong>Attention to Detail:</strong>  Every small aspect of your website or app is meticulously handled to ensure perfection.</li>
+                <li><strong>Customer Satisfaction:</strong>  At the end of the day, we guarantee your complete satisfaction with your project.</li>
+                <li><strong>Business Growth Support:</strong>  We provide valuable ideas and suggestions to help improve your business.</li>
+                <li> <strong>Digital Marketing & SEO:</strong>  Our expert team enhances your online presence through effective digital marketing and search engine optimization strategies.</li>
+                <li><strong>Client Respect:</strong>  We value our clients and treat their projects with the utmost respect and dedication.</li>
+                <li><strong>Support Your Startup:</strong>  We are committed to providing you with better support.</li>
+            </ul>
+        </div>
+         
+    </div>
+    <footer>
+        &copy; 2024 Vspaze Technologies All Rights Reserved.
+    </footer>
+
+</body>
+</html>
