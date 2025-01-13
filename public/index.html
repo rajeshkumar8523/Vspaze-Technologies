@@ -8,6 +8,8 @@
  <!-- FontAwesome CDN for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
  <style>
         body {
             margin: 0;
@@ -186,80 +188,77 @@ header nav a:hover::after {
                 opacity: 1;
             }
         }
-        .our-strategies {
+.our-strategies {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #f5f5f5;
-        }
+}
 
+.outer-frame {
+  padding: 8px;
+  background-color: #e0e0e0;
+  border-radius: 15px;
+  border: 1px solid black;
+  margin-bottom: 0px;
+  margin-top: 50px;
+}
 
-    .outer-frame {
-      padding: 8px; /* Padding between the inner and outer frame */
-      background-color: #e0e0e0; /* Outer frame color */
-      border-radius: 15px; /* Slightly larger border radius for the outer frame */
-      border: 1px solid black;
-      margin-bottom: 0px;
-      margin-top: 50px;
-    }
+.strategies-box {
+  padding: 10px 50px;
+  font-size: 20px;
+  font-weight: bold;
+  color: purple;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 0px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
 
-    .strategies-box {
-      padding: 10px 50px;
-      font-size: 20px;
-      font-weight: bold;
-      color: purple;
-      background: rgba(255, 255, 255, 0.6); /* Semi-transparent background */
-      border-radius: 10px;
-      text-align: center;
-      margin-bottom: 0px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
-      backdrop-filter: blur(10px); /* Glassy blur effect */
-      border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
-    }
+.vertical-line {
+  width: 2px;
+  height: 60px;
+  background-color: black;
+  position: relative;
+  top: 0px;
+}
 
-    .vertical-line {
-      width: 2px;
-      height: 70px;
-      background-color: black;
-      position: relative;
-      top: 0px;
-    }
+.horizontal-line {
+  width: 450px;
+  height: 2px;
+  background-color: black;
+  position: relative;
+  margin-top: 0px;
+  display: flex;
+  justify-content: space-between;
+}
 
-    .horizontal-line {
-      width: 400px;
-      height: 2px;
-      background-color: black;
-      position: relative;
-      margin-top: 0px;
-      
-      display: flex;
-      justify-content: space-between;
-    }
+.connector {
+  position: relative;
+  height: 50px;
+  width: 2px;
+  background-color: black;
+}
 
-    .connector {
-      position: relative;
-      height: 50px;
-      width: 2px;
-      background-color: black;
-    }
+.connector.left,
+.connector.middle,
+.connector.right {
+  width: 2px;
+}
 
-    .connector.left,
-    .connector.middle,
-    .connector.right {
-      width: 2px;
-    }
-
-    .intersection-dot {
-      position: absolute;
-      bottom: -4px; /* Place the dot just below the bottom of the vertical line */
-      left: 50%;
-      transform: translateX(-50%); /* Center horizontally */
-      width: 8px;
-      height: 8px;
-      background-color: black;
-      border-radius: 50%;
-    }
-
+.intersection-dot {
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: black;
+  border-radius: 50%;
+}
     .cards {
       display: flex;
       justify-content: space-evenly;
@@ -267,29 +266,51 @@ header nav a:hover::after {
       margin-top: 60px;
       margin-bottom: 50px;
     }
+/* General Card Styles */
+.card {
+  background-color: #ffffff;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: scale(0);
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+.card-icon {
+  font-size: 40px;
+  color: #6a1b9a;
+  margin-bottom: 10px;
+}
 
-    .card {
-      background-color: #f9f9f9;
-      border: 2px solid BLACK;
-      border-radius: 10px;
-      width: 120px;
-      height: 120px;
-      text-align: center;
-      padding: 20px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
+/* Cards are fully hidden */
+.card.hidden {
+  display: none;
+}
 
-    .card-icon {
-      font-size: 40px;
-      color: #6a1b9a;
-      margin-bottom: 10px;
-    }
+/* Cards are visible */
+.card.visible {
+  transform: scale(1);
+  opacity: 1;
+  display: flex;
+}
 
-    .card-title {
-      font-size: 16px;
-      font-weight: bold;
-      color: #333;
-    }
+/* Zoom-out effect */
+.card.zoom-out {
+  transform: scale(0.3);
+  opacity: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+
+
         .logos {
     position: relative;
     width: auto; /* Makes sure the width is full */
@@ -336,168 +357,51 @@ header nav a:hover::after {
     }
 }
 .container {
-            background-color:  #e0e0e0;
-            padding: 50px 20px;
-            text-align: left;
-            
-            min-height: 250px;
-        }
+      max-width: auto;
+      margin:  auto;
+      text-align: left;
+      background-color: #eaeaea;
+      padding: 30px;
+       
+       
+    }
 
-        .page-title {
-            font-size: 3.5em;
-            color: #000;
-             
-            margin-bottom: 20px;
-            margin-right: 20%;
-            margin-left: 10%;
-        }
+    
 
-        .description {
-            font-size: 1.2em;
-            color: #333;
-            margin-bottom: 30px;
-            line-height: 1.6;
-            
-            margin-right: 10%;
-            margin-left: 10%;
-        }
+    .title {
+      font-size: 60px;
+      margin-left: 10%;
+      margin-right: 20%;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #000;
+    }
 
-        .select-dropdown {
-            padding: 20px;
-            font-size: 1em;
-            width: 80%;
-            margin-bottom: 20px;
-            border: 1px solid black;
-            border-radius: 5px;
-            align-items: center;
-            margin-left: 10%;
-}
+    .description {
+      font-size: 20px;
+      margin-bottom: 30px;
+       margin-left: 10%;
+      margin-right: 15%;
+      color: #666;
+    }
 
-        /* Dropdown and popup styling */
-        .select-dropdown {
-            padding: 20px;
-            font-size: 1em;
-            width: 80%;
-            margin-bottom: 40px;
-            border: 1px solid black;
-            border-radius: 5px;
-            margin-left: 10%;
-            text-align: center;
-        }
+    select {
+      width: 70%;
+      padding: 20px;
+      border: 2px solid #000;
+      border-radius: 5px;
+      font-size: 18px;
+      margin-left: 10%;
+      margin-right: 15%;
+      text-align: center;
+      text-align-last: center; /* For centering options in the dropdown */
+      background-color: #fff;
+      cursor: pointer;
+    }
 
-        /* Popup container styling */
-        .popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .popup .container {
-            width: 40%;
-            padding: 30px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            text-align: center;
-            color: #333;
-        }
-
-        label {
-            font-size: 1.1em;
-            margin-top: 10px;
-            display: block;
-            color: #333;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        input[type="number"],
-        input[type="file"],
-        select,
-        textarea {
-            width: 100%;
-            padding: 12px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1em;
-        }
-
-        input[type="submit"] {
-            background-color: #4a47a3;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.2em;
-            cursor: pointer;
-            width: 40%;
-            margin-top: 10px;
-            transition: background-color 0.3s;
-            align-items: center;
-            margin-left: 30%;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #2b2860;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group i {
-            color:  #4a47a3;
-            margin-right: 10px;
-        }
-
-        .close-btn {
-            background-color:#4a47a3;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        .close-btn:hover {
-            background-color: #2b2860;
-        }
-
-        /* Success message */
-        .success-message {
-            display: none;
-            background-color: #4CAF50;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            border-radius: 5px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            align-items: center;
-            width: 50%;
-            margin-left: 20%;
-            margin-right: 20%;
-        }
-
-
-        .button-container {
-            margin-top: 20px;
-        }
-
+    option {
+      text-align: center;
+    }
      
 
         .focus-section {
@@ -517,27 +421,27 @@ header nav a:hover::after {
             flex: 1;
             max-width: 500px;
         }
-         .container-flex {
-      display: flex;
-      align-items: stretch;
-    }
-.left-panel {
-      background-color: #22a39f; /* Light teal color */
-      width: 30%;
-      height: 1000px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      text-align: center;
-      padding: 10px 0;
-      
-    }
+ .container-flex {
+  display: flex;
+  align-items: stretch;
+}
 
-  .left-panel h1 {
-  font-size: 60px; /* Increased font size */
+.left-panel {
+  background: linear-gradient(120deg, #4a47a3, #4a47a3, #2b2860);
+  width: 30%;
+  height: 2000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  padding: 0 0;
+}
+
+.left-panel h1 {
+  font-size: 80px; /* Increased font size */
   font-weight: bold; /* Make the text bold */
-  letter-spacing: 3px; /* Increase letter spacing */
-  color:BLACK; /* Ensure the text is white for visibility */
+  letter-spacing: 5px; /* Increase letter spacing */
+  color: BLACK; /* Ensure the text is white for visibility */
   text-transform: uppercase; /* Make text uppercase */
   padding-left: 10px; /* Optional: add space from the left edge */
   writing-mode: vertical-lr; /* Makes the text display vertically, top to bottom */
@@ -551,104 +455,85 @@ header nav a:hover::after {
   height: 100%; /* Ensure the text takes up the full height of the left panel */
 }
 
- 
-    .left-panel .offer {
-      font-size:25px;
-      font: bold;
-      
-      background-color: #121212; /* Match main background color */
-      color: white;
-      padding: 10px;
-      border-radius: 5px;
-      display: inline-block;
-    }
-
-    .right-panel {
-      width: 80%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-
-    /* Features Container */
-    .features-container {
-      width: 80%;
-      text-align: center; /* Center content */
-      margin-top:3rem ;
-      margin-bottom: 3rem;
-    }
-
-    /* Features Title */
-    .features-title {
-      font-size: 2rem;
-      font-weight: bold;
-      text-align: center;
-      background-color: transparent;
-      padding: 3rem 0; /* Add padding for spacing */
-    }
-
-    .features {
-      display: flex;
-      flex-direction: column; /* Stack features vertically */
-      gap: 2rem; /* Space between items */
-      width: 100%; /* Ensure full width */
-      text-align: center;
-    }
-
-    .feature {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* Feature Icon */
-    .icon {
-      font-size: 1rem;
-      padding: 1rem;
-      border-radius: 20%;
-      background-color: #1c2a40;
-      color: #fff; /* Default color */
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
-
-    .icon:hover {
-      animation: bounce 0.5s ease;
-      color: #42a5f5; /* Hover color */
-    }
-
-    /* Feature Title */
-    .feature-title {
-      margin-top: 1rem;
-      font-size: 1rem;
-    }
-
-    /* Animations */
-    @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
-    }
-
-/* Responsive Design for Mobile Screens */
-@media (max-width: 768px) {
-    .features {
-        grid-template-columns: 1fr; /* Single column for mobile */
-    }
+.left-panel .offer {
+  font-size: 30px;
+  font-weight: bold;
+  background-color: #121212; /* Match main background color */
+  color: white;
+  letter-spacing: 6px; /* Increase letter spacing */
+  padding: 30px;
+   
+  display: inline-block;
 }
 
+.right-panel {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #eaeaea;
+}
+
+.main-section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.services-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem; /* Space between services */
+}
+
+.service .icon {
+  font-size: 2rem; /* Larger icon */
+  padding: 1.5rem;
+  border-radius: 20%;
+  background-color: #1c2a40;
+  color: #fff; /* Default color */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.service .icon:hover {
+  animation: bounce 0.5s ease;
+  color: #42a5f5; /* Hover color */
+}
+
+.service-title {
+  margin-top: 1rem;
+  font-size: 1.25rem; /* Slightly larger text */
+  font-weight: bold;
+}
+
+/* Animations */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+ 
   .contact-section {
     position: relative;
     background: url('https://assets.onecompiler.app/42y68y97m/4356m26z3/WhatsApp%20Image%202025-01-05%20at%208.49.43%20PM.jpeg') no-repeat center center/cover;
     color: white;
     padding: 100px 20px;
     text-align: center;
-    width: 98%;
+    width: auto;
     height: 200px; /* Set your desired height, e.g., 500px */
     margin-bottom: 0%;
 }
@@ -700,7 +585,7 @@ header nav a:hover::after {
             background-color: #f5f5f5;
             padding: 50px;
             display: flex;
-            width: 95%;
+            width: auto;
             flex-wrap: wrap;
             justify-content: space-between;
         }
@@ -961,36 +846,67 @@ header nav a:hover::after {
   }
 
   .horizontal-line {
-    width: 58%;
+    width: 55%;
     margin-top: 0px;
   }
 
   .connector {
     height: 20px;
   }
-
-  .cards {
-    display: flex;
-            justify-content: space-evenly;
-       gap: 20px; /* Adds gap between cards */
+.cards {
+      display: flex;
+      justify-content: space-evenly;
+      gap: 10px; /* Adds gap between cards */
       margin-top: 30px;
       margin-bottom: 20px;
-  }
+    }
+  /* General Card Styles */
+.card {
+  background-color: #ffffff;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-size: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: scale(0);
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+.card-icon {
+  font-size: 20px;
+  color: #6a1b9a;
+  margin-bottom: 5px;
+}
+.card-title {
+      font-size: 13px;
+      font-weight: bold;
+      color: #333;
+    }
+/* Cards are fully hidden */
+.card.hidden {
+  display: none;
+}
 
-  .card {
-    width: 80px;
-    height: 80px;
-    padding: 10px;
-    margin-bottom: 1px;
-  }
+/* Cards are visible */
+.card.visible {
+  transform: scale(1);
+  opacity: 1;
+  display: flex;
+}
 
-  .card-icon {
-    font-size: 25px;
-  }
-
-  .card-title {
-    font-size: 12px;
-  }
+/* Zoom-out effect */
+.card.zoom-out {
+  transform: scale(0.3);
+  opacity: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
 
   .vertical-line {
     height: 30px;
@@ -1042,162 +958,52 @@ header nav a:hover::after {
 }
 
 .container {
-            background-color: #e0e0e0;
-            padding: 30px 10px;
-            text-align: left;
-            min-height: 100px;
-        }
+      max-width: 100%;
+      margin: auto;
+      text-align: left;
+      background-color: #eaeaea;
+      padding: 15px;
+       
+      
+    }
 
-        .page-title {
-            font-size: 23px;
-            color: #000;
-            margin-bottom: 8px;
-            margin-right: 8%;
-            margin-left: 4%;
-        }
+    
 
-        .description {
-            font-size: 15px;
-            color: #333;
-            margin-bottom: 10px;
-            line-height: 1.1;
-            margin-right: 6%;
-            margin-left: 5%;
-        }
+    .title {
+      font-size: 30px;
+      margin-left: 6%;
+      margin-right: 10%;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #000;
+    }
 
-        .select-dropdown {
-            padding: 10px;
-            font-size: 10px;
-            width: 80%;
-            margin-bottom: 8px;
-            border: 1px solid black;
-            border-radius: 5px;
-            align-items: center;
-            margin-left: 10%;
-        }
-        /* Dropdown and popup styling */
-        .select-dropdown {
-            padding: 10px;
-            font-size: 13px;
-            width: 70%;
-            margin-bottom: 20px;
-            border: 1px solid black;
-            border-radius: 5px;
-            margin-left: 13%;
-            text-align: center;
-        }
+    .description {
+      font-size: 15px;
+      margin-bottom: 15px;
+       margin-left: 6%;
+      margin-right: 5%;
+      color: #666;
+    }
 
-        /* Popup container styling */
-        .popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
+    select {
+      width: 80%;
+      padding: 10px;
+      border: 1px solid #000;
+      border-radius: 5px;
+      font-size: 15px;
+      margin-left: 6%;
+      margin-right: 8%;
+      text-align: center;
+      text-align-last: center; /* For centering options in the dropdown */
+      background-color: #fff;
+      cursor: pointer;
+    }
 
-        .popup .container {
-            width: 50%;
-            padding: 10px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            text-align: center;
-            color: #333;
-            font-size: 15px;
-        }
-
-        label {
-             
-            margin-top: 10px;
-            display: block;
-            color: #333;
-            font-size: 10px;
-            width:40% ;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        input[type="number"],
-        input[type="file"],
-        select,
-        textarea {
-            width:  90%;
-            padding: 8px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 10px;
-        }
-
-        input[type="submit"] {
-            background-color: #4a47a3;
-            color: white;
-            padding: 4px 8px;
-            border: none;
-            border-radius: 5px;
-            font-size: 13px;
-            cursor: pointer;
-            width: 40%;
-            margin-top: 10px;
-            transition: background-color 0.3s;
-            align-items: center;
-            margin-left: 30%;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #2b2860;
-        }
-
-        .form-group {
-            margin-bottom: 10px;
-        }
-
-        .form-group i {
-            color:  #4a47a3;
-            margin-right: 1px;
-        }
-
-        .close-btn {
-            background-color:#4a47a3;
-            color: white;
-            padding: 4px 8px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 13px;
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        .close-btn:hover {
-            background-color: #2b2860;
-        }
-
-        /* Success message */
-        .success-message {
-            display: none;
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            border-radius: 5px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            font-size: 13px;
-            align-items: center;
-            width: 50%;
-            margin-left: 20%;
-            margin-right: 20%;
-        }
+    option {
+      text-align: center;
+    }
+ 
 
         .focus-section {
             display: flex;
@@ -1219,35 +1025,118 @@ header nav a:hover::after {
             max-width: 300px;
              
         }
-        .features {
-        grid-template-columns: 1fr; /* Single column for mobile */
-    }
-        .features-title {
-            font-size: 18px;
-             padding: 30px;
-        }
+        .container-flex {
+  display: flex;
+  align-items: stretch;
+}
 
-        .icon {
-            font-size: 15px;
-            padding: 10px;
-        }
+.left-panel {
+  background: linear-gradient(120deg, #4a47a3, #4a47a3, #2b2860);
+  width: 30%;
+  height: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  padding: 0 0;
+}
 
-        .feature-title {
-            font-size: 14px;
-        }
+.left-panel h1 {
+  font-size: 50px; /* Increased font size */
+  font-weight: bold; /* Make the text bold */
+  letter-spacing: 5px; /* Increase letter spacing */
+  color: BLACK; /* Ensure the text is white for visibility */
+  text-transform: uppercase; /* Make text uppercase */
+  padding-left: 10px; /* Optional: add space from the left edge */
+  writing-mode: vertical-lr; /* Makes the text display vertically, top to bottom */
+  transform: rotate(180deg); /* Inverts the text so it goes from bottom to top */
+  white-space: nowrap; /* Prevent text wrapping */
+  margin-top: 10%; /* Adjust top margin for positioning */
+  text-align: center; /* Center-aligns the text horizontally */
+  display: flex;
+  justify-content: center; /* Centers the text horizontally within the panel */
+  align-items: center; /* Centers the text vertically within the panel */
+  height: 100%; /* Ensure the text takes up the full height of the left panel */
+}
 
-        .feature-description {
-            font-size: 12px;
-            margin-left: 20%;
-            margin-right: 20%;
-        }
+.left-panel .offer {
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #121212; /* Match main background color */
+  color: white;
+  padding: 20px;
+  letter-spacing: 5px; /* Increase letter spacing */
+  
+  display: inline-block;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+
+.right-panel {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.main-section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.services-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px; /* Space between services */
+}
+
+.service .icon {
+  font-size: 20px; /* Larger icon */
+  padding: 10px;
+  border-radius: 20%;
+  background-color: #1c2a40;
+  color: #fff; /* Default color */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.service .icon:hover {
+  animation: bounce 0.5s ease;
+  color: #42a5f5; /* Hover color */
+}
+
+.service-title {
+  margin-top: 10px;
+  font-size: 15px; /* Slightly larger text */
+  font-weight: bold;
+}
+
+/* Animations */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
     
        .contact-section {
     position: relative;
     background: url('https://assets.onecompiler.app/42y68y97m/4356m26z3/WhatsApp%20Image%202025-01-05%20at%208.49.43%20PM.jpeg') no-repeat center center/cover;
     color: white;
     padding: 20px 0px;
-    margin-top: 1%;
+    margin-top: 0%;
     text-align: center;
     width: 100%; /* Makes sure the width is full */
     height: 150px; /* Set your desired height, e.g., 500px */
@@ -1438,149 +1327,174 @@ header nav a:hover::after {
         <img src="https://assets.onecompiler.app/42y68y97m/43479ey5k/WhatsApp_Image_2024-12-26_at_7.11.56_PM-removebg-preview.png" alt="Boy Sliding Down">
     </div>
     
-    <section class="our-strategies">
-     <div class="outer-frame">
-      <div class="strategies-box">OUR SERVICES</div>
+   <section class="our-strategies">
+    <div class="outer-frame">
+        <div class="strategies-box">KEY FEATURES</div>
     </div>
-    <!-- Vertical line connecting strategies box to the horizontal line -->
-    <div class="vertical-line">
-      
-    </div>
+    <div class="vertical-line"></div>
     <div class="horizontal-line">
-      <div class="connector left">
-        <!-- Dot at the bottom of the left connector -->
-        <div class="intersection-dot"></div>
-      </div>
-      <div class="connector middle">
-        <!-- Dot at the bottom of the middle connector -->
-        <div class="intersection-dot"></div>
-      </div>
-      <div class="connector right">
-        <!-- Dot at the bottom of the right connector -->
-        <div class="intersection-dot"></div>
-      </div>
-    </div>
-    <div class="cards">
-      <div class="card">
-          <div class="card-icon">📱</div>
-          <div class="card-title">SOCIAL MEDIA MARKETING</div>
-      </div>
-      <div class="card">
-          <div class="card-icon">🤝</div>
-          <div class="card-title">GENUINE LEADS</div>
-      </div>
-      <div class="card">
-          <div class="card-icon">📈</div>
-          <div class="card-title">DESIRED SALE</div>
-      </div>
-    </div>
-   </section>
-
-<div class="container">
-    <h1 class="page-title">Website Design for Software and Technology Companies</h1>
-    <p class="description">Vspaze designs websites for software and technology companies needs to perform at the highest level. Our team of experienced web specialists design and develop sites that inform and convert visitors.</p>
-    <!-- Dropdown to select industry -->
-    <select class="select-dropdown" id="industry-select">
-        <option value="">-- Select Industry --</option>
-        <option value="ecommerce">E-Commerce and Retail</option>
-        <option value="trivial">Trivial</option>
-        <option value="fintech">Fintech</option>
-        <option value="edtech"> Education Technology </option>
-        <option value="healthtech">Health Tech</option>
-        <option value="entertainment">Entertainment and Media</option>
-        <option value="hospitality">Hospitality</option>
-        <option value="enterprise">Enterprise Software  </option>
-        <option value="logistics">Logistics and Supply Chain</option>
-        <option value="socialmedia">Social Media and Networking</option>
-        <option value="proptech"> Property Technology </option>
-        <option value="cybersecurity">Cyber Security</option>
-        <option value="cloud">Cloud Computing and Storage</option>
-        <option value="other">Other</option>
-    </select>
-
-    <!-- Popup Form -->
-    <div class="popup" id="popup-form">
-        <div class="container">
-            <h2>Application Form</h2>
-            <form id="application-form" action="submit_form.php" method="POST" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="name">*<i class="fas fa-user"></i> Full Name:</label>
-                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
-                </div>
-                <div class="form-group">
-                    <label for="email">*<i class="fas fa-envelope"></i> Email Address:</label>
-                    <input type="email" id="email" name="email" required placeholder="Enter your email">
-                </div>
-                <div class="form-group">
-                    <label for="phone">*<i class="fas fa-phone"></i> Phone Number:</label>
-                    <input type="text" id="phone" name="phone" required placeholder="Enter your phone number">
-                </div>
-                <div class="form-group">
-                    <label for="message"><i class="fas fa-comment"></i> Message</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Write a brief cover letter" required></textarea>
-                </div>
-                <input type="submit" value="Submit  ">
-            </form>
-            <button class="close-btn" onclick="closeForm()">Close</button>
+        <div class="connector left">
+            <div class="intersection-dot"></div>
+        </div>
+        <div class="connector middle">
+            <div class="intersection-dot"></div>
+        </div>
+        <div class="connector right">
+            <div class="intersection-dot"></div>
         </div>
     </div>
-
-    <!-- Success Message -->
-    <div class="success-message" id="success-message">
-        Your application has been submitted successfully!
+    <div class="cards-container">
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon">💬</div>
+                <div class="card-title">Friendly Support</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">🔍</div>
+                <div class="card-title">Search Engine Optimised</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">🅰️</div>
+                <div class="card-title">Custom Typography</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">📄</div>
+                <div class="card-title">Essential Inner Pages</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">💻</div>
+                <div class="card-title">Modern Technologies</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <div class="card-title">High-Speed Performance</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">🔄</div>
+                <div class="card-title">Lifetime Updates</div>
+            </div>
+            <div class="card">
+                <div class="card-icon">🔧</div>
+                <div class="card-title">Highly Customisable</div>
+            </div>
+            <!-- New additional card -->
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <div class="card-title">Analytics Tools</div>
+            </div>
+        </div>
     </div>
+</section>
+
+ <section class="logos"> 
+        <div class="animated-background"></div>
+        <div class="logos-text">
+            A PLATFORM TO UNLOCK NEW OPPORTUNITIES FOR YOUR BUSINESS.
+        </div>
+    </section>
     
-    <div class="container-flex">
-    <div class="left-panel">
-      <h1>KEY FEATURES</h1>
-      <div class="offer">VSPAZE</div>
-    </div>
-    <div class="right-panel">
-      <div class="features-container">
-        <div class="features">
-          <div class="feature feature-support">
-            <div class="icon icon-support"><i class="fas fa-headset"></i></div>
-            <h2 class="feature-title">Friendly Support</h2>
-          </div>
-
-          <div class="feature feature-seo">
-            <div class="icon icon-seo"><i class="fas fa-search"></i></div>
-            <h2 class="feature-title">Search Engine Optimised</h2>
-          </div>
-
-          <div class="feature feature-typography">
-            <div class="icon icon-typography"><i class="fas fa-font"></i></div>
-            <h2 class="feature-title">Custom Typography</h2>
-          </div>
-
-          <div class="feature feature-pages">
-            <div class="icon icon-pages"><i class="fas fa-folder"></i></div>
-            <h2 class="feature-title">Essential Inner Pages</h2>
-          </div>
-
-          <div class="feature feature-modern-tech">
-            <div class="icon icon-modern-tech"><i class="fas fa-laptop-code"></i></div>
-            <h2 class="feature-title">Modern Technologies</h2>
-          </div>
-
-          <div class="feature feature-performance">
-            <div class="icon icon-performance"><i class="fas fa-rocket"></i></div>
-            <h2 class="feature-title">High-Speed Performance</h2>
-          </div>
-
-          <div class="feature feature-updates">
-            <div class="icon icon-updates"><i class="fas fa-sync-alt"></i></div>
-            <h2 class="feature-title">Lifetime Updates</h2>
-          </div>
-
-          <div class="feature feature-customisable">
-            <div class="icon icon-customisable"><i class="fas fa-cogs"></i></div>
-            <h2 class="feature-title">Highly Customisable</h2>
-          </div>
-        </div>
+    <div class="container">
+   <h1 class="title">Website Design for Software and Technology Companies</h1>
+      <p class="description">
+        Vspaze designs websites for software and technology companies needs to perform at the highest level.
+        Our team of experienced web specialist design and develop sites that inform and convert visitors.
+      </p>
+      <select>
+      <option value="" disabled selected>-- Select Industry --</option>
+      <option value="ecommerce">E-Commerce and Retail</option>
+      <option value="trivial">Trivial</option>
+      <option value="fintech">Fintech</option>
+      <option value="edtech">Education Technology</option>
+      <option value="healthtech">Health Tech</option>
+      <option value="media">Entertainment and Media</option>
+      <option value="hospitality">Hospitality</option>
+      <option value="enterprise">Enterprise Software</option>
+      <option value="logistics">Logistics and Supply Chain</option>
+      <option value="socialmedia">Social Media and Networking</option>
+      <option value="propertytech">Property Technology</option>
+    </select>
       </div>
-    </div>
-  </div>
+    
+  <div class="container-flex">
+    <section class="main-section">
+        <div class="left-panel">
+            <h1>OUR SERVICES</h1>
+            <div class="offer">VSPAZE</div>
+        </div>
+
+        <div class="right-panel">
+            <div class="services-container">
+                <!-- Development Service -->
+                <div class="service">
+                    <div class="icon"><i class="fas fa-code"></i></div>
+                    <h2 class="service-title">Development Service</h2>
+                </div>
+
+                <!-- IT Infrastructure Service -->
+                <div class="service">
+                    <div class="icon"><i class="fas fa-server"></i></div>
+                    <h2 class="service-title">IT Infrastructure Service</h2>
+                </div>
+
+                <!-- Consulting & Strategy Service -->
+                <div class="service">
+                    <div class="icon"><i class="fas fa-lightbulb"></i></div>
+                    <h2 class="service-title">Consulting & Strategy Service</h2>
+                </div>
+
+                <!-- Data Service -->
+                <div class="service">
+                    <div class="icon"><i class="fas fa-database"></i></div>
+                    <h2 class="service-title">Data Service</h2>
+                </div>
+
+                <!-- Cyber Security Service -->
+                <div class="service">
+                    <div class="icon"><i class="fas fa-shield-alt"></i></div>
+                    <h2 class="service-title">Cyber Security Service</h2>
+                </div>
+
+                <!-- Design and UX/UI Service -->
+                <div class="service">
+                    <div class="icon"><i class="fas fa-pencil-ruler"></i></div>
+                    <h2 class="service-title">Design and UX/UI Service</h2>
+                </div>
+
+                <!-- Software Testing and QA -->
+                <div class="service">
+                    <div class="icon"><i class="fas fa-vial"></i></div>
+                    <h2 class="service-title">Software Testing and QA</h2>
+                </div>
+
+                <!-- E-commerce Solutions -->
+                <div class="service">
+                    <div class="icon"><i class="fas fa-shopping-cart"></i></div>
+                    <h2 class="service-title">E-commerce Solutions</h2>
+                </div>
+
+                <!-- Enterprise Software Solutions -->
+                <div class="service">
+                    <div class="icon"><i class="fas fa-building"></i></div>
+                    <h2 class="service-title">Enterprise Software Solutions</h2>
+                </div>
+
+                <!-- Emerging Technologies -->
+                <div class="service">
+                    <div class="icon"><i class="fas fa-robot"></i></div>
+                    <h2 class="service-title">Emerging Technologies</h2>
+                </div>
+
+                <!-- Digital Marketing and SEO -->
+                <div class="service">
+                    <div class="icon"><i class="fas fa-chart-line"></i></div>
+                    <h2 class="service-title">Digital Marketing and SEO</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
      <section class="contact-section">
         <div class="overlay"></div>
         <div class="content">
@@ -1641,7 +1555,7 @@ header nav a:hover::after {
     </ul>
 </div>
 <div class="copyright">
-    &copy; 2024 Vspaze Technologies All Rights Reserved.
+  &copy; 2024 Vspaze Technologies All Rights Reserved.
 </div>
 </footer>
 
@@ -1656,45 +1570,54 @@ header nav a:hover::after {
     }, 100); // Delay before animation starts
   
     
-    
-    
-        
+ document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".card");
+  const totalCards = cards.length;
+  const cardsPerSet = 3; // Number of cards visible at a time
+  let currentIndex = 0;
+
+  function showNextSet() {
+    // Add zoom-out effect to the current visible cards
+    cards.forEach((card) => {
+      if (card.classList.contains("visible")) {
+        card.classList.add("zoom-out");
+      }
+    });
+
+    // Wait for the zoom-out animation to complete before switching cards
+    setTimeout(() => {
+      // Reset all cards to hidden state after the zoom-out transition
+      cards.forEach((card) => {
+        card.classList.remove("visible", "zoom-out");
+        card.classList.add("hidden");
+      });
+
+      // Show the next set of cards with smooth transition
+      for (let i = 0; i < cardsPerSet; i++) {
+        const index = (currentIndex + i) % totalCards; // Ensure the index loops
+        cards[index].classList.add("visible");
+        cards[index].classList.remove("hidden");
+      }
+
+      // Update the index for the next set
+      currentIndex = (currentIndex + cardsPerSet) % totalCards;
+    }, 500); // Duration of the zoom-out effect (matching CSS transition time)
+  }
+
+  // Initialize the animation (apply the behavior from the start)
+  showNextSet();
+  setInterval(showNextSet, 3000); // Switch every 3 seconds
+
+  // Apply zoom-out effect when the page is refreshed, ensuring behavior consistency
+  window.addEventListener('beforeunload', () => {
+    cards.forEach(card => {
+      card.classList.remove("visible");
+      card.classList.add("zoom-out");
+    });
+  });
+});
 
 
-         // Get elements
-         const industrySelect = document.getElementById('industry-select');
-        const popupForm = document.getElementById('popup-form');
-        const successMessage = document.getElementById('success-message');
-        const form = document.getElementById('application-form');
-
-        // Show the form when an industry is selected
-        industrySelect.addEventListener('change', function() {
-            if (industrySelect.value !== "") {
-                popupForm.style.display = 'flex'; // Display popup
-            }
-        });
-
-        // Close the form
-        function closeForm() {
-            popupForm.style.display = 'none';
-        }
-
-        // Handle form submission
-        form.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent form submission for demo
-
-            // Hide the form and show success message
-            popupForm.style.display = 'none';
-            successMessage.style.display = 'block';
-
-            // Optionally, reset the form after showing the success message
-            form.reset();
-
-            // Optionally, hide the success message after 5 seconds
-            setTimeout(function() {
-                successMessage.style.display = 'none';
-            }, 5000);
-        });
          
     </script>
     
