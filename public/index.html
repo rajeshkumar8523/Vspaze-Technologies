@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
 
  <style>
         body {
@@ -96,43 +98,43 @@ header nav a:hover::after {
             background: radial-gradient(circle, #4a47a3, #2b2860);
             color: white;
             padding: 100px 50px;
-            height: 500px;
+            height: 600px;
             overflow: hidden;
             position: relative;
         }
 
         .hero h1 {
-            font-size: 4em;
+            font-size: 5em;
             margin-bottom: 20px;
             animation: fadeIn 2s ease-in-out;
             margin-left: 10%;
-            margin-right: 30%;
+            margin-right: 5%;
         }
 
         .hero p {
-            font-size: 1.2em;
+            font-size: 1.6em;
             margin-bottom: 20px;
             margin-left: 10%;
-            margin-right: 30%;
+            margin-right:10%;
             animation: slideIn 2s ease-in-out;
         }
-
-        .hero img {
-            max-width: 700px;
-            height: auto;
-            border-radius: 10px;
-            animation: zoomIn 2.5s ease-in-out;
+        .hero .buttons {
+             
+            margin-left: 0%;
         }
-       .hero .buttons a {
+      
+        .hero .buttons a {
             display: inline-block;
             margin-right: 40px;
             padding: 10px 20px;
             background: #00bcd4;
             color: white;
-            text-decoration: none;
+              text-decoration: none;
             border-radius: 5px;
             position: relative;
             overflow: hidden;
+            animation: slideIn 2s ease-in-out;
+            animation: fadeIn 2s ease-in-out;
         }
 
         .hero .buttons a:hover {
@@ -155,10 +157,13 @@ header nav a:hover::after {
         }
 
         .hero img {
-            max-width: 700px;
-            height: 400px;
+            max-width: 900px;
+            height: 500px;
             border-radius: 10px;
             margin-right: 40px;
+            margin-left: 0%;
+            border-radius: 10px;
+            animation: zoomIn 2.5s ease-in-out;
         } @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -188,7 +193,7 @@ header nav a:hover::after {
                 opacity: 1;
             }
         }
-.our-strategies {
+        .our-strategies {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -205,10 +210,11 @@ header nav a:hover::after {
 }
 
 .strategies-box {
+  position: relative; /* Positioning for pseudo-elements */
   padding: 10px 50px;
   font-size: 20px;
   font-weight: bold;
-  color: purple;
+  color: purple;  /* Initial font color */
   background: rgba(255, 255, 255, 0.6);
   border-radius: 10px;
   text-align: center;
@@ -216,7 +222,48 @@ header nav a:hover::after {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
+  overflow: hidden; /* Ensures pseudo-element stays within the box */
+  animation: changeFontColor 3s linear infinite; /* Animation to change font color */
 }
+
+.strategies-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  z-index: 1; /* Ensures the light effect appears above the box content */
+  animation: slidingLight 3s linear infinite; /* Infinite sliding animation */
+}
+
+/* Keyframes for automatic sliding light effect */
+@keyframes slidingLight {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Keyframes for changing font color */
+@keyframes changeFontColor {
+  0% {
+    color: purple;
+  }
+  50% {
+    color: #4a47a3;  /* Change color at the middle of the animation */
+  }
+  100% {
+    color: purple;  /* Back to original color */
+  }
+}
+
 
 .vertical-line {
   width: 2px;
@@ -259,7 +306,7 @@ header nav a:hover::after {
   background-color: black;
   border-radius: 50%;
 }
-    .cards {
+.cards {
       display: flex;
       justify-content: space-evenly;
       gap: 35px; /* Adds gap between cards */
@@ -302,9 +349,70 @@ header nav a:hover::after {
   display: flex;
 }
 
-/* Zoom-out effect */
+ /* For Larger Screens - Display 4 cards and 4 connectors */
+@media (min-width: 768px) {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+    gap: 35px;
+  }
+  .horizontal-line {
+    width: 690px; /* Adjust the horizontal line length for larger screens */
+  }
+  .connector {
+    width: 2px;
+    height: 50px; /* Adjust the height of connectors */
+  }
+  .connector.left, .connector.middle, .connector.right, .connector.fourth {
+    width: 2px;
+  }
+  .connector.left {
+    height: 50px; /* Left connector height */
+  }
+  .connector.middle {
+    height: 50px; /* Middle connector height */
+  }
+  .connector.right {
+    height: 50px; /* Right connector height */
+  }
+  .connector.fourth {
+    height: 50px; /* Fourth connector height */
+  }
+}
+
+/* For Mobile Screens - Display 3 cards and 3 connectors */
+@media (max-width: 767px) {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    gap: 20px;
+  }
+  .horizontal-line {
+    width: 450px; /* Adjust the horizontal line length for mobile screens */
+  }
+  .connector {
+    width: 2px;
+    height: 20px; /* Adjust the height of connectors */
+  }
+  .connector.left, .connector.middle, .connector.right {
+    width: 2px;
+  }
+  .connector.left {
+    height: 20px; /* Left connector height */
+  }
+  .connector.middle {
+    height: 20px; /* Middle connector height */
+  }
+  .connector.right {
+    height: 20px; /* Right connector height */
+  }
+}
+
+
+
+/* Adjust zoom in/out to work with 2 cards only */
 .card.zoom-out {
-  transform: scale(0.3);
+  transform: scale(0.5); /* Reduced zoom out scale */
   opacity: 0;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
@@ -360,7 +468,7 @@ header nav a:hover::after {
       max-width: auto;
       margin:  auto;
       text-align: left;
-      background-color: #eaeaea;
+      background-color:  #e0e0e0;
       padding: 30px;
        
        
@@ -369,8 +477,8 @@ header nav a:hover::after {
     
 
     .title {
-      font-size: 60px;
-      margin-left: 10%;
+      font-size: 70px;
+      margin-left: 15%;
       margin-right: 20%;
       font-weight: bold;
       margin-bottom: 20px;
@@ -378,31 +486,76 @@ header nav a:hover::after {
     }
 
     .description {
-      font-size: 20px;
+      font-size: 30px;
       margin-bottom: 30px;
-       margin-left: 10%;
+       margin-left: 15%;
       margin-right: 15%;
       color: #666;
     }
 
-    select {
-      width: 70%;
-      padding: 20px;
-      border: 2px solid #000;
-      border-radius: 5px;
-      font-size: 18px;
-      margin-left: 10%;
-      margin-right: 15%;
-      text-align: center;
-      text-align-last: center; /* For centering options in the dropdown */
-      background-color: #fff;
-      cursor: pointer;
-    }
+   /* Styling for the select dropdown */
+select {
+  width: 70%;
+  padding: 20px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-left: 15%;
+  margin-right: 15%;
+  text-align: center;
+  text-align-last: center; /* Centers options in the dropdown */
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
 
-    option {
-      text-align: center;
-    }
-     
+/* Hover effect for the select dropdown */
+select:hover {
+  background-color: #f0f0f0;
+  border-color: #007BFF;
+  transform: translateY(-2px); /* Slight lift effect */
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+}
+
+/* Focus effect for the select dropdown */
+select:focus {
+  outline: none;
+  border-color: #28a745;
+  box-shadow: 0 0 8px rgba(40, 167, 69, 0.5);
+}
+
+/* Styling for dropdown options */
+option {
+  text-align: center;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #000;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Hover effect for options (applies when opened in some browsers) */
+option:hover {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+/* Smooth fade-in animation for options */
+select option {
+  animation: fadeIn 0.3s ease;
+}
+
+/* Keyframe animation for options */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 
         .focus-section {
             display: flex;
@@ -456,14 +609,17 @@ header nav a:hover::after {
 }
 
 .left-panel .offer {
-  font-size: 30px;
+  font-size: 35px;
   font-weight: bold;
   background-color: #121212; /* Match main background color */
   color: white;
-  letter-spacing: 6px; /* Increase letter spacing */
-  padding: 30px;
+  letter-spacing: 20px; /* Increase letter spacing */
+  padding: 40px;
+  justify-content: center; /* Center the .offer element horizontally */
    
   display: inline-block;
+  text-align: center; /* Align text to the center */
+   
 }
 
 .right-panel {
@@ -473,7 +629,7 @@ header nav a:hover::after {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background-color: #eaeaea;
+  background-color:  #e0e0e0;
 }
 
 .main-section {
@@ -530,7 +686,7 @@ header nav a:hover::after {
   .contact-section {
     position: relative;
     background: url('https://assets.onecompiler.app/42y68y97m/4356m26z3/WhatsApp%20Image%202025-01-05%20at%208.49.43%20PM.jpeg') no-repeat center center/cover;
-    color: white;
+    color: #e0e0e0;
     padding: 100px 20px;
     text-align: center;
     width: auto;
@@ -569,93 +725,253 @@ header nav a:hover::after {
         }
 
         .contact-section .btn {
-            padding: 10px 20px;
-            background-color: #00bcd4;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
+    display: inline-block;
+    padding: 10px 20px;
+    background-color:  #00bcd4;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
 
-        .contact-section .btn:hover {
-            background-color: #019ba8;
-        }
+.contact-section .btn:hover {
+  box-shadow: 0 0 15px rgba(0, 188, 212, 0.8); /* Add glowing effect */
+}
 
-    .footer {
-            background-color: #f5f5f5;
-            padding: 50px;
+.contact-section .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2); /* Light effect color */
+    transition: left 0.3s ease-in-out;
+}
+
+.contact-section .btn:hover::before {
+    left: 100%; /* Slide the light effect across the button */
+}
+body {
+  background-color: #e0e0e0; /* Light gray background for the entire body */
+}
+
+.footer {
+    padding: 40px 20px;
+    
+    background: linear-gradient(-45deg, #0056b3, #42a5f5, #81c784, #ffc107);
+    background-size: 300% 300%; /* Enlarges the gradient for smoother animation */
+    animation: gradientAnimation 8s ease infinite; /* Infinite looping animation */
+    text-align: center;
+    margin: 20px;
+    border: 5px solid #0056b3;
+    border-radius: 15px;
+    color: #000; /* Footer text in black */
+}
+
+/* Animation for gradient */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.footer .logo {
+    display: flex;
+    flex-direction: column; /* Stack the logo and company name vertically */
+    align-items: center; /* Center the items horizontally */
+    margin-bottom: 20px;
+}
+
+.footer .logo-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px; /* Adds space between logo and company name */
+}
+
+.footer .company-name {
+    font-size: 36px;
+    font-weight: bold;
+    color: #000;
+}
+    
+        .footer .description {
+            font-size: 18px;
+            color: #121212;
+            margin-bottom: 40px;
+        }
+        .footer .social-icons h3 {
+    font-size: 27px; /* Set the font size for the heading */
+    color: #000; /* White color for the heading */
+    margin-bottom: 20px; /* Adds space between the heading and the icons */
+    font-weight: bold; /* Makes the heading bold */
+    
+}
+        .footer .social-icons {
+    display: flex;
+    flex-direction: column; /* Stack rows vertically */
+    align-items: center; /* Center icons horizontally */
+}
+
+.footer .social-icons .row {
+    display: flex;
+    justify-content: center; /* Center icons within each row */
+    margin-bottom: 10px; /* Add spacing between rows */
+}
+
+.footer .social-icons a {
+    margin: 0 10px; /* Space between icons */
+    display: inline-flex; /* Ensures proper alignment of the icon */
+    align-items: center; /* Vertically centers the icon */
+    justify-content: center; /* Horizontally centers the icon */
+    text-decoration: none;
+    
+    color: #fff; /* Icon color */
+    font-size: 18px;
+    border: 1px solid black; /* Black circular border */
+    width: 40px;
+    height: 40px; /* Match width and height for a circle */
+    border-radius: 50%; /* Circular border */
+}
+
+.footer .social-icons a:hover {
+  
+     color: #000; /* Hover border color */
+      
+}
+
+        .footer .locations {
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        .footer .locations span {
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        .footer .content {
             display: flex;
-            width: auto;
-            flex-wrap: wrap;
             justify-content: space-between;
+            flex-wrap: wrap;
+            text-align: left;
+            margin-top: 30px;
+            margin-left: 20%;
+            margin-right: 15%;
         }
-
-        .footer .column {
+        .footer .content div {
             flex: 1;
-            min-width: 200px;
             margin: 10px;
+            min-width: 200px;
         }
-
-        .footer h3 {
-            font-size: 1.2rem;
-            color: #1b2735;
+        .footer .content div h3 {
+            font-size: 27px;
             margin-bottom: 20px;
         }
-
-        .footer p {
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-
-        .footer ul {
+        .footer .content div ul {
             list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 30px;
         }
-
-        .footer ul li {
-            margin-bottom: 10px;
+        .content i {
+          display: inline-flex; /* Ensures proper alignment of the icon */
+    align-items: center; /* Vertically centers the icon */
+    justify-content: center; /* Horizontally centers the icon */
+    text-decoration: none;
+    background-color: #000;
+    color: #fff; /* Icon color */
+    font-size: 18px;
+          border: 2px solid black; /* Black circular border */
+    width: 35px;
+    height: 35px; /* Match width and height for a circle */
+    border-radius: 50%; /* Circular border */
         }
-
-        .footer ul li a {
-            color: #333;
+        .content a:hover i {
+    background-color: #fff; /* Hover background color */
+     color: #000; /* Hover border color */
+     border: 2px solid #fff; /* Black circular border */
+}
+        .footer .content div ul li {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .footer .content div ul li a {
             text-decoration: none;
-            font-size: 0.9rem;
+            color: #fff; /* Links in blue */
         }
-
-        .footer ul li a:hover {
+        .newsletter .newsletter-form .input-container {
+            position: relative;
+            width: 80%;
+            max-width: 400px;
+        }
+        .newsletter .newsletter-form .input-container input {
+          padding: 15px;
+      width: 80%;
+      max-width: 400px;
+      border: 2px solid #fff; /* Added border */
+      border-radius: 50px;
+      font-size: 16px;
+      color: #333;
+      outline: none;
+      background-color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    .newsletter input[type="email"]:focus {
+      border-color: #81c784; /* Border changes on focus */
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+        .newsletter button {
+      padding: 15px 30px;
+      margin-top: 10px;
+      background: linear-gradient(90deg, #42a5f5, #0056b3);
+      border: 2px solid #fff; /* Added border */
+      border-radius: 50px;
+      color: #fff;
+      margin-left: 65px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .newsletter button:hover {
+      background: linear-gradient(90deg, #0056b3, #42a5f5);
+      border-color: #81c784; /* Border color changes on hover */
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+      transform: translateY(-2px);
+    }
+        .footer .footer-bottom {
+             
+            font-size: 20px;
+            color: #000; /* Footer bottom text in dark gray */
+            border: 2px solid #fff;
+      padding: 20px;
+      display: inline-block;
+      border-radius: 5px;
+      margin-top: 40px;
+      color: #fff;
+        }
+        .footer .footer-bottom a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .footer .footer-bottom a:hover {
             text-decoration: underline;
         }
-
-        .social-icons {
-            display: flex;
-            gap: 10px;
-        }
-
-        .social-icons a {
-            font-size: 1.5rem;
-            color: #333;
-            text-decoration: none;
-        }
-
-        .social-icons a:hover {
-            color: #00bcd4;
-        }
-        .footer .copyright {
-    text-align: center;
-    margin-bottom: 0%;
-    margin-top: 20px;
-    font-size: 1rem;
-    color: black;
-    border-top: 1px solid black;
-    margin: 0; /* Optional: Removes default margin */
-    padding-top: 20px;
-    width: 100%; /* Ensures it spans the entire footer */
-     
-}
+        
           .rope {
             position: absolute;
             top: 0;
-            left: 95%;
+           left: 95%;
             width: 3px;
             height: 53%;
             background-color: #000;
@@ -765,46 +1081,57 @@ header nav a:hover::after {
             padding: 60px 20px;
             height: 140px;
             width: auto;
-            overflow: hidden;
+             overflow: hidden;
             position: relative;
         }
         .hero-text {
             max-width: 50%;
+            margin-top: 30px;
+            
+             
         }
 
         .hero h1 {
-            font-size: 0.8em;
+            font-size: 0.9em;
             margin-bottom: 1px;
             width: 90%;
+            margin-left: 10%;
+            margin-right: 0%;
             animation: fadeIn 2s ease-in-out;
         }
 
         .hero p {
-            font-size: 0.5em;
-            margin-bottom: 1px;
+            font-size: 0.6em;
+             margin-bottom: 4px;
+            margin-right: 0%;
+            margin-left: 10%;
              animation: slideIn 2s ease-in-out;
         }
 
         .hero .buttons {
-            margin-top: 1px;
+            margin-top: 3px;
+             
         }
          
 
         .hero img {
-            max-width: 150px;
-            height: 70px;
+            max-width: 190px;
+            height: auto;
+            margin-top: 30px;
             border-radius: 10px;
-             margin-right: 2%;
+             margin-right: 1%;
+             margin-left: 0%;
             animation: zoomIn 2.5s ease-in-out;
         }
        .hero .buttons a {
             display: inline-block;
-            margin-right: 10px;
-            padding: 4px 8px;
+            margin-left: 0%;
+            padding: 2px 4px;
             background: #00bcd4;
             color: white;
+            margin-right: 0%;
             border-radius: 2px;
-            font-size: 6px;
+            font-size: 8px;
              
             text-decoration: none;
              
@@ -830,6 +1157,7 @@ header nav a:hover::after {
         .hero .buttons a:hover::before {
             left: 100%;
         }
+
         .outer-frame {
       padding: 5px; /* Padding between the inner and outer frame */
       background-color: #e0e0e0; /* Outer frame color */
@@ -961,7 +1289,7 @@ header nav a:hover::after {
       max-width: 100%;
       margin: auto;
       text-align: left;
-      background-color: #eaeaea;
+      background-color:  #e0e0e0;
       padding: 15px;
        
       
@@ -972,7 +1300,7 @@ header nav a:hover::after {
     .title {
       font-size: 30px;
       margin-left: 6%;
-      margin-right: 10%;
+      margin-right: 6%;
       font-weight: bold;
       margin-bottom: 10px;
       color: #000;
@@ -982,7 +1310,7 @@ header nav a:hover::after {
       font-size: 15px;
       margin-bottom: 15px;
        margin-left: 6%;
-      margin-right: 5%;
+      margin-right: 8%;
       color: #666;
     }
 
@@ -1060,16 +1388,17 @@ header nav a:hover::after {
 }
 
 .left-panel .offer {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   background-color: #121212; /* Match main background color */
   color: white;
-  padding: 20px;
-  letter-spacing: 5px; /* Increase letter spacing */
-  
+  letter-spacing: 3px; /* Increase letter spacing */
+  padding: 16px;
+  justify-content: center; /* Center the .offer element horizontally */
+   
   display: inline-block;
-  margin-left: 0%;
-  margin-right: 0%;
+  text-align: center; /* Align text to the center */
+   
 }
 
 .right-panel {
@@ -1176,87 +1505,103 @@ header nav a:hover::after {
         }
 
         .contact-section .btn {
-            padding: 4px 8px;
-            background-color: #00bcd4;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 8px;
-        }
+    display: inline-block;
+    padding: 4px 8px;
+    background-color:  #00bcd4;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 8px;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
 
-        .contact-section .btn:hover {
-            background-color: #019ba8;
-        }
+.contact-section .btn:hover {
+  box-shadow: 0 0 15px rgba(0, 188, 212, 0.8); /* Add glowing effect */
+}
 
-    .footer {
-            background-color: #f5f5f5;
-            padding: 10px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
+.contact-section .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2); /* Light effect color */
+    transition: left 0.3s ease-in-out;
+}
 
-        .footer .column {
-            flex: 1;
-            min-width: 150px;
-            margin: 10px;
-        }
+.contact-section .btn:hover::before {
+    left: 100%; /* Slide the light effect across the button */
+}
 
-        .footer h3 {
-            font-size: 15px;
-            color: #1b2735;
-            margin-bottom: 8px;
-        }
+.footer .company-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+}
+            .footer .content {
+              margin-left: 10%;
+              margin-right: 1%;
+            }
+            .footer .description {
+                font-size: 15px;
+                margin-bottom: 10px;
+            }
+            .footer .social-icons h3 {
+              font-size: 19px; /* Set the font size for the heading */
+            }
+            .footer .social-icons {
+    display: flex;
+    flex-direction: column; /* Stack rows vertically */
+    align-items: center; /* Center icons horizontally */
+}
 
-        .footer p {
-            font-size: 13px;
-            margin-bottom: 8px;
-            line-height: 1.1;
-        }
+.footer .social-icons .row {
+    display: flex;
+    justify-content: center; /* Center icons within each row */
+    margin-bottom: 0px; /* Add spacing between rows */
+}
 
-        .footer ul {
-            list-style: none;
+            .footer .social-icons a {
+                font-size: 16px;
+                margin: 0 5px;
+               margin-top: 10px;
+               gap: 1px;
+            }
+           .footer .content div h3 {
+    font-size: 19px;
+    text-align: left; /* Align the heading text to the left */
+}
+.content i {
+font-size: 13px;
+ width:28px ;
+ height:28px;
+ border-radius: 50%;
+}
+     .footer .content div ul li {
+        font-size: 16px;
+        text-align: left; /* Align list item text to the left */
+        
+    }
+    .newsletter button {
+      margin-left:44px;
+    }
+     .footer .footer-bottom {
+        font-size: 13px;
+        text-align: center; /* Align text to the center */
+        width: 80%; /* Ensure the footer takes up full width */
+        margin-top: 20px; /* Add some space above, if needed */
+        color: #000; /* Footer bottom text in dark gray */
+            border: 2px solid #fff;
+      padding: 15px;
+      display: inline-block;
+      border-radius: 5px;
+        color: #fff;
         }
-
-        .footer ul li {
-            margin-bottom: 5px;
-        }
-
-        .footer ul li a {
-            color: #333;
-            text-decoration: none;
-            font-size: 13px;
-        }
-
-        .footer ul li a:hover {
-            text-decoration: underline;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 10px;
-        }
-
-        .social-icons a {
-            font-size: 1.5rem;
-            color: #333;
-            text-decoration: none;
-        }
-
-        .social-icons a:hover {
-            color: #00bcd4;
-        }
-          
-        .footer .copyright {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 0.8rem;
-    color: black;
-    border-top: 1px solid #444;
-    padding-top: 10px;
-    width: 100%; /* Ensures it spans the entire footer */
-}   
-.rope {
+   
+     .rope {
             position: absolute;
             top: 0;
             left: 92%;
@@ -1303,7 +1648,7 @@ header nav a:hover::after {
     </div>
     <nav>
         <a href="index.html">Home</a>
-        <a href="#">Services</a>
+        <a href="#ourservices">Services</a>
         <a href="chartbot.html">Help Desk</a>
         <a href="#">Contact</a>
         <a href="aboutus.html">About Us</a>
@@ -1312,7 +1657,7 @@ header nav a:hover::after {
      
     <section class="hero">
         <div class="hero-text">
-            <h1>We solve business problems with technology.</h1>
+            <h1>We solve <br> business problems <br>with technology.</h1>
             <p>Our performance is your success. Our passion is innovation. Our expertise is unmatched. We get you more.</p>
             <div class="buttons">
                 <a style="margin-left: 10%;" href="#">Get Started</a>
@@ -1327,64 +1672,67 @@ header nav a:hover::after {
         <img src="https://assets.onecompiler.app/42y68y97m/43479ey5k/WhatsApp_Image_2024-12-26_at_7.11.56_PM-removebg-preview.png" alt="Boy Sliding Down">
     </div>
     
-   <section class="our-strategies">
-    <div class="outer-frame">
-        <div class="strategies-box">KEY FEATURES</div>
-    </div>
-    <div class="vertical-line"></div>
-    <div class="horizontal-line">
-        <div class="connector left">
-            <div class="intersection-dot"></div>
-        </div>
-        <div class="connector middle">
-            <div class="intersection-dot"></div>
-        </div>
-        <div class="connector right">
-            <div class="intersection-dot"></div>
-        </div>
-    </div>
-    <div class="cards-container">
-        <div class="cards">
-            <div class="card">
-                <div class="card-icon">💬</div>
-                <div class="card-title">Friendly Support</div>
-            </div>
-            <div class="card">
-                <div class="card-icon">🔍</div>
-                <div class="card-title">Search Engine Optimised</div>
-            </div>
-            <div class="card">
-                <div class="card-icon">🅰️</div>
-                <div class="card-title">Custom Typography</div>
-            </div>
-            <div class="card">
-                <div class="card-icon">📄</div>
-                <div class="card-title">Essential Inner Pages</div>
-            </div>
-            <div class="card">
-                <div class="card-icon">💻</div>
-                <div class="card-title">Modern Technologies</div>
-            </div>
-            <div class="card">
-                <div class="card-icon">⚡</div>
-                <div class="card-title">High-Speed Performance</div>
-            </div>
-            <div class="card">
-                <div class="card-icon">🔄</div>
-                <div class="card-title">Lifetime Updates</div>
-            </div>
-            <div class="card">
-                <div class="card-icon">🔧</div>
-                <div class="card-title">Highly Customisable</div>
-            </div>
-            <!-- New additional card -->
-            <div class="card">
-                <div class="card-icon">📊</div>
-                <div class="card-title">Analytics Tools</div>
-            </div>
-        </div>
-    </div>
-</section>
+    <section class="our-strategies">
+      <div class="outer-frame">
+          <div class="strategies-box">KEY FEATURES</div>
+      </div>
+      <div class="vertical-line"></div>
+      <div class="horizontal-line">
+          <div class="connector left">
+              <div class="intersection-dot"></div>
+          </div>
+          <div class="connector middle">
+              <div class="intersection-dot"></div>
+          </div>
+          <div class="connector right">
+              <div class="intersection-dot"></div>
+          </div>
+          <div class="connector fourth">
+              <div class="intersection-dot"></div>
+          </div>
+      </div>
+      <div class="cards-container">
+          <div class="cards">
+              <div class="card">
+                  <div class="card-icon">💬</div>
+                  <div class="card-title">Friendly Support</div>
+              </div>
+              <div class="card">
+                  <div class="card-icon">🔍</div>
+                  <div class="card-title">Search Engine Optimised</div>
+              </div>
+              <div class="card">
+                  <div class="card-icon">🅰️</div>
+                  <div class="card-title">Custom Typography</div>
+              </div>
+              <div class="card">
+                  <div class="card-icon">📄</div>
+                  <div class="card-title">Essential Inner Pages</div>
+              </div>
+              <div class="card">
+                  <div class="card-icon">💻</div>
+                  <div class="card-title">Modern Technologies</div>
+              </div>
+              <div class="card">
+                  <div class="card-icon">⚡</div>
+                  <div class="card-title">High-Speed Performance</div>
+              </div>
+              <div class="card">
+                  <div class="card-icon">🔄</div>
+                  <div class="card-title">Lifetime Updates</div>
+              </div>
+              <div class="card">
+                  <div class="card-icon">🔧</div>
+                  <div class="card-title">Highly Customisable</div>
+              </div>
+              <div class="card">
+                  <div class="card-icon">📊</div>
+                  <div class="card-title">Analytics Tools</div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
 
  <section class="logos"> 
         <div class="animated-background"></div>
@@ -1394,7 +1742,7 @@ header nav a:hover::after {
     </section>
     
     <div class="container">
-   <h1 class="title">Website Design for Software and Technology Companies</h1>
+   <h1 class="title"> Website Design for Software and Technology Companies</h1>
       <p class="description">
         Vspaze designs websites for software and technology companies needs to perform at the highest level.
         Our team of experienced web specialist design and develop sites that inform and convert visitors.
@@ -1505,58 +1853,79 @@ header nav a:hover::after {
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="column">
-            <h2 style="color: black;">Vspaze  </h2>
-            <p style="color: black;">We implement the corporate performance software "CCH Tagetik" for consolidation, planning, and reporting purposes.</p>
-            <div class="social-icons">
-                <a href="#" class="fab fa-facebook"></a> <!-- Facebook Icon -->
-                <a href="https://youtube.com/@vspaze_technologies?si=KS349G4HWm_fCnE0" class="fab fa-youtube"></a> <!-- Youtube Icon -->
-                <a href="https://x.com/VSPAZE_TECH?t=QL6c-1lGl1_UGtDTJbzGKA&s=09" class="fab fa-twitter"></a>  <!-- Twitter Icon -->
-                <a href="https://x.com/VSPAZE_TECH?s=09" class="fab fa-threads icon"></a>  <!-- Threads Icon -->
-                <a href=" https://in.linkedin.com/in/vspaze-technologies-41a150326" class="fab fa-linkedin"></a> <!-- LinkedIn Icon -->
-                <a href="https://www.instagram.com/vspaze_technologies?igsh=MWR3cnBpOGdpYnRyeA==" class="fab fa-instagram"></a> <!-- Instagram Icon -->
-            </div>
+    <div class="footer">
+      <div class="logo">
+          <img src="https://assets.onecompiler.app/42y68y97m/433zxpj73/WhatsApp%20Image%202024-12-25%20at%2012.45.50%20AM.jpeg" alt="Logo" class="logo-img"> 
+          <span class="company-name">VSPAZE TECHNOLOGIES</span>
+      </div>
+      <div class="description">
+          We provide various services to make your business grow and get bigger. Your satisfaction is our first priority.
+      </div>
+      <div class="social-icons">
+        <h3>Follow Us</h3>
+        <div class="row">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/vspaze_technologies?igsh=MWR3cnBpOGdpYnRyeA=="><i class="fab fa-instagram"></i></a>
+            <a href="https://in.linkedin.com/in/vspaze-technologies-41a150326"><i class="fab fa-linkedin-in"></i></a>
         </div>
-        <div class="column">
-            <h3>Home</h3>
-            <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Blogs</a></li>
-                <li><a href="#">Testimonials</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
+        <div class="row">
+            <a href="https://youtube.com/@vspaze_technologies?si=KS349G4HWm_fCnE0"><i class="fab fa-youtube"></i></a>
+            <a href="https://x.com/VSPAZE_TECH?t=QL6c-1lGl1_UGtDTJbzGKA&s=09"><i class="fab fa-twitter"></i></a>
+            <a href="https://x.com/VSPAZE_TECH?s=09"><i class="bi bi-threads"></i></a>
         </div>
-        <div class="column">
-            <h3>Services</h3>
-            <ul>
-                <li><a href="#">Building Apps</a></li>
-                <li><a href="#">MVP</a></li>
-                <li><a href="#">Digital Product</a></li>
-                <li><a href="#">Other</a></li>
-            </ul>
+    </div>
+      <div class="locations">
+          <span>India</span> | <span>South Africa</span> | <span>UAE</span> | <span>USA</span>
+      </div>
+      <div class="content">
+          <div>
+              <h3>Company</h3>
+              <ul>
+                  <li><a href="#"><i class="fas fa-angle-right"></i> Branding</a></li>
+                  <li><a href="#"><i class="fas fa-angle-right"></i> Digital Marketing</a></li>
+                  <li><a href="#"><i class="fas fa-angle-right"></i> Web & App Development</a></li>
+                
+                  <li><a href="#"><i class="fas fa-angle-right"></i> Portfolio</a></li>
+                  <li><a href="#"><i class="fas fa-angle-right"></i> Blog</a></li>
+                  <li><a href="#"><i class="fas fa-angle-right"></i> Contact Us</a></li>
+              </ul>
+          </div>
+          <div>
+              <h3>Contact Info</h3>
+              <ul>
+                  <li>
+                    <a href=" " target="_blank">
+                      <i class="fas fa-map-marker-alt"></i> Jadcherla, Telangana, India
+                    </a><br><br>
+                  </li>
+                    <li>
+                      <a href="mailto:support@vspaze.com">
+                        <i class="fas fa-envelope"></i> support@vspaze.com
+                      </a><br><br>
+                  </li>
+                   <li>
+                     
+                    <a href="tel:+919640190090">
+                      <i class="fas fa-phone"></i> +91 9908581431
+                    </a><br><br>
+                  </li>
+              </ul>
+          </div>
+          <div class="newsletter">
+            <h3>Newsletter</h3>
+            <p>Join our subscribers list to get the latest news and special offers</p>
+            <form class="newsletter-form">
+                <div class="input-container">
+                    <input type="email" placeholder="Enter Email Address" required>
+                  </div>
+                    <button type="submit">Subscribe</button>
+                 
+            </form>
         </div>
-       <div class="column">
-    <h3>Contact Us</h3>
-    <ul>
-        <li>
-            <a href="tel:+12082619898">
-                <i class="fas fa-phone"></i> Call Us: +91 9908581431
-            </a>
-        </li>
-        <li>
-            <a href="mailto:info@email.com">
-                <i class="fas fa-envelope"></i> Email: support@vspaze.com
-            </a>
-        </li>
-        
-    </ul>
-</div>
-<div class="copyright">
-  &copy; 2024 Vspaze Technologies All Rights Reserved.
-</div>
+    </div>
+    <div class="footer-bottom">
+        © 2024 Vspaze Technologies. All rights reserved  
+    </div>
 </footer>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -1570,10 +1939,14 @@ header nav a:hover::after {
     }, 100); // Delay before animation starts
   
     
- document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", () => {
   const cards = document.querySelectorAll(".card");
+  const connectors = document.querySelectorAll(".connector");
   const totalCards = cards.length;
-  const cardsPerSet = 3; // Number of cards visible at a time
+  const totalConnectors = connectors.length;
+  
+  // Adjust cardsPerSet based on screen width
+  const cardsPerSet = window.innerWidth >= 768 ? 4 : 3; // 4 cards for larger screens and 3 for mobile
   let currentIndex = 0;
 
   function showNextSet() {
@@ -1590,6 +1963,15 @@ header nav a:hover::after {
       cards.forEach((card) => {
         card.classList.remove("visible", "zoom-out");
         card.classList.add("hidden");
+      });
+
+      // Reset connectors visibility based on the number of cards per row
+      connectors.forEach((connector, index) => {
+        if (index < cardsPerSet) {
+          connector.style.display = 'block';
+        } else {
+          connector.style.display = 'none';
+        }
       });
 
       // Show the next set of cards with smooth transition
@@ -1617,8 +1999,6 @@ header nav a:hover::after {
   });
 });
 
-
-         
     </script>
     
 </body>
