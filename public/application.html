@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+    <style>
+        /* Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        /* Background Animation */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #4a47a3, #2b2860);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+            padding: 10px;
+        }
+
+        /* Floating Glassmorphic Form */
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            color: white;
+            animation: fadeInZoom 0.8s ease-in-out;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        /* Input Fields */
+        input, textarea {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s ease-in-out;
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            backdrop-filter: blur(8px);
+            outline: none;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        input:focus, textarea:focus {
+            border-color: #fff;
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+            transform: scale(1.02);
+        }
+
+        /* Submit Button */
+        button {
+            width: 30%;
+            padding: 12px;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            animation: pulse 2s infinite;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #ff6b81, #ff5e99);
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            input, textarea {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 10px;
+            }
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeInZoom {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+            }
+            100% {
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2 id="formTitle">Application Form</h2>
+        <form action="submit_form.php" method="post">
+            <input type="hidden" id="industryInput" name="industry">
+            
+            <input type="text" id="name" name="name" placeholder="Full Name" required>
+            <input type="tel" id="number" name="number" placeholder="Phone Number" required>
+            <input type="email" id="email" name="email" placeholder="Email Address" required>
+            <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        // Get industry from URL and update form title
+        function getQueryParam(param) {
+            var urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        var industry = getQueryParam("industry");
+        if (industry) {
+            document.getElementById("formTitle").innerText = industry + " Application Form";
+            document.getElementById("industryInput").value = industry;
+        }
+    </script>
+
+</body>
+</html>

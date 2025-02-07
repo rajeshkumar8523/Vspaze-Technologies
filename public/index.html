@@ -11,6 +11,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
 
  <style>
         body {
@@ -464,37 +466,36 @@ header nav a:hover::after {
         background-position: 0% 50%;
     }
 }
-.container {
-      max-width: auto;
-      margin:  auto;
-      text-align: left;
-      background-color:  #e0e0e0;
-      padding: 30px;
-       
-       
-    }
+ /* Styling for the main industry container */
+.industry-container {
+  max-width: auto;
+  margin: auto;
+  text-align: left;
+  background-color: #e0e0e0;
+  padding: 30px;
+}
 
-    
+/* Styling for the industry title */
+.industry-title {
+  font-size: 70px;
+  margin-left: 15%;
+  margin-right: 20%;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #000;
+}
 
-    .title {
-      font-size: 70px;
-      margin-left: 15%;
-      margin-right: 20%;
-      font-weight: bold;
-      margin-bottom: 20px;
-      color: #000;
-    }
+/* Styling for the industry description */
+.industry-description {
+  font-size: 30px;
+  margin-bottom: 30px;
+  margin-left: 15%;
+  margin-right: 15%;
+  color: #666;
+}
 
-    .description {
-      font-size: 30px;
-      margin-bottom: 30px;
-       margin-left: 15%;
-      margin-right: 15%;
-      color: #666;
-    }
-
-   /* Styling for the select dropdown */
-select {
+/* Styling for the industry select dropdown */
+.industry-select {
   width: 70%;
   padding: 20px;
   border: 2px solid #000;
@@ -503,30 +504,30 @@ select {
   margin-left: 15%;
   margin-right: 15%;
   text-align: center;
-  text-align-last: center; /* Centers options in the dropdown */
+  text-align-last: center;
   background-color: #fff;
   cursor: pointer;
-  transition: all 0.3s ease; /* Smooth transition for hover effects */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Hover effect for the select dropdown */
-select:hover {
+/* Hover effect for the industry select dropdown */
+.industry-select:hover {
   background-color: #f0f0f0;
   border-color: #007BFF;
-  transform: translateY(-2px); /* Slight lift effect */
-  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Focus effect for the select dropdown */
-select:focus {
+/* Focus effect for the industry select dropdown */
+.industry-select:focus {
   outline: none;
   border-color: #28a745;
   box-shadow: 0 0 8px rgba(40, 167, 69, 0.5);
 }
 
 /* Styling for dropdown options */
-option {
+.industry-select option {
   text-align: center;
   padding: 10px;
   font-size: 16px;
@@ -535,14 +536,14 @@ option {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-/* Hover effect for options (applies when opened in some browsers) */
-option:hover {
+/* Hover effect for options */
+.industry-select option:hover {
   background-color: #007BFF;
   color: #fff;
 }
 
 /* Smooth fade-in animation for options */
-select option {
+.industry-select option {
   animation: fadeIn 0.3s ease;
 }
 
@@ -652,19 +653,8 @@ select option {
   margin-bottom: 2rem; /* Space between services */
 }
 
-.service .icon {
-  font-size: 2rem; /* Larger icon */
-  padding: 1.5rem;
-  border-radius: 20%;
-  background-color: #1c2a40;
-  color: #fff; /* Default color */
-  transition: transform 0.3s ease, color 0.3s ease;
-}
 
-.service .icon:hover {
-  animation: bounce 0.5s ease;
-  color: #42a5f5; /* Hover color */
-}
+
 
 .service-title {
   margin-top: 1rem;
@@ -673,25 +663,17 @@ select option {
 }
 
 /* Animations */
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
+
  /* Banner Section */
  .banner {
             text-align: center;
             background-color: #fdf6f0;
-             
-            position: relative;
+  position: relative;
         }
 
         .banner img {
             width: 100%;
-            height: 400px;
+            height: 550px;
             
         }
 
@@ -741,19 +723,12 @@ select option {
     padding: 100px 20px;
     text-align: center;
     width: auto;
-    height: 200px; /* Set your desired height, e.g., 500px */
+    height: 100%; /* Set your desired height, e.g., 500px */
     margin-bottom: 0%;
 }
 
 
-        .contact-section .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-        }
+
 
         .contact-section .content {
             position: relative;
@@ -1059,6 +1034,54 @@ body {
       width: 100px;
     }
 
+
+    .title {
+      font-size: 24px;
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      font-size: 16px;
+      color: #555;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+
+    .form-container {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .form-container h2 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .form-container input,
+    .form-container textarea,
+    .form-container button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    .form-container button {
+      background-color: #42a5f5;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .form-container button:hover {
+      background-color: #1e88e5;
+    }
                
 
         
@@ -1342,53 +1365,54 @@ header nav a:hover::after {
     }
 }
 
-.container {
-      max-width: 100%;
-      margin: auto;
-      text-align: left;
-      background-color:  #e0e0e0;
-      padding: 15px;
-       
-      
-    }
+/* Styling for the main industry container */
+.industry-container {
+  max-width: 100%;
+  margin: auto;
+  text-align: left;
+  background-color: #e0e0e0;
+  padding: 15px;
+}
 
-    
+/* Styling for the industry title */
+.industry-title {
+  font-size: 30px;
+  margin-left: 6%;
+  margin-right: 6%;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #000;
+}
 
-    .title {
-      font-size: 30px;
-      margin-left: 6%;
-      margin-right: 6%;
-      font-weight: bold;
-      margin-bottom: 10px;
-      color: #000;
-    }
+/* Styling for the industry description */
+.industry-description {
+  font-size: 15px;
+  margin-bottom: 15px;
+  margin-left: 6%;
+  margin-right: 8%;
+  color: #666;
+}
 
-    .description {
-      font-size: 15px;
-      margin-bottom: 15px;
-       margin-left: 6%;
-      margin-right: 8%;
-      color: #666;
-    }
+/* Styling for the industry select dropdown */
+.industry-select {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  font-size: 15px;
+  margin-left: 6%;
+  margin-right: 8%;
+  text-align: center;
+  text-align-last: center; /* Centers options in the dropdown */
+  background-color: #fff;
+  cursor: pointer;
+}
 
-    select {
-      width: 80%;
-      padding: 10px;
-      border: 1px solid #000;
-      border-radius: 5px;
-      font-size: 15px;
-      margin-left: 6%;
-      margin-right: 8%;
-      text-align: center;
-      text-align-last: center; /* For centering options in the dropdown */
-      background-color: #fff;
-      cursor: pointer;
-    }
+/* Styling for dropdown options */
+.industry-select option {
+  text-align: center;
+}
 
-    option {
-      text-align: center;
-    }
- 
 
         .focus-section {
             display: flex;
@@ -1410,10 +1434,7 @@ header nav a:hover::after {
             max-width: 300px;
              
         }
-        .container-flex {
-  display: flex;
-  align-items: stretch;
-}
+
 
 .left-panel {
   background: linear-gradient(120deg, #4a47a3, #4a47a3, #2b2860);
@@ -1520,20 +1541,23 @@ header nav a:hover::after {
      .banner {
             text-align: center;
             background-color: #fdf6f0;
-             height: 200px;
+             height: 220px;
             position: relative;
         }
 
         .banner img {
             width: 100%;
-            height: 140px;
-            
+            height: 200px;
         }
 
-        .banner h2 {
+        .banner-2 h2 {
             font-size: 18px;
             color: #444;
             margin-bottom: 10px;
+        }
+
+        .banner{
+          height: 100%;
         }
 
         .banner p {
@@ -1552,7 +1576,6 @@ header nav a:hover::after {
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            margin-bottom: 10px;
             font-size: 12px;
         }
 
@@ -1568,6 +1591,7 @@ header nav a:hover::after {
     margin-bottom: 10px; /* Added margin below the logo */
     margin-top: 10px;
         }
+
        .contact-section {
     position: relative;
     background: url('https://assets.onecompiler.app/42y68y97m/4356m26z3/WhatsApp%20Image%202025-01-05%20at%208.49.43%20PM.jpeg') no-repeat center center/cover;
@@ -1576,7 +1600,7 @@ header nav a:hover::after {
     margin-top: 0%;
     text-align: center;
     width: 100%; /* Makes sure the width is full */
-    height: 150px; /* Set your desired height, e.g., 500px */
+    height: 100%; /* Set your desired height, e.g., 500px */
 }
 
 
@@ -1701,7 +1725,7 @@ font-size: 13px;
       border: 2px solid #fff; /* Added border */
       border-radius: 50px;
       color: #fff;
-      margin-left: 44px;
+      margin-left: 61px;
       font-size: 14px;
       font-weight: bold;
       cursor: pointer;
@@ -1726,6 +1750,7 @@ font-size: 13px;
       display: inline-block;
       border-radius: 5px;
         color: #fff;
+         
         }
    
      .rope {
@@ -1868,27 +1893,33 @@ font-size: 13px;
         </div>
     </section>
     
-    <div class="container">
-   <h1 class="title"> Website Design for Software and Technology Companies</h1>
-      <p class="description">
-        Vspaze designs websites for software and technology companies needs to perform at the highest level.
-        Our team of experienced web specialist design and develop sites that inform and convert visitors.
+    <div class="industry-container">
+      <h1 class="industry-title">Website Design for Software and Technology Companies</h1>
+      <p class="industry-description">
+        Vspaze designs websites for software and technology companies that need to perform at the highest level.
+        Our team of experienced web specialists design and develop sites that inform and convert visitors.
       </p>
-      <select>
-      <option value="" disabled selected>-- Select Industry --</option>
-      <option value="ecommerce">E-Commerce and Retail</option>
-      <option value="trivial">Trivial</option>
-      <option value="fintech">Fintech</option>
-      <option value="edtech">Education Technology</option>
-      <option value="healthtech">Health Tech</option>
-      <option value="media">Entertainment and Media</option>
-      <option value="hospitality">Hospitality</option>
-      <option value="enterprise">Enterprise Software</option>
-      <option value="logistics">Logistics and Supply Chain</option>
-      <option value="socialmedia">Social Media and Networking</option>
-      <option value="propertytech">Property Technology</option>
+    
+      <select class="industry-select" id="industry"  onchange="openFormPage()">
+        <option value="" disabled selected>-- Select Industry --</option>
+        <option value="E-Commerce and Retail">E-Commerce and Retail</option>
+        <option value="Trivial">Trivial</option>
+        <option value="Fintech">Fintech</option>
+        <option value="Education Technology">Education Technology</option>
+        <option value="Health Tech">Health Tech</option>
+        <option value="Entertainment and Media">Entertainment and Media</option>
+        <option value="Hospitality">Hospitality</option>
+        <option value="Enterprise Software">Enterprise Software</option>
+        <option value="Logistics and Supply Chain">Logistics and Supply Chain</option>
+        <option value="Social Media and Networking">Social Media and Networking</option>
+        <option value="Property Technology">Property Technology</option>
+        <option value="Cyber Security">Cyber Security</option>
+        <option value="Cloud Computing and Storage">Cloud Computing and Storage</option>
+        <option value="Other">Other</option>
     </select>
-      </div>
+    </div>
+    
+ 
     
   <div class="container-flex">
     <section class="main-section">
@@ -1970,23 +2001,20 @@ font-size: 13px;
 </div>
   <!-- Banner Section with Image -->
   <div class="banner">
-    <img src="https://assets.onecompiler.app/42ucesb3u/436c2gzuc/WhatsApp%20Image%202025-01-17%20at%2010.10.42%20PM.jpeg" alt="Woman at desk">
-   <div class="banner">
-<div class="logo">
-        <img src="logo-placeholder.png" alt="Logo">
+    <img src="https://res.cloudinary.com/dagkvnqd9/image/upload/v1737966077/Untitled_design_20250127_133052_0000_pgsrqo.jpg" alt="Woman at desk">
+    <div class="banner-2">
+      <h2>It's Time to IMPLEMENT!</h2>
+      <p>We implement corporate performance solutions, and VSpaze takes responsibility for transforming your business into a top brand position.</p>
+      <button>Learn More</button>
     </div>
-    <h2>It's Time to RISE!</h2>
-    <p>As an Emotional Intelligence facilitator and coach, I ignite and inspire those  ready to rise into their dreams. I offer corporate coaching and private programs to teach people how to make shifts for clarity, joy, and abundance.</p>
-    <button>Learn More</button>
-</div>
+  </div>
+
 
      <section class="contact-section">
-        <div class="overlay"></div>
         <div class="content">
           <h1>VSPAZE TECHNOLOGIES CONTACT US TODAY!</h1>
            <p>Get in touch with us if you want to optimize your controlling and accounting processes with system support. We would be happy to present our solution portfolio to you and support you as a partner in the design and implementation.</p>
            <a href="tel:+919908581431" class="btn">Contact Us Now</a>
-
         </div>
     </section>
 
@@ -2136,6 +2164,144 @@ font-size: 13px;
   });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const services = document.querySelectorAll(".service .icon"); // Select all icons
+
+  // Define the bouncing order groups
+  const bounceGroups = [
+    [0, 2], // 1 and 3 (0-indexed)
+    [4, 6], // 5 and 7
+    [8, 10], // 9 and 11
+    [1, 3], // 2 and 4
+    [5, 7], // 6 and 8
+    [9] // 10
+  ];
+
+  let currentGroupIndex = 0;
+
+  const bounceIcons = () => {
+    // Reset all icons to their default state
+    services.forEach((icon) => {
+      icon.style.transform = "translateY(0)";
+      icon.style.color = "#fff";
+      icon.style.transition = "transform 0.3s ease, color 0.3s ease";
+    });
+
+    // Get the current bounce group
+    const currentGroup = bounceGroups[currentGroupIndex];
+
+    // Apply bounce effect to the current group
+    currentGroup.forEach((index) => {
+      const icon = services[index];
+      icon.style.transform = "translateY(-10px)"; // Bounce effect
+      icon.style.color = "#42a5f5"; // Change color
+    });
+
+    // Move to the next group in the sequence
+    currentGroupIndex = (currentGroupIndex + 1) % bounceGroups.length;
+  };
+
+  // Run the bounceIcons function every 500ms
+  setInterval(bounceIcons, 500);
+});
+
+// CSS Styles
+
+const style = document.createElement("style");
+style.textContent = `
+  .service .icon {
+    font-size: 2rem; /* Larger icon */
+    padding: 1.5rem;
+    border-radius: 20%;
+    background-color: #1c2a40;
+    color: #fff; /* Default color */
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @media (max-width: 768px){
+    .services-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px; /* Space between services */
+}
+
+.service .icon {
+  font-size: 20px; /* Larger icon */
+  padding: 10px;
+  border-radius: 20%;
+  background-color: #1c2a40;
+  color: #fff; /* Default color */
+
+}
+  }
+`;
+document.head.appendChild(style);
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const industrySelect = document.getElementById('industry-select');
+    const formContainer = document.getElementById('form-container');
+    const industryInput = document.getElementById('industry');
+
+    // Show the form when an industry is selected
+    industrySelect.addEventListener('change', (event) => {
+      formContainer.style.display = 'block';
+      industryInput.value = event.target.options[event.target.selectedIndex].text;
+    });
+
+    // Handle form submission
+    document.getElementById('design-form').addEventListener('submit', (event) => {
+      event.preventDefault(); // Prevent default form submission
+
+      // Collect form data
+      const formData = new FormData(event.target);
+      const formObj = Object.fromEntries(formData.entries());
+
+      // Prepare email content
+      const emailContent = `
+        Name: ${formObj.name}\n
+        Mobile Number: ${formObj.mobile}\n
+        Industry: ${formObj.industry}\n
+        Email ID: ${formObj.email}\n
+        Message: ${formObj.message}
+      `;
+
+      // Send email to admin (example: integrate with a server or email API here)
+      console.log("Email Content:", emailContent);
+      alert('Your response has been submitted!');
+
+      // Reset the form
+      event.target.reset();
+      formContainer.style.display = 'none';
+    });
+  });
+
+
+  function openFormPage() {
+        var industry = document.getElementById("industry").value;
+        if (industry) {
+            window.location.href = "application.html?industry=" + encodeURIComponent(industry);
+        } else {
+            alert("Please select an industry first!");
+        }
+    }
     </script>
     
 </body>
