@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,266 +15,315 @@
             background-color: #fff;
             color: #333;
         }
-          header {
+
+        header {
             background: radial-gradient(circle, #4a47a3, #2b2860);
-    color: white;
-    padding: 20px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 98%;
-    height: 60px;
-    z-index: 1000;
-    animation: slideDown 4s ease-in-out;
-}
+            color: white;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 98%;
+            height: 60px;
+            z-index: 1000;
+            animation: slideDown 4s ease-in-out;
+        }
 
-header .logo {
-    display: flex;
-    align-items: center;
-}
+        header .logo {
+            display: flex;
+            align-items: center;
+        }
 
-header .logo img {
-    max-height: 100px; /* Adjust logo size */
-    height: 150px;
-    width: 100px;
-    border-radius: 50%;
-    margin-top: 2%;
-    margin-left: 20%;
-}
+        header .logo img {
+            max-height: 100px;
+            /* Adjust logo size */
+            height: 150px;
+            width: 100px;
+            border-radius: 50%;
+            margin-top: 2%;
+            margin-left: 20%;
+        }
 
-header nav {
-    display: flex; /* Ensure nav is a flex container */
-    justify-content: flex-end; /* Push links to the right */
-    align-items: center; /* Align links vertically */
-    margin-right: 2%;
-}
+        header nav {
+            display: flex;
+            /* Ensure nav is a flex container */
+            justify-content: flex-end;
+            /* Push links to the right */
+            align-items: center;
+            /* Align links vertically */
+            margin-right: 2%;
+        }
 
-header nav a {
-    position: relative;
-    color: white;
-    text-decoration: none;
-    margin: 0 13px;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-     
-}
+        header nav a {
+            position: relative;
+            color: white;
+            text-decoration: none;
+            margin: 0 13px;
+            font-size: 1rem;
+            transition: color 0.3s ease;
 
-header nav a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background:white;
-    transition: width 0.3s ease;
-}
+        }
 
-header nav a:hover {
-    color: #00bcd4;
-}
+        header nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s ease;
+        }
 
-header nav a:hover::after {
-    width: 100%;
-}
- 
+        header nav a:hover {
+            color: #00bcd4;
+        }
+
+        header nav a:hover::after {
+            width: 100%;
+        }
+
         .about {
             text-align: center;
             padding: 50px 20px;
             background: radial-gradient(circle, #4a47a3, #2b2860);
             position: relative;
-              
+
         }
+
         .about h1 {
-    font-size: 36px;
-    font-weight: bold;
-    color: #fff; /* Black text for contrast */
-    margin-bottom: 15px;
-    margin-top: 10%;
-}
+            font-size: 36px;
+            font-weight: bold;
+            color: #fff;
+            /* Black text for contrast */
+            margin-bottom: 15px;
+            margin-top: 10%;
+        }
+
         .about p {
-    font-size: 18px;
-    font-weight: 400;
-    color: #fff; /* Dark gray for readability */
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 10px 20px;
-    margin-bottom: 100px;
-}
-.image-grid {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    position: absolute;
-    bottom: -90px;
-    left: 50%;
-    margin-top: 50px;
-    transform: translateX(-50%);
-    padding: 10px;
-    border-radius: 10px;
-}
+            font-size: 18px;
+            font-weight: 400;
+            color: #fff;
+            /* Dark gray for readability */
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 10px 20px;
+            margin-bottom: 100px;
+        }
 
-.image-grid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-}
+        .image-grid {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            position: absolute;
+            bottom: -90px;
+            left: 50%;
+            margin-top: 50px;
+            transform: translateX(-50%);
+            padding: 10px;
+            border-radius: 10px;
+        }
 
-.image-grid img {
-    object-fit: cover;
-    border-radius: 10px;
-    transition: 0.3s ease-in-out;
-}
+        .image-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
 
-.image-grid img.big {
-    width: 250px; /* Bigger images */
-    height: 180px;
-}
+        .image-grid img {
+            object-fit: cover;
+            border-radius: 10px;
+            transition: 0.3s ease-in-out;
+        }
 
-.image-grid img.small {
-    width: 200px; /* Smaller images */
-    height: 120px;
-}
+        .image-grid img.big {
+            width: 250px;
+            /* Bigger images */
+            height: 180px;
+        }
+
+        .image-grid img.small {
+            width: 200px;
+            /* Smaller images */
+            height: 120px;
+        }
 
 
-        .content, .founder, .business-growth {
+        .content,
+        .founder,
+        .business-growth {
             text-align: center;
             padding: 100px 20px 50px;
             margin-left: 7%;
             margin-right: 7%;
-             
+
         }
+
         .founder img {
-          margin-top: 1px;
+            margin-top: 1px;
             width: auto;
             border-radius: 10px;
         }
+
         .features {
             display: flex;
             justify-content: center;
             gap: 20px;
             margin-top: 0;
         }
+
         .feature {
-            
+
             padding: 20px;
-            
+
             border-radius: 10px;
             text-align: center;
         }
-       .feature i {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: #4a47a3;
-    font-size: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 10px; /* Centers horizontally */
-}
-.footer {
-    padding: 40px 20px;
-    
-    background: linear-gradient(-45deg, #0056b3, #42a5f5, #81c784, #ffc107);
-    background-size: 300% 300%; /* Enlarges the gradient for smoother animation */
-    animation: gradientAnimation 8s ease infinite; /* Infinite looping animation */
-    text-align: center;
-    margin: 20px;
-    border: 5px solid #0056b3;
-    border-radius: 15px;
-    color: #000; /* Footer text in black */
-}
 
-/* Animation for gradient */
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
+        .feature i {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #4a47a3;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            /* Centers horizontally */
+        }
 
-.footer .logo {
-    display: flex;
-    flex-direction: column; /* Stack the logo and company name vertically */
-    align-items: center; /* Center the items horizontally */
-    margin-bottom: 20px;
-}
+        .footer {
+            padding: 40px 20px;
 
-.footer .logo-img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-bottom: 10px; /* Adds space between logo and company name */
-}
+            background: linear-gradient(-45deg, #0056b3, #42a5f5, #81c784, #ffc107);
+            background-size: 300% 300%;
+            /* Enlarges the gradient for smoother animation */
+            animation: gradientAnimation 8s ease infinite;
+            /* Infinite looping animation */
+            text-align: center;
+            margin: 20px;
+            border: 5px solid #0056b3;
+            border-radius: 15px;
+            color: #000;
+            /* Footer text in black */
+        }
 
-.footer .company-name {
-    font-size: 36px;
-    font-weight: bold;
-    color: #000;
-}
-    
+        /* Animation for gradient */
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .footer .logo {
+            display: flex;
+            flex-direction: column;
+            /* Stack the logo and company name vertically */
+            align-items: center;
+            /* Center the items horizontally */
+            margin-bottom: 20px;
+        }
+
+        .footer .logo-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            /* Adds space between logo and company name */
+        }
+
+        .footer .company-name {
+            font-size: 36px;
+            font-weight: bold;
+            color: #000;
+        }
+
         .footer .description {
             font-size: 18px;
             color: #121212;
             margin-bottom: 40px;
         }
+
         .footer .social-icons h3 {
-    font-size: 27px; /* Set the font size for the heading */
-    color: #000; /* White color for the heading */
-    margin-bottom: 20px; /* Adds space between the heading and the icons */
-    font-weight: bold; /* Makes the heading bold */
-    
-}
+            font-size: 27px;
+            /* Set the font size for the heading */
+            color: #000;
+            /* White color for the heading */
+            margin-bottom: 20px;
+            /* Adds space between the heading and the icons */
+            font-weight: bold;
+            /* Makes the heading bold */
+
+        }
+
         .footer .social-icons {
-    display: flex;
-    flex-direction: column; /* Stack rows vertically */
-    align-items: center; /* Center icons horizontally */
-}
+            display: flex;
+            flex-direction: column;
+            /* Stack rows vertically */
+            align-items: center;
+            /* Center icons horizontally */
+        }
 
-.footer .social-icons .row {
-    display: flex;
-    justify-content: center; /* Center icons within each row */
-    margin-bottom: 10px; /* Add spacing between rows */
-}
+        .footer .social-icons .row {
+            display: flex;
+            justify-content: center;
+            /* Center icons within each row */
+            margin-bottom: 10px;
+            /* Add spacing between rows */
+        }
 
-.footer .social-icons a {
-    margin: 0 10px; /* Space between icons */
-    display: inline-flex; /* Ensures proper alignment of the icon */
-    align-items: center; /* Vertically centers the icon */
-    justify-content: center; /* Horizontally centers the icon */
-    text-decoration: none;
-    
-    color: #fff; /* Icon color */
-    font-size: 18px;
-    border: 1px solid black; /* Black circular border */
-    width: 40px;
-    height: 40px; /* Match width and height for a circle */
-    border-radius: 50%; /* Circular border */
-}
+        .footer .social-icons a {
+            margin: 0 10px;
+            /* Space between icons */
+            display: inline-flex;
+            /* Ensures proper alignment of the icon */
+            align-items: center;
+            /* Vertically centers the icon */
+            justify-content: center;
+            /* Horizontally centers the icon */
+            text-decoration: none;
 
-.footer .social-icons a:hover {
-  
-     color: #000; /* Hover border color */
-      
-}
+            color: #fff;
+            /* Icon color */
+            font-size: 18px;
+            border: 1px solid black;
+            /* Black circular border */
+            width: 40px;
+            height: 40px;
+            /* Match width and height for a circle */
+            border-radius: 50%;
+            /* Circular border */
+        }
+
+        .footer .social-icons a:hover {
+
+            color: #000;
+            /* Hover border color */
+
+        }
 
         .footer .locations {
             margin: 20px 0;
             font-size: 14px;
         }
+
         .footer .locations span {
             margin: 0 10px;
             cursor: pointer;
         }
+
         .footer .content {
             display: flex;
             justify-content: space-between;
@@ -283,405 +333,483 @@ header nav a:hover::after {
             margin-left: 20%;
             margin-right: 15%;
         }
+
         .footer .content div {
             flex: 1;
             margin: 10px;
             min-width: 200px;
         }
+
         .footer .content div h3 {
             font-size: 27px;
             margin-bottom: 20px;
         }
+
         .footer .content div ul {
             list-style: none;
             padding: 0;
             margin: 0;
             font-size: 30px;
         }
+
         .content i {
-          display: inline-flex; /* Ensures proper alignment of the icon */
-    align-items: center; /* Vertically centers the icon */
-    justify-content: center; /* Horizontally centers the icon */
-    text-decoration: none;
-    background-color: #000;
-    color: #fff; /* Icon color */
-    font-size: 18px;
-          border: 2px solid black; /* Black circular border */
-    width: 35px;
-    height: 35px; /* Match width and height for a circle */
-    border-radius: 50%; /* Circular border */
+            display: inline-flex;
+            /* Ensures proper alignment of the icon */
+            align-items: center;
+            /* Vertically centers the icon */
+            justify-content: center;
+            /* Horizontally centers the icon */
+            text-decoration: none;
+            background-color: #000;
+            color: #fff;
+            /* Icon color */
+            font-size: 18px;
+            border: 2px solid black;
+            /* Black circular border */
+            width: 35px;
+            height: 35px;
+            /* Match width and height for a circle */
+            border-radius: 50%;
+            /* Circular border */
         }
+
         .content a:hover i {
-    background-color: #fff; /* Hover background color */
-     color: #000; /* Hover border color */
-     border: 2px solid #fff; /* Black circular border */
-}
+            background-color: #fff;
+            /* Hover background color */
+            color: #000;
+            /* Hover border color */
+            border: 2px solid #fff;
+            /* Black circular border */
+        }
+
         .footer .content div ul li {
             margin: 10px 0;
             font-size: 16px;
         }
+
         .footer .content div ul li a {
             text-decoration: none;
-            color: #fff; /* Links in blue */
+            color: #fff;
+            /* Links in blue */
         }
+
         .newsletter .newsletter-form .input-container {
             position: relative;
             width: 80%;
             max-width: 400px;
         }
+
         .newsletter .newsletter-form .input-container input {
-          padding: 15px;
-      width: 80%;
-      max-width: 400px;
-      border: 2px solid #fff; /* Added border */
-      border-radius: 50px;
-      font-size: 16px;
-      color: #333;
-      outline: none;
-      background-color: #fff;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-    }
-    .newsletter input[type="email"]:focus {
-      border-color: #81c784; /* Border changes on focus */
-      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-    }
-        .newsletter button {
-      padding: 15px 30px;
-      margin-top: 10px;
-      background: linear-gradient(90deg, #42a5f5, #0056b3);
-      border: 2px solid #fff; /* Added border */
-      border-radius: 50px;
-      color: #fff;
-      margin-left: 65px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .newsletter button:hover {
-      background: linear-gradient(90deg, #0056b3, #42a5f5);
-      border-color: #81c784; /* Border color changes on hover */
-      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-      transform: translateY(-2px);
-    }
-        .footer .footer-bottom {
-             
-            font-size: 20px;
-            color: #000; /* Footer bottom text in dark gray */
+            padding: 15px;
+            width: 80%;
+            max-width: 400px;
             border: 2px solid #fff;
-      padding: 20px;
-      display: inline-block;
-      border-radius: 5px;
-      margin-top: 40px;
-      color: #fff;
+            /* Added border */
+            border-radius: 50px;
+            font-size: 16px;
+            color: #333;
+            outline: none;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
+
+        .newsletter input[type="email"]:focus {
+            border-color: #81c784;
+            /* Border changes on focus */
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .newsletter button {
+            padding: 15px 30px;
+            margin-top: 10px;
+            background: linear-gradient(90deg, #42a5f5, #0056b3);
+            border: 2px solid #fff;
+            /* Added border */
+            border-radius: 50px;
+            color: #fff;
+            margin-left: 65px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .newsletter button:hover {
+            background: linear-gradient(90deg, #0056b3, #42a5f5);
+            border-color: #81c784;
+            /* Border color changes on hover */
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .footer .footer-bottom {
+
+            font-size: 20px;
+            color: #000;
+            /* Footer bottom text in dark gray */
+            border: 2px solid #fff;
+            padding: 20px;
+            display: inline-block;
+            border-radius: 5px;
+            margin-top: 40px;
+            color: #fff;
+        }
+
         .footer .footer-bottom a {
             color: #fff;
             text-decoration: none;
         }
+
         .footer .footer-bottom a:hover {
             text-decoration: underline;
         }
- @media (max-width: 768px) {
-                header {
-                    background: radial-gradient(circle, #4a47a3, #2b2860);
-    color: black;
-    padding: 5px 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 95%;
-    height: 40px;
-    z-index: 1000;
-    animation: slideDown 4s ease-in-out;
-}
 
-header .logo {
-    display: flex;
-    align-items: center;
-}
-
-header .logo img {
-    max-height: 70px; /* Adjust logo size */
-    height: 70px;
-    width: 70px;
-    border-radius: 50%;
-    margin-top: 3%;
-}
-
-header nav {
-    display: flex; /* Ensure nav is a flex container */
-    justify-content: flex-end; /* Push links to the right */
-    align-items: center; /* Align links vertically */
-    margin-right: 4%;
-}
-
-header nav a {
-    position: relative;
-    color: white;
-    text-decoration: none;
-    margin: 0 5px;
-    font-size: 12px;
-    
-    transition: color 0.3s ease;
-}
-
-header nav a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: white;
-    transition: width 0.3s ease;
-}
-
-header nav a:hover {
-    color: white;
-}
-
-header nav a:hover::after {
-    width: 100%;
-}
- 
-         .about {
-            text-align: center;
-            padding: 30px 10px;
-            background: radial-gradient(circle, #4a47a3, #2b2860);
-            position: relative;
-              
-        }
-        .about h1 {
-    font-size: 25px;
-    font-weight: bold;
-    color: #fff; /* Black text for contrast */
-    margin-bottom: 15px;
-    margin-top: 15%;
-}
-        .about p {
-    font-size: 15px;
-    font-weight: 200;
-    color: #fff; /* Dark gray for readability */
-    line-height: 1.3rem;
-    max-width: 400px;
-    margin: 15px auto;
-    padding: 5px 10px;
-    margin-bottom: 45px;
-}
-.image-grid {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    position: absolute;
-    bottom: -55px;
-    left: 50%;
-    margin-top: 50px;
-    transform: translateX(-50%);
-    padding: 5px;
-    border-radius: 8px;
-}
-.image-grid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-}
-
-.image-grid img {
-    object-fit: cover;
-    border-radius: 10px;
-    transition: 0.3s ease-in-out;
-}
-
-.image-grid img.big {
-    width: 100px; /* Bigger images */
-    height: 90px;
-}
-
-.image-grid img.small {
-    width: 90px; /* Smaller images */
-    height: 70px;
-}
-
-         /* ======= Content & Features ======= */
-        .content, .founder, .business-growth {
-            text-align: center;
-             padding: 50px 10px 25px;
-        }
-
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 5px;
-            margin-top: 20px;
-        }
-
-        .feature {
-            width: 200px;
-            padding: 10px;
-            text-align: center;
-        }
-
-        .feature i {
-            display: block;
-            font-size: 30px;
-            margin: 0 auto 10px;
-            background-color: #4a47a3;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            color: #fff;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* ======= Founder Section ======= */
-        .founder img {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 10px;
-        }
-        .footer .company-name {
-    font-size: 18px;
-    font-weight: bold;
-    color: #000;
-}
-            .footer .content {
-              margin-left: 10%;
-              margin-right: 1%;
+        @media (max-width: 768px) {
+            header {
+                background: radial-gradient(circle, #4a47a3, #2b2860);
+                color: black;
+                padding: 5px 15px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: fixed;
+                width: 95%;
+                height: 40px;
+                z-index: 1000;
+                animation: slideDown 4s ease-in-out;
             }
+
+            header .logo {
+                display: flex;
+                align-items: center;
+            }
+
+            header .logo img {
+                max-height: 70px;
+                /* Adjust logo size */
+                height: 70px;
+                width: 70px;
+                border-radius: 50%;
+                margin-top: 3%;
+            }
+
+            header nav {
+                display: flex;
+                /* Ensure nav is a flex container */
+                justify-content: flex-end;
+                /* Push links to the right */
+                align-items: center;
+                /* Align links vertically */
+                margin-right: 4%;
+            }
+
+            header nav a {
+                position: relative;
+                color: white;
+                text-decoration: none;
+                margin: 0 5px;
+                font-size: 12px;
+
+                transition: color 0.3s ease;
+            }
+
+            header nav a::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: white;
+                transition: width 0.3s ease;
+            }
+
+            header nav a:hover {
+                color: white;
+            }
+
+            header nav a:hover::after {
+                width: 100%;
+            }
+
+            .about {
+                text-align: center;
+                padding: 30px 10px;
+                background: radial-gradient(circle, #4a47a3, #2b2860);
+                position: relative;
+
+            }
+
+            .about h1 {
+                font-size: 25px;
+                font-weight: bold;
+                color: #fff;
+                /* Black text for contrast */
+                margin-bottom: 15px;
+                margin-top: 15%;
+            }
+
+            .about p {
+                font-size: 15px;
+                font-weight: 200;
+                color: #fff;
+                /* Dark gray for readability */
+                line-height: 1.3rem;
+                max-width: 400px;
+                margin: 15px auto;
+                padding: 5px 10px;
+                margin-bottom: 45px;
+            }
+
+            .image-grid {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                position: absolute;
+                bottom: -55px;
+                left: 50%;
+                margin-top: 50px;
+                transform: translateX(-50%);
+                padding: 5px;
+                border-radius: 8px;
+            }
+
+            .image-grid {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+            }
+
+            .image-grid img {
+                object-fit: cover;
+                border-radius: 10px;
+                transition: 0.3s ease-in-out;
+            }
+
+            .image-grid img.big {
+                width: 100px;
+                /* Bigger images */
+                height: 90px;
+            }
+
+            .image-grid img.small {
+                width: 90px;
+                /* Smaller images */
+                height: 70px;
+            }
+
+            /* ======= Content & Features ======= */
+            .content,
+            .founder,
+            .business-growth {
+                text-align: center;
+                padding: 50px 10px 25px;
+            }
+
+            .features {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 5px;
+                margin-top: 20px;
+            }
+
+            .feature {
+                width: 200px;
+                padding: 10px;
+                text-align: center;
+            }
+
+            .feature i {
+                display: block;
+                font-size: 30px;
+                margin: 0 auto 10px;
+                background-color: #4a47a3;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                display: flex;
+                color: #fff;
+                align-items: center;
+                justify-content: center;
+            }
+
+            /* ======= Founder Section ======= */
+            .founder img {
+                width: 100%;
+                max-width: 400px;
+                border-radius: 10px;
+            }
+
+            .footer .company-name {
+                font-size: 18px;
+                font-weight: bold;
+                color: #000;
+            }
+
+            .footer .content {
+                margin-left: 10%;
+                margin-right: 1%;
+            }
+
             .footer .description {
                 font-size: 15px;
                 margin-bottom: 10px;
             }
-            .footer .social-icons h3 {
-              font-size: 19px; /* Set the font size for the heading */
-            }
-            .footer .social-icons {
-    display: flex;
-    flex-direction: column; /* Stack rows vertically */
-    align-items: center; /* Center icons horizontally */
-}
 
-.footer .social-icons .row {
-    display: flex;
-    justify-content: center; /* Center icons within each row */
-    margin-bottom: 0px; /* Add spacing between rows */
-}
+            .footer .social-icons h3 {
+                font-size: 19px;
+                /* Set the font size for the heading */
+            }
+
+            .footer .social-icons {
+                display: flex;
+                flex-direction: column;
+                /* Stack rows vertically */
+                align-items: center;
+                /* Center icons horizontally */
+            }
+
+            .footer .social-icons .row {
+                display: flex;
+                justify-content: center;
+                /* Center icons within each row */
+                margin-bottom: 0px;
+                /* Add spacing between rows */
+            }
 
             .footer .social-icons a {
                 font-size: 16px;
                 margin: 0 5px;
-               margin-top: 10px;
-               gap: 1px;
+                margin-top: 10px;
+                gap: 1px;
             }
-           .footer .content div h3 {
-    font-size: 19px;
-    text-align: left; /* Align the heading text to the left */
-}
-.content i {
-font-size: 13px;
- width:28px ;
- height:28px;
- border-radius: 50%;
-}
-     .footer .content div ul li {
-        font-size: 16px;
-        text-align: left; /* Align list item text to the left */
-        
-    }
-    .newsletter button {
-      padding: 10px 20px;
-      margin-top: 7px;
-      background: linear-gradient(90deg, #42a5f5, #0056b3);
-      border: 2px solid #fff; /* Added border */
-      border-radius: 50px;
-      color: #fff;
-      margin-left: 61px;
-      font-size: 14px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .newsletter button:hover {
-      background: linear-gradient(90deg, #0056b3, #42a5f5);
-      border-color: #81c784; /* Border color changes on hover */
-      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-      transform: translateY(-2px);
-    }
 
-     .footer .footer-bottom {
-        font-size: 13px;
-        text-align: center; /* Align text to the center */
-        width: 80%; /* Ensure the footer takes up full width */
-        margin-top: 20px; /* Add some space above, if needed */
-        color: #000; /* Footer bottom text in dark gray */
-            border: 2px solid #fff;
-      padding: 15px;
-      display: inline-block;
-      border-radius: 5px;
-        color: #fff;
-         
+            .footer .content div h3 {
+                font-size: 19px;
+                text-align: left;
+                /* Align the heading text to the left */
+            }
+
+            .content i {
+                font-size: 13px;
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+            }
+
+            .footer .content div ul li {
+                font-size: 16px;
+                text-align: left;
+                /* Align list item text to the left */
+
+            }
+
+            .newsletter button {
+                padding: 10px 20px;
+                margin-top: 7px;
+                background: linear-gradient(90deg, #42a5f5, #0056b3);
+                border: 2px solid #fff;
+                /* Added border */
+                border-radius: 50px;
+                color: #fff;
+                margin-left: 61px;
+                font-size: 14px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .newsletter button:hover {
+                background: linear-gradient(90deg, #0056b3, #42a5f5);
+                border-color: #81c784;
+                /* Border color changes on hover */
+                box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+                transform: translateY(-2px);
+            }
+
+            .footer .footer-bottom {
+                font-size: 13px;
+                text-align: center;
+                /* Align text to the center */
+                width: 80%;
+                /* Ensure the footer takes up full width */
+                margin-top: 20px;
+                /* Add some space above, if needed */
+                color: #000;
+                /* Footer bottom text in dark gray */
+                border: 2px solid #fff;
+                padding: 15px;
+                display: inline-block;
+                border-radius: 5px;
+                color: #fff;
+
+            }
         }
- }
     </style>
 </head>
+
 <body>
     <header>
-    <div class="logo">
-        <img src="https://assets.onecompiler.app/42y68y97m/4359nzr9t/file.png" alt="Logo" />
-    </div>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href=" ">Services</a>
-        <a href="chartbot.html">Help Desk</a>
-        <a href="#">Contact</a>
-        <a href="#">About Us</a>
-    </nav>
-      
-</header>
-    
+        <div class="logo">
+            <img src="https://assets.onecompiler.app/42y68y97m/4359nzr9t/file.png" alt="Logo" />
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href=" ">Services</a>
+            <a href="chartbot.html">Help Desk</a>
+            <a href="#">Contact</a>
+            <a href="#">About Us</a>
+        </nav>
+
+    </header>
+
     <section class="about">
         <h1>About Us</h1>
-        <p>A dynamic software solutions and digital marketing agency committed to delivering premium-quality results tailored to your business needs. As a startup, we strive to establish ourselves by offering exceptional services at reasonable prices.</p>
+        <p>A dynamic software solutions and digital marketing agency committed to delivering premium-quality results
+            tailored to your business needs. As a startup, we strive to establish ourselves by offering exceptional
+            services at reasonable prices.</p>
         <div class="image-grid">
-            <img src="	https://assets.onecompiler.app/42y68y97m/4399f8efc/BrightEdge%20Acquires%20Oncrawl%20To%20Help%20SEOs%20Do%20More%20Wth%20Data%20Science%20via%20@sejournal,%20@MattGSouthern.jpeg" alt="Image 1" class="big">
-            <img src="https://assets.onecompiler.app/42y68y97m/4399f8efc/Ready%20to%20implement%20AI_.jpeg" alt="Image 2" class="small">
-            <img src="	https://assets.onecompiler.app/42y68y97m/4399f8efc/Fun%20Accounting%20Jobs_%20You%20Bet!%20Here%20Are%20Some%20of%20the%20Best.jpeg" alt="Image 3" class="big">
-            <img src="	https://assets.onecompiler.app/42y68y97m/4399f8efc/Whether%20you're%20a%20content%20creator,%20marketer,%20or%20entrepreneur,%20Craftty_ai%20is%20here%20to%20transform%20your%20id.jpeg" alt="Image 4" class="small">
-             
+            <img src="	https://assets.onecompiler.app/42y68y97m/4399f8efc/BrightEdge%20Acquires%20Oncrawl%20To%20Help%20SEOs%20Do%20More%20Wth%20Data%20Science%20via%20@sejournal,%20@MattGSouthern.jpeg"
+                alt="Image 1" class="big">
+            <img src="https://assets.onecompiler.app/42y68y97m/4399f8efc/Ready%20to%20implement%20AI_.jpeg"
+                alt="Image 2" class="small">
+            <img src="	https://assets.onecompiler.app/42y68y97m/4399f8efc/Fun%20Accounting%20Jobs_%20You%20Bet!%20Here%20Are%20Some%20of%20the%20Best.jpeg"
+                alt="Image 3" class="big">
+            <img src="	https://assets.onecompiler.app/42y68y97m/4399f8efc/Whether%20you're%20a%20content%20creator,%20marketer,%20or%20entrepreneur,%20Craftty_ai%20is%20here%20to%20transform%20your%20id.jpeg"
+                alt="Image 4" class="small">
+
         </div>
-        
+
     </section>
-    
+
     <section class="content">
         <h2>We make sure your idea & creation delivered properly</h2>
-        <p>What Makes Us Unique: Premium Quality Output, Responsive Websites & Applications, Customer Satisfaction, Reasonable Pricing, Attention to Detail, Client Respect, Support Your Startup.</p>
+        <p>What Makes Us Unique: Premium Quality Output, Responsive Websites & Applications, Customer Satisfaction,
+            Reasonable Pricing, Attention to Detail, Client Respect, Support Your Startup.</p>
     </section>
-    
+
     <section class="founder">
-        <img src="https://assets.onecompiler.app/42y68y97m/438gjwd5k/Easily%20automate%20your%20business%20processes%20with%20AI.jpeg" alt="Founder Image">
+        <img src="https://assets.onecompiler.app/42y68y97m/438gjwd5k/Easily%20automate%20your%20business%20processes%20with%20AI.jpeg"
+            alt="Founder Image">
         <blockquote>"Making an impact, together"</blockquote>
     </section>
-    
+
     <section class="business-growth">
         <h2>We help businesses to grow faster and bigger</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         <div class="features">
             <div class="feature">
-                <i class="fas fa-users"  style="color: #fff;"></i>
+                <i class="fas fa-users" style="color: #fff;"></i>
                 <h3>Professional Team</h3>
                 <p>Lorem ipsum dolor sit amet.</p>
             </div>
             <div class="feature">
-                <i class="fas fa-bullseye"  style="color: #fff;"></i>
+                <i class="fas fa-bullseye" style="color: #fff;"></i>
                 <h3>Target Oriented</h3>
                 <p>Lorem ipsum dolor sit amet.</p>
             </div>
@@ -694,28 +822,31 @@ font-size: 13px;
     </section>
     <div class="footer">
         <div class="logo">
-            <img src="https://assets.onecompiler.app/42y68y97m/433zxpj73/WhatsApp%20Image%202024-12-25%20at%2012.45.50%20AM.jpeg" alt="Logo" class="logo-img"> 
+            <img src="https://assets.onecompiler.app/42y68y97m/433zxpj73/WhatsApp%20Image%202024-12-25%20at%2012.45.50%20AM.jpeg"
+                alt="Logo" class="logo-img">
             <span class="company-name">VSPAZE TECHNOLOGIES</span>
         </div>
         <div class="description">
-            We provide various services to make your business grow and get bigger. Your satisfaction is our first priority.
+            We provide various services to make your business grow and get bigger. Your satisfaction is our first
+            priority.
         </div>
         <div class="social-icons">
-          <h3>Follow Us</h3>
-          <div class="row">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="https://www.instagram.com/vspaze_technologies?igsh=MWR3cnBpOGdpYnRyeA=="><i class="fab fa-instagram"></i></a>
-              <a href="https://in.linkedin.com/in/vspaze-technologies-41a150326"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-          <div class="row">
-              <a href="https://youtube.com/@vspaze_technologies?si=KS349G4HWm_fCnE0"><i class="fab fa-youtube"></i></a>
-              <a href="https://x.com/VSPAZE_TECH?t=QL6c-1lGl1_UGtDTJbzGKA&s=09"><i class="fab fa-twitter"></i></a>
-              <a href="https://x.com/VSPAZE_TECH?s=09"><i class="bi bi-threads"></i></a>
-          </div>
-      </div>
-        <div class="locations">
-            <span>India</span> | <span>South Africa</span> | <span>UAE</span> | <span>USA</span>
+            <h3>Follow Us</h3>
+            <div class="row">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/vspaze_technologies?igsh=MWR3cnBpOGdpYnRyeA=="><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://in.linkedin.com/in/vspaze-technologies-41a150326"><i
+                        class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="row">
+                <a href="https://youtube.com/@vspaze_technologies?si=KS349G4HWm_fCnE0"><i
+                        class="fab fa-youtube"></i></a>
+                <a href="https://x.com/VSPAZE_TECH?t=QL6c-1lGl1_UGtDTJbzGKA&s=09"><i class="fab fa-twitter"></i></a>
+                <a href="https://x.com/VSPAZE_TECH?s=09"><i class="bi bi-threads"></i></a>
+            </div>
         </div>
+
         <div class="content">
             <div>
                 <h3>Company</h3>
@@ -723,7 +854,7 @@ font-size: 13px;
                     <li><a href="#"><i class="fas fa-angle-right"></i> Branding</a></li>
                     <li><a href="#"><i class="fas fa-angle-right"></i> Digital Marketing</a></li>
                     <li><a href="#"><i class="fas fa-angle-right"></i> Web & App Development</a></li>
-                  
+
                     <li><a href="#"><i class="fas fa-angle-right"></i> Portfolio</a></li>
                     <li><a href="#"><i class="fas fa-angle-right"></i> Blog</a></li>
                     <li><a href="#"><i class="fas fa-angle-right"></i> Contact Us</a></li>
@@ -733,38 +864,39 @@ font-size: 13px;
                 <h3>Contact Info</h3>
                 <ul>
                     <li>
-                      <a href=" " target="_blank">
-                        <i class="fas fa-map-marker-alt"></i> Jadcherla, Telangana, India
-                      </a><br><br>
-                    </li>
-                      <li>
-                        <a href="mailto:support@vspaze.com">
-                          <i class="fas fa-envelope"></i> support@vspaze.com
+                        <a href=" " target="_blank">
+                            <i class="fas fa-map-marker-alt"></i> Jadcherla, Telangana, India
                         </a><br><br>
                     </li>
-                     <li>
-                       
-                      <a href="tel:+919640190090">
-                        <i class="fas fa-phone"></i> +91 9908581431
-                      </a><br><br>
+                    <li>
+                        <a href="mailto:support@vspaze.com">
+                            <i class="fas fa-envelope"></i> support@vspaze.com
+                        </a><br><br>
+                    </li>
+                    <li>
+
+                        <a href="tel:+919640190090">
+                            <i class="fas fa-phone"></i> +91 9908581431
+                        </a><br><br>
                     </li>
                 </ul>
             </div>
             <div class="newsletter">
-              <h3>Newsletter</h3>
-              <p>Join our subscribers list to get the latest news and special offers</p>
-              <form class="newsletter-form">
-                  <div class="input-container">
-                      <input type="email" placeholder="Enter Email Address" required>
+                <h3>Newsletter</h3>
+                <p>Join our subscribers list to get the latest news and special offers</p>
+                <form class="newsletter-form">
+                    <div class="input-container">
+                        <input type="email" placeholder="Enter Email Address" required>
                     </div>
-                      <button type="submit">Subscribe</button>
-                   
-              </form>
-          </div>
-      </div>
-      <div class="footer-bottom">
-          © 2024 Vspaze Technologies. All rights reserved  
-      </div>
-  </footer>
+                    <button type="submit">Subscribe</button>
+
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2024 Vspaze Technologies. All rights reserved
+        </div>
+        </footer>
 </body>
+
 </html>

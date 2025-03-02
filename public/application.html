@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Application Form</title>
+
     <style>
         /* Google Font */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
@@ -12,6 +14,7 @@
         body {
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #4a47a3, #2b2860);
+            animation: gradientAnimation 6s infinite ease-in-out;
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -26,11 +29,17 @@
         .container {
             width: 100%;
             max-width: 500px;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.1);
+            /* Increased transparency */
+            backdrop-filter: blur(20px);
+            /* Increased blur for a more glassy effect */
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border: 1px solid black;
+            /* Subtle border for depth */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3),
+                inset 0 0 10px rgba(255, 255, 255, 0.2);
+            /* Inner shadow for glassy effect */
             text-align: center;
             color: white;
             animation: fadeInZoom 0.8s ease-in-out;
@@ -42,27 +51,49 @@
         }
 
         /* Input Fields */
-        input, textarea {
+        input,
+        textarea {
             width: 90%;
             padding: 12px;
             margin: 10px 0;
-            border: 2px solid transparent;
+            border: 2px solid black;
+            /* Lighter border for glassy effect */
             border-radius: 5px;
             font-size: 16px;
             transition: all 0.3s ease-in-out;
-            background: rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, #4a47a3, #2b2860);
+            animation: gradientAnimation 6s infinite ease-in-out;
+            /* Slightly more transparency */
             color: white;
             backdrop-filter: blur(8px);
             outline: none;
         }
 
-        input::placeholder, textarea::placeholder {
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        input::placeholder,
+        textarea::placeholder {
             color: rgba(255, 255, 255, 0.7);
         }
 
-        input:focus, textarea:focus {
-            border-color: #fff;
-            box-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+        input:focus,
+        textarea:focus {
+            border-color: rgba(255, 255, 255, 0.7);
+            /* Brighter border on focus */
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            /* Enhanced glow effect */
             transform: scale(1.02);
         }
 
@@ -70,19 +101,110 @@
         button {
             width: 30%;
             padding: 12px;
-            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            background: #00bcd4;
+            /* Gradient color */
             color: white;
             font-size: 18px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: all 0.3s ease-in-out;
-            animation: pulse 2s infinite;
+            animation: pulse 2s infinite, fadeIn 1.5s ease-in-out;
+            /* Combined animations */
+            box-shadow: 0 4px 15px rgba(255, 118, 140, 0.4);
+            position: relative;
+            overflow: hidden;
+            /* Ensures ::before and ::after don't overflow */
         }
 
         button:hover {
-            background: linear-gradient(135deg, #ff6b81, #ff5e99);
+            background: #00bcd4;
+            /* Darker gradient on hover */
             transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 188, 212, 0.8);
+        }
+
+        /* Glow effect on hover */
+        button:hover::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            animation: glow 1s ease-in-out infinite;
+        }
+
+        /* Slide-in effect on hover */
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.5s ease-in-out;
+        }
+
+        button:hover::before {
+            left: 100%;
+        }
+
+        /* Popup Overlay */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: #000;
+
+        }
+
+        .popup img {
+            width: 250px;
+            height: 150px;
+        }
+
+        .popup p {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #000;
+        }
+
+        .popup span {
+            display: block;
+            margin-bottom: 15px;
+            color: #555;
+            margin-top: 3px;
+        }
+
+        .popup a {
+            display: block;
+            margin-top: 20px;
+            border: 1px solid green;
+            color: green;
+            padding: 5px;
+
+            background: #fff;
+            border-radius: 15px;
+            text-decoration: none;
+            font-weight: bold;
         }
 
         /* Responsive Design */
@@ -95,7 +217,8 @@
                 font-size: 20px;
             }
 
-            input, textarea {
+            input,
+            textarea {
                 font-size: 14px;
                 padding: 10px;
             }
@@ -103,6 +226,27 @@
             button {
                 font-size: 16px;
                 padding: 10px;
+            }
+
+            .popup {
+                padding: 15px;
+            }
+
+            .popup i {
+                font-size: 50px;
+            }
+
+            .popup p {
+                font-size: 18px;
+            }
+
+            .popup span {
+                font-size: 14px;
+            }
+
+            .popup a {
+                padding: 8px;
+                font-size: 16px;
             }
         }
 
@@ -112,6 +256,7 @@
                 transform: scale(0.8);
                 opacity: 0;
             }
+
             to {
                 transform: scale(1);
                 opacity: 1;
@@ -122,33 +267,97 @@
             0% {
                 box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
             }
+
             50% {
                 box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
             }
+
             100% {
                 box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
             }
         }
     </style>
 </head>
+
 <body>
 
     <div class="container">
         <h2 id="formTitle">Application Form</h2>
-        <form action="submit_form.php" method="post">
+        <form id="your-form">
             <input type="hidden" id="industryInput" name="industry">
-            
             <input type="text" id="name" name="name" placeholder="Full Name" required>
-            <input type="tel" id="number" name="number" placeholder="Phone Number" required>
             <input type="email" id="email" name="email" placeholder="Email Address" required>
+            <input type="tel" id="contact" name="contact" placeholder="Phone Number" required>
+            <input type="text" id="industrytype" name="industrytype" placeholder="Nature Of Business" required>
             <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
-
             <button type="submit">Submit</button>
         </form>
- 
+
     </div>
 
+    <div class="popup-overlay" id="popup-overlay">
+        <div class="popup">
+            <img src="	https://assets.onecompiler.app/42y68y97m/43a86mbvc/submit_success.png" alt="Success">
+            <p> Your submission was received :)</p>
+            <span>Thanks for the message</span>
+            <a href="index.html" onclick="hidePopup()">Back To Home</a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
     <script>
+        window.onload = function () {
+            emailjs.init("1DMYwocjZ2KbsU9hx"); // Replace with your actual public key
+        }
+        async function handleSubmit(event) {
+            event.preventDefault(); // Prevents the form from refreshing
+
+            // ✅ Make sure these IDs match your form input fields
+            const formData = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                contact: document.getElementById("contact").value, // Fixed (was incorrect before)
+                industrytype: document.getElementById("industrytype").value,
+                message: document.getElementById("message").value,
+            };
+
+            // ✅ Make sure these variables match your EmailJS template placeholders
+            const emailData = {
+                to_name: "Vspaze Technologies",
+                from_name: formData.name,
+                name: formData.name,
+                email: formData.email,
+                contact: formData.contact,
+                industrytype: formData.industrytype,
+                message: formData.message,
+            };
+
+
+            emailjs.send("service_3snix8r", "template_x1ciusq", emailData)
+                .then((response) => {
+                    console.log("✅ SUCCESS!", response.status, response.text);
+                    document.getElementById("your-form").reset();
+                    showPopup();
+                })
+                .catch((err) => {
+                    console.error("❌ FAILED...", err);
+                    alert("Submission failed, please try again.");
+                });
+        }
+        function showPopup() {
+            document.getElementById("popup-overlay").style.display = "flex";
+        }
+
+        function hidePopup() {
+            document.getElementById("popup-overlay").style.display = "none";
+        }
+        // ✅ Ensure your form has id="your-form"
+        document.getElementById("your-form").addEventListener("submit", handleSubmit);
+
+
+
+
+
         // Get industry from URL and update form title
         function getQueryParam(param) {
             var urlParams = new URLSearchParams(window.location.search);
@@ -160,9 +369,8 @@
             document.getElementById("formTitle").innerText = industry + " Application Form";
             document.getElementById("industryInput").value = industry;
         }
-
-        
     </script>
 
 </body>
+
 </html>

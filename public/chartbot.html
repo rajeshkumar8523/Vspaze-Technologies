@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -120,6 +121,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="chatbot-container">
     <div class="chat-header">VSpaze Chatbot</div>
@@ -132,7 +134,7 @@
   <script>
     const chatBody = document.getElementById("chatBody");
     const userInput = document.getElementById("userInput");
-  
+
     // Predefined responses for VSpaze Technologies
     const botResponses = {
       hello: "Hi there! Welcome to VSpaze Technologies. How can I assist you today? 😊",
@@ -148,25 +150,25 @@
       "what's provided by you": "We provide a wide range of services at VSpaze Technologies, including custom software development, mobile app development, web solutions, cloud computing, and IT consulting. Our team is committed to delivering innovative and tailored solutions to meet your business needs. How can we assist you further?",
       default: "I'm sorry, I didn't understand that. Could you rephrase or ask about our services, pricing, or support?",
     };
-  
+
     // Function to handle user messages
     function sendMessage() {
       const message = userInput.value.trim();
       if (message === "") return;
-  
+
       // Display user message
       appendMessage(message, "user-message");
-  
+
       // Clear the input field
       userInput.value = "";
-  
+
       // Simulate bot response
       setTimeout(() => {
         const botResponse = getBotResponse(message);
         appendMessage(botResponse, "bot-message");
       }, 500);
     }
-  
+
     // Append message to chat body
     function appendMessage(message, className) {
       const messageElement = document.createElement("div");
@@ -175,13 +177,13 @@
       chatBody.appendChild(messageElement);
       chatBody.scrollTop = chatBody.scrollHeight; // Scroll to the bottom
     }
-  
+
     // Get bot response based on user input
     function getBotResponse(userMessage) {
       const normalizedMessage = userMessage.toLowerCase();
       return botResponses[normalizedMessage] || botResponses.default;
     }
-  
+
     // Add event listener for "Enter" key press
     userInput.addEventListener("keydown", (event) => {
       if (event.key === "Enter") {
@@ -190,4 +192,5 @@
     });
   </script>
 </body>
+
 </html>

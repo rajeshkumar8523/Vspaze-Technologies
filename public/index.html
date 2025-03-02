@@ -1,954 +1,1108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vspaze Technologies</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
- <!-- FontAwesome CDN for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vspaze Technologies</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- FontAwesome CDN for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
 
- <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: #333;
-             width: 100%;
-            scroll-behavior: smooth;
-            animation: backgroundShift 10s infinite alternate;
-        }
-       @keyframes slideDown {
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+      width: 100%;
+      scroll-behavior: smooth;
+      animation: backgroundShift 10s infinite alternate;
+    }
+
+    @keyframes slideDown {
       from {
         transform: translateY(-100%);
       }
+
       to {
         transform: translateY(0);
       }
     }
-       header {
-    background: #4a47a3;
-    color: white;
-    padding: 10px 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 98%; /* Makes sure the width is full */
-    height: 60px;
-    z-index: 1000;
-    animation: slideDown 4s ease-in-out;
-}
 
-header .logo {
-    display: flex;
-    align-items: center;
-}
+    header {
+      background: #4a47a3;
+      color: white;
+      padding: 10px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 98%;
+      /* Makes sure the width is full */
+      height: 60px;
+      z-index: 1000;
+      animation: slideDown 4s ease-in-out;
+    }
 
-header .logo img {
-    max-height: 100px; /* Adjust logo size */
-    height: 150px;
-    width: 100px;
-    border-radius: 50%;
-    margin-top: 2%;
-}
+    header .logo {
+      display: flex;
+      align-items: center;
+    }
 
-header nav {
-    display: flex; /* Ensure nav is a flex container */
-    justify-content: flex-end; /* Push links to the right */
-    align-items: center; /* Align links vertically */
-}
+    header .logo img {
+      max-height: 100px;
+      /* Adjust logo size */
+      height: 150px;
+      width: 100px;
+      border-radius: 50%;
+      margin-top: 2%;
+    }
 
-header nav a {
-    position: relative;
-    color: white;
-    text-decoration: none;
-    margin: 0 13px;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-}
+    header nav {
+      display: flex;
+      /* Ensure nav is a flex container */
+      justify-content: flex-end;
+      /* Push links to the right */
+      align-items: center;
+      /* Align links vertically */
+    }
 
-header nav a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: white;
-    transition: width 0.3s ease;
-}
+    header nav a {
+      position: relative;
+      color: white;
+      text-decoration: none;
+      margin: 0 13px;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
 
-header nav a:hover {
-    color: #00bcd4;
-}
+    header nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: white;
+      transition: width 0.3s ease;
+    }
 
-header nav a:hover::after {
-    width: 100%;
-}
- 
-       .hero {
-            display: flex;
-             
-            align-items: center;
-            justify-content: space-between;
-            background: radial-gradient(circle, #4a47a3, #2b2860);
-            color: white;
-            padding: 100px 50px;
-            height: 600px;
-            overflow: hidden;
-            position: relative;
-        }
+    header nav a:hover {
+      color: #00bcd4;
+    }
 
-        .hero h1 {
-            font-size: 5em;
-            margin-bottom: 20px;
-            animation: fadeIn 2s ease-in-out;
-            margin-left: 10%;
-            margin-right: 5%;
-        }
+    header nav a:hover::after {
+      width: 100%;
+    }
 
-        .hero p {
-            font-size: 1.6em;
-            margin-bottom: 20px;
-            margin-left: 10%;
-            margin-right:10%;
-            animation: slideIn 2s ease-in-out;
-        }
-        .hero .buttons {
-             
-            margin-left: 0%;
-        }
-      
-        .hero .buttons a {
-            display: inline-block;
-            margin-right: 40px;
-            padding: 10px 20px;
-            background: #00bcd4;
-            color: white;
-              text-decoration: none;
-            border-radius: 5px;
-            position: relative;
-            overflow: hidden;
-            animation: slideIn 2s ease-in-out;
-            animation: fadeIn 2s ease-in-out;
-        }
+    .hero {
+      display: flex;
 
-        .hero .buttons a:hover {
-            box-shadow: 0 0 15px rgba(0, 188, 212, 0.8);
-        }
+      align-items: center;
+      justify-content: space-between;
+      background: radial-gradient(circle, #4a47a3, #2b2860);
+      color: white;
+      padding: 100px 50px;
+      height: 600px;
+      overflow: hidden;
+      position: relative;
+    }
 
-        .hero .buttons a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            transition: left 0.3s ease-in-out;
-        }
+    .hero h1 {
+      font-size: 5em;
+      margin-bottom: 20px;
+      animation: fadeIn 2s ease-in-out;
+      margin-left: 10%;
+      margin-right: 5%;
+    }
 
-        .hero .buttons a:hover::before {
-            left: 100%;
-        }
+    .hero p {
+      font-size: 1.6em;
+      margin-bottom: 20px;
+      margin-left: 10%;
+      margin-right: 10%;
+      animation: slideIn 2s ease-in-out;
+    }
 
-        .hero img {
-            max-width: 900px;
-            height: 500px;
-            border-radius: 10px;
-            margin-right: 40px;
-            margin-left: 0%;
-            border-radius: 10px;
-            animation: zoomIn 2.5s ease-in-out;
-        } @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
+    .hero .buttons {
 
-        @keyframes slideIn {
-            from {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
- @keyframes zoomIn {
-            from {
-                transform: scale(0.8);
-                opacity: 0;
-            }
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-        .our-strategies {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #f5f5f5;
-}
+      margin-left: 0%;
+    }
 
-.outer-frame {
-  padding: 8px;
-  background-color: #e0e0e0;
-  border-radius: 15px;
-  border: 1px solid black;
-  margin-bottom: 0px;
-  margin-top: 50px;
-}
+    .hero .buttons a {
+      display: inline-block;
+      margin-right: 40px;
+      padding: 10px 20px;
+      background: #00bcd4;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      position: relative;
+      overflow: hidden;
+      animation: slideIn 2s ease-in-out;
+      animation: fadeIn 2s ease-in-out;
+    }
 
-.strategies-box {
-  position: relative; /* Positioning for pseudo-elements */
-  padding: 10px 50px;
-  font-size: 20px;
-  font-weight: bold;
-  color: purple;  /* Initial font color */
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 10px;
-  text-align: center;
-  margin-bottom: 0px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  overflow: hidden; /* Ensures pseudo-element stays within the box */
-  animation: changeFontColor 3s linear infinite; /* Animation to change font color */
-}
+    .hero .buttons a:hover {
+      box-shadow: 0 0 15px rgba(0, 188, 212, 0.8);
+    }
 
-.strategies-box::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.2);
-  z-index: 1; /* Ensures the light effect appears above the box content */
-  animation: slidingLight 3s linear infinite; /* Infinite sliding animation */
-}
+    .hero .buttons a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: left 0.3s ease-in-out;
+    }
 
-/* Keyframes for automatic sliding light effect */
-@keyframes slidingLight {
-  0% {
-    left: -100%;
-  }
-  50% {
-    left: 0;
-  }
-  100% {
-    left: 100%;
-  }
-}
+    .hero .buttons a:hover::before {
+      left: 100%;
+    }
 
-/* Keyframes for changing font color */
-@keyframes changeFontColor {
-  0% {
-    color: purple;
-  }
-  50% {
-    color: #4a47a3;  /* Change color at the middle of the animation */
-  }
-  100% {
-    color: purple;  /* Back to original color */
-  }
-}
+    .hero img {
+      max-width: 900px;
+      height: 500px;
+      border-radius: 10px;
+      margin-right: 40px;
+      margin-left: 0%;
+      border-radius: 10px;
+      animation: zoomIn 2.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .our-strategies {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #f5f5f5;
+    }
+
+    .outer-frame {
+      padding: 8px;
+      background-color: #e0e0e0;
+      border-radius: 15px;
+      border: 1px solid black;
+      margin-bottom: 0px;
+      margin-top: 50px;
+    }
+
+    .strategies-box {
+      position: relative;
+      /* Positioning for pseudo-elements */
+      padding: 10px 50px;
+      font-size: 20px;
+      font-weight: bold;
+      color: purple;
+      /* Initial font color */
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 10px;
+      text-align: center;
+      margin-bottom: 0px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      overflow: hidden;
+      /* Ensures pseudo-element stays within the box */
+      animation: changeFontColor 3s linear infinite;
+      /* Animation to change font color */
+    }
+
+    .strategies-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      z-index: 1;
+      /* Ensures the light effect appears above the box content */
+      animation: slidingLight 3s linear infinite;
+      /* Infinite sliding animation */
+    }
+
+    /* Keyframes for automatic sliding light effect */
+    @keyframes slidingLight {
+      0% {
+        left: -100%;
+      }
+
+      50% {
+        left: 0;
+      }
+
+      100% {
+        left: 100%;
+      }
+    }
+
+    /* Keyframes for changing font color */
+    @keyframes changeFontColor {
+      0% {
+        color: purple;
+      }
+
+      50% {
+        color: #4a47a3;
+        /* Change color at the middle of the animation */
+      }
+
+      100% {
+        color: purple;
+        /* Back to original color */
+      }
+    }
 
 
-.vertical-line {
-  width: 2px;
-  height: 60px;
-  background-color: black;
-  position: relative;
-  top: 0px;
-}
+    .vertical-line {
+      width: 2px;
+      height: 60px;
+      background-color: black;
+      position: relative;
+      top: 0px;
+    }
 
-.horizontal-line {
-  width: 450px;
-  height: 2px;
-  background-color: black;
-  position: relative;
-  margin-top: 0px;
-  display: flex;
-  justify-content: space-between;
-}
+    .horizontal-line {
+      width: 450px;
+      height: 2px;
+      background-color: black;
+      position: relative;
+      margin-top: 0px;
+      display: flex;
+      justify-content: space-between;
+    }
 
-.connector {
-  position: relative;
-  height: 50px;
-  width: 2px;
-  background-color: black;
-}
+    .connector {
+      position: relative;
+      height: 50px;
+      width: 2px;
+      background-color: black;
+    }
 
-.connector.left,
-.connector.middle,
-.connector.right {
-  width: 2px;
-}
+    .connector.left,
+    .connector.middle,
+    .connector.right {
+      width: 2px;
+    }
 
-.intersection-dot {
-  position: absolute;
-  bottom: -4px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 8px;
-  height: 8px;
-  background-color: black;
-  border-radius: 50%;
-}
-.cards {
+    .intersection-dot {
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 8px;
+      background-color: black;
+      border-radius: 50%;
+    }
+
+    .cards {
       display: flex;
       justify-content: space-evenly;
-      gap: 35px; /* Adds gap between cards */
+      gap: 35px;
+      /* Adds gap between cards */
       margin-top: 60px;
       margin-bottom: 50px;
     }
-/* General Card Styles */
-.card {
-  background-color: #ffffff;
-  border: 2px solid black;
-  border-radius: 10px;
-  width: 150px;
-  height: 150px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transform: scale(0);
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-  opacity: 0;
-}
-.card-icon {
-  font-size: 40px;
-  color: #6a1b9a;
-  margin-bottom: 10px;
-}
 
-/* Cards are fully hidden */
-.card.hidden {
-  display: none;
-}
-
-/* Cards are visible */
-.card.visible {
-  transform: scale(1);
-  opacity: 1;
-  display: flex;
-}
-
- /* For Larger Screens - Display 4 cards and 4 connectors */
-@media (min-width: 768px) {
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
-    gap: 35px;
-  }
-  .horizontal-line {
-    width: 690px; /* Adjust the horizontal line length for larger screens */
-  }
-  .connector {
-    width: 2px;
-    height: 50px; /* Adjust the height of connectors */
-  }
-  .connector.left, .connector.middle, .connector.right, .connector.fourth {
-    width: 2px;
-  }
-  .connector.left {
-    height: 50px; /* Left connector height */
-  }
-  .connector.middle {
-    height: 50px; /* Middle connector height */
-  }
-  .connector.right {
-    height: 50px; /* Right connector height */
-  }
-  .connector.fourth {
-    height: 50px; /* Fourth connector height */
-  }
-}
-
-/* For Mobile Screens - Display 3 cards and 3 connectors */
-@media (max-width: 767px) {
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
-    gap: 20px;
-  }
-  .horizontal-line {
-    width: 450px; /* Adjust the horizontal line length for mobile screens */
-  }
-  .connector {
-    width: 2px;
-    height: 20px; /* Adjust the height of connectors */
-  }
-  .connector.left, .connector.middle, .connector.right {
-    width: 2px;
-  }
-  .connector.left {
-    height: 20px; /* Left connector height */
-  }
-  .connector.middle {
-    height: 20px; /* Middle connector height */
-  }
-  .connector.right {
-    height: 20px; /* Right connector height */
-  }
-}
-
-
-
-/* Adjust zoom in/out to work with 2 cards only */
-.card.zoom-out {
-  transform: scale(0.5); /* Reduced zoom out scale */
-  opacity: 0;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-
-
-        .logos {
-    position: relative;
-    width: auto; /* Makes sure the width is full */
-    text-align: center;
-    padding: 50px 20px;
-    color: #fff;
-    font-size: 20px;
-    font-family: 'Poppins', sans-serif;
-    text-shadow: 
-        2px 2px #4a47a3,  /* Diagonal shadow */
-        -2px -2px #2b2860; /* Opposite diagonal shadow */
-    letter-spacing: 2px;  /* Adds some space between letters for a modern look */
-    overflow: hidden;
-    z-index: 1;
-}
-
-.logos-text {
-    font-size: 24px;  /* You can adjust the font size as needed */
-    font-weight: bold;
-}
-
- 
-.logos .animated-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, #4a47a3, #4a47a3, #2b2860);
-    background-size: 200% 200%;
-    z-index: -1;
-    animation: gradientAnimation 6s infinite ease-in-out;
-}
-
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
+    /* General Card Styles */
+    .card {
+      background-color: #ffffff;
+      border: 2px solid black;
+      border-radius: 10px;
+      width: 150px;
+      height: 150px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transform: scale(0);
+      transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+      opacity: 0;
     }
-    50% {
+
+    .card-icon {
+      font-size: 40px;
+      color: #6a1b9a;
+      margin-bottom: 10px;
+    }
+
+    /* Cards are fully hidden */
+    .card.hidden {
+      display: none;
+    }
+
+    /* Cards are visible */
+    .card.visible {
+      transform: scale(1);
+      opacity: 1;
+      display: flex;
+    }
+
+    /* For Larger Screens - Display 4 cards and 4 connectors */
+    @media (min-width: 768px) {
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        /* 4 cards per row */
+        gap: 35px;
+      }
+
+      .horizontal-line {
+        width: 690px;
+        /* Adjust the horizontal line length for larger screens */
+      }
+
+      .connector {
+        width: 2px;
+        height: 50px;
+        /* Adjust the height of connectors */
+      }
+
+      .connector.left,
+      .connector.middle,
+      .connector.right,
+      .connector.fourth {
+        width: 2px;
+      }
+
+      .connector.left {
+        height: 50px;
+        /* Left connector height */
+      }
+
+      .connector.middle {
+        height: 50px;
+        /* Middle connector height */
+      }
+
+      .connector.right {
+        height: 50px;
+        /* Right connector height */
+      }
+
+      .connector.fourth {
+        height: 50px;
+        /* Fourth connector height */
+      }
+    }
+
+    /* For Mobile Screens - Display 3 cards and 3 connectors */
+    @media (max-width: 767px) {
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 cards per row */
+        gap: 20px;
+      }
+
+      .horizontal-line {
+        width: 450px;
+        /* Adjust the horizontal line length for mobile screens */
+      }
+
+      .connector {
+        width: 2px;
+        height: 20px;
+        /* Adjust the height of connectors */
+      }
+
+      .connector.left,
+      .connector.middle,
+      .connector.right {
+        width: 2px;
+      }
+
+      .connector.left {
+        height: 20px;
+        /* Left connector height */
+      }
+
+      .connector.middle {
+        height: 20px;
+        /* Middle connector height */
+      }
+
+      .connector.right {
+        height: 20px;
+        /* Right connector height */
+      }
+    }
+
+
+
+    /* Adjust zoom in/out to work with 2 cards only */
+    .card.zoom-out {
+      transform: scale(0.5);
+      /* Reduced zoom out scale */
+      opacity: 0;
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+
+
+    .logos {
+      position: relative;
+      width: auto;
+      /* Makes sure the width is full */
+      text-align: center;
+      padding: 50px 20px;
+      color: #fff;
+      font-size: 20px;
+      font-family: 'Poppins', sans-serif;
+      text-shadow:
+        2px 2px #4a47a3,
+        /* Diagonal shadow */
+        -2px -2px #2b2860;
+      /* Opposite diagonal shadow */
+      letter-spacing: 2px;
+      /* Adds some space between letters for a modern look */
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .logos-text {
+      font-size: 24px;
+      /* You can adjust the font size as needed */
+      font-weight: bold;
+    }
+
+
+    .logos .animated-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, #4a47a3, #4a47a3, #2b2860);
+      background-size: 200% 200%;
+      z-index: -1;
+      animation: gradientAnimation 6s infinite ease-in-out;
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
         background-position: 100% 50%;
-    }
-    100% {
+      }
+
+      100% {
         background-position: 0% 50%;
+      }
     }
-}
- /* Styling for the main industry container */
-.industry-container {
-  max-width: auto;
-  margin: auto;
-  text-align: left;
-  background-color: #e0e0e0;
-  padding: 30px;
-}
 
-/* Styling for the industry title */
-.industry-title {
-  font-size: 70px;
-  margin-left: 15%;
-  margin-right: 20%;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #000;
-}
+    /* Styling for the main industry container */
+    .industry-container {
+      max-width: auto;
+      margin: auto;
+      text-align: left;
+      background-color: #e0e0e0;
+      padding: 30px;
+    }
 
-/* Styling for the industry description */
-.industry-description {
-  font-size: 30px;
-  margin-bottom: 30px;
-  margin-left: 15%;
-  margin-right: 15%;
-  color: #666;
-}
+    /* Styling for the industry title */
+    .industry-title {
+      font-size: 70px;
+      margin-left: 15%;
+      margin-right: 20%;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #000;
+    }
 
-/* Styling for the industry select dropdown */
-.industry-select {
-  width: 70%;
-  padding: 20px;
-  border: 2px solid #000;
-  border-radius: 5px;
-  font-size: 18px;
-  margin-left: 15%;
-  margin-right: 15%;
-  text-align: center;
-  text-align-last: center;
-  background-color: #fff;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
+    /* Styling for the industry description */
+    .industry-description {
+      font-size: 30px;
+      margin-bottom: 30px;
+      margin-left: 15%;
+      margin-right: 15%;
+      color: #666;
+    }
 
-/* Hover effect for the industry select dropdown */
-.industry-select:hover {
-  background-color: #f0f0f0;
-  border-color: #007BFF;
-  transform: translateY(-2px);
-  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
-}
+    /* Styling for the industry select dropdown */
+    .industry-select {
+      width: 70%;
+      padding: 20px;
+      border: 2px solid #000;
+      border-radius: 5px;
+      font-size: 18px;
+      margin-left: 15%;
+      margin-right: 15%;
+      text-align: center;
+      text-align-last: center;
+      background-color: #fff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-/* Focus effect for the industry select dropdown */
-.industry-select:focus {
-  outline: none;
-  border-color: #28a745;
-  box-shadow: 0 0 8px rgba(40, 167, 69, 0.5);
-}
+    /* Hover effect for the industry select dropdown */
+    .industry-select:hover {
+      background-color: #f0f0f0;
+      border-color: #007BFF;
+      transform: translateY(-2px);
+      box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15);
+    }
 
-/* Styling for dropdown options */
-.industry-select option {
-  text-align: center;
-  padding: 10px;
-  font-size: 16px;
-  background-color: #fff;
-  color: #000;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
+    /* Focus effect for the industry select dropdown */
+    .industry-select:focus {
+      outline: none;
+      border-color: #28a745;
+      box-shadow: 0 0 8px rgba(40, 167, 69, 0.5);
+    }
 
-/* Hover effect for options */
-.industry-select option:hover {
-  background-color: #007BFF;
-  color: #fff;
-}
+    /* Styling for dropdown options */
+    .industry-select option {
+      text-align: center;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #fff;
+      color: #000;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
 
-/* Smooth fade-in animation for options */
-.industry-select option {
-  animation: fadeIn 0.3s ease;
-}
+    /* Hover effect for options */
+    .industry-select option:hover {
+      background-color: #007BFF;
+      color: #fff;
+    }
 
-/* Keyframe animation for options */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+    /* Smooth fade-in animation for options */
+    .industry-select option {
+      animation: fadeIn 0.3s ease;
+    }
 
+    /* Keyframe animation for options */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
 
-        .focus-section {
-            display: flex;
-            justify-content: space-between;
-            padding: 50px;
-            width: auto;
-            align-items: center;
-             
-        }
-
-        .focus-section .text {
-            flex: 1;
-        }
-
-        .focus-section img {
-            flex: 1;
-            max-width: 500px;
-        }
- .container-flex {
-  display: flex;
-  align-items: stretch;
-}
-
-.left-panel {
-  background: linear-gradient(120deg, #4a47a3, #4a47a3, #2b2860);
-  width: 30%;
-  height: 2000px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
-  padding: 0 0;
-}
-
-.left-panel h1 {
-  font-size: 80px; /* Increased font size */
-  font-weight: bold; /* Make the text bold */
-  letter-spacing: 5px; /* Increase letter spacing */
-  color: BLACK; /* Ensure the text is white for visibility */
-  text-transform: uppercase; /* Make text uppercase */
-  padding-left: 10px; /* Optional: add space from the left edge */
-  writing-mode: vertical-lr; /* Makes the text display vertically, top to bottom */
-  transform: rotate(180deg); /* Inverts the text so it goes from bottom to top */
-  white-space: nowrap; /* Prevent text wrapping */
-  margin-top: 10%; /* Adjust top margin for positioning */
-  text-align: center; /* Center-aligns the text horizontally */
-  display: flex;
-  justify-content: center; /* Centers the text horizontally within the panel */
-  align-items: center; /* Centers the text vertically within the panel */
-  height: 100%; /* Ensure the text takes up the full height of the left panel */
-}
-
-.left-panel .offer {
-  font-size: 35px;
-  font-weight: bold;
-  background-color: #121212; /* Match main background color */
-  color: white;
-  letter-spacing: 20px; /* Increase letter spacing */
-  padding: 40px;
-  justify-content: center; /* Center the .offer element horizontally */
-   
-  display: inline-block;
-  text-align: center; /* Align text to the center */
-   
-}
-
-.right-panel {
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background-color:  #e0e0e0;
-}
-
-.main-section {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.services-container {
-  width: 100%;
-  text-align: center;
-  margin-top: 3rem;
-}
-
-.service {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 2rem; /* Space between services */
-}
+      to {
+        opacity: 1;
+      }
+    }
 
 
+    .focus-section {
+      display: flex;
+      justify-content: space-between;
+      padding: 50px;
+      width: auto;
+      align-items: center;
 
+    }
 
-.service-title {
-  margin-top: 1rem;
-  font-size: 1.25rem; /* Slightly larger text */
-  font-weight: bold;
-}
+    .focus-section .text {
+      flex: 1;
+    }
 
-/* Animations */
+    .focus-section img {
+      flex: 1;
+      max-width: 500px;
+    }
 
- /* Banner Section */
- .banner {
-            text-align: center;
-            background-color: #fdf6f0;
-  position: relative;
-        }
+    .container-flex {
+      display: flex;
+      align-items: stretch;
+    }
 
-        .banner img {
-            width: 100%;
-            height: 550px;
-            
-        }
+    .left-panel {
+      background: linear-gradient(120deg, #4a47a3, #4a47a3, #2b2860);
+      width: 30%;
+      height: 2000px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+      padding: 0 0;
+    }
 
-        .banner h2 {
-            font-size: 28px;
-            color: #444;
-            margin-bottom: 20px;
-        }
+    .left-panel h1 {
+      font-size: 80px;
+      /* Increased font size */
+      font-weight: bold;
+      /* Make the text bold */
+      letter-spacing: 5px;
+      /* Increase letter spacing */
+      color: BLACK;
+      /* Ensure the text is white for visibility */
+      text-transform: uppercase;
+      /* Make text uppercase */
+      padding-left: 10px;
+      /* Optional: add space from the left edge */
+      writing-mode: vertical-lr;
+      /* Makes the text display vertically, top to bottom */
+      transform: rotate(180deg);
+      /* Inverts the text so it goes from bottom to top */
+      white-space: nowrap;
+      /* Prevent text wrapping */
+      margin-top: 10%;
+      /* Adjust top margin for positioning */
+      text-align: center;
+      /* Center-aligns the text horizontally */
+      display: flex;
+      justify-content: center;
+      /* Centers the text horizontally within the panel */
+      align-items: center;
+      /* Centers the text vertically within the panel */
+      height: 100%;
+      /* Ensure the text takes up the full height of the left panel */
+    }
 
-        .banner p {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 30px;
-            line-height: 1.6;
-            margin-left: 35%;
-            margin-right: 35%;
-        }
+    .left-panel .offer {
+      font-size: 35px;
+      font-weight: bold;
+      background-color: #121212;
+      /* Match main background color */
+      color: white;
+      letter-spacing: 20px;
+      /* Increase letter spacing */
+      padding: 40px;
+      justify-content: center;
+      /* Center the .offer element horizontally */
 
-        .banner button {
-            background-color: #d4a373;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-bottom: 30px;
-        }
+      display: inline-block;
+      text-align: center;
+      /* Align text to the center */
 
-        .banner button:hover {
-            background-color: #c18c5d;
-        }
+    }
 
-        .banner .logo {
-             margin: 0 auto;
-    text-align: center;
-    margin-bottom: 5px; /* Added margin to create space between the logo and content */
-              max-width: 120px; /* Increased max width for the logo */
-    margin-bottom: 30px; /* Added margin below the logo */
-    margin-top: 50px;
-        }
- 
-  .contact-section {
-    position: relative;
-    background: url('https://assets.onecompiler.app/42y68y97m/4356m26z3/WhatsApp%20Image%202025-01-05%20at%208.49.43%20PM.jpeg') no-repeat center center/cover;
-    color: #e0e0e0;
-    padding: 100px 20px;
-    text-align: center;
-    width: auto;
-    height: 100%; /* Set your desired height, e.g., 500px */
-    margin-bottom: 0%;
-}
+    .right-panel {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background-color: #e0e0e0;
+    }
+
+    .main-section {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .services-container {
+      width: 100%;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .service {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+      /* Space between services */
+    }
 
 
 
 
-        .contact-section .content {
-            position: relative;
-            z-index: 2;
-            margin-top: 10px;
-             margin-left: 55%;
-            margin-right: 15%;
-            width: 30%;
-        }
+    .service-title {
+      margin-top: 1rem;
+      font-size: 1.25rem;
+      /* Slightly larger text */
+      font-weight: bold;
+    }
 
-        .contact-section h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #00bcd4;
-            margin-top: 10px;
-        }
+    /* Animations */
 
-        .contact-section p {
-            font-size: 15px;
-            margin-bottom: 20px;
-             margin-top: 10px;
-            margin-left: 15%;
-            color: #fff;
-            margin-right: 10%;
-            width: 70%;
-        }
+    /* Banner Section */
+    .banner {
+      text-align: center;
+      background-color: #fdf6f0;
+      position: relative;
+    }
 
-        .contact-section .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color:  #00bcd4;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    position: relative;
-    overflow: hidden;
-    transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
-}
+    .banner img {
+      width: 100%;
+      height: 550px;
 
-.contact-section .btn:hover {
-  box-shadow: 0 0 15px rgba(0, 188, 212, 0.8); /* Add glowing effect */
-}
+    }
 
-.contact-section .btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.2); /* Light effect color */
-    transition: left 0.3s ease-in-out;
-}
+    .banner h2 {
+      font-size: 28px;
+      color: #444;
+      margin-bottom: 20px;
+    }
 
-.contact-section .btn:hover::before {
-    left: 100%; /* Slide the light effect across the button */
-}
-body {
-  background-color: #e0e0e0; /* Light gray background for the entire body */
-}
+    .banner p {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 30px;
+      line-height: 1.6;
+      margin-left: 35%;
+      margin-right: 35%;
+    }
 
-.footer {
-    padding: 40px 20px;
-    
-    background: linear-gradient(-45deg, #0056b3, #42a5f5, #81c784, #ffc107);
-    background-size: 300% 300%; /* Enlarges the gradient for smoother animation */
-    animation: gradientAnimation 8s ease infinite; /* Infinite looping animation */
-    text-align: center;
-    margin: 20px;
-    border: 5px solid #0056b3;
-    border-radius: 15px;
-    color: #000; /* Footer text in black */
-}
+    .banner button {
+      background-color: #d4a373;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
 
-/* Animation for gradient */
-@keyframes gradientAnimation {
-    0% {
+    .banner button:hover {
+      background-color: #c18c5d;
+    }
+
+    .banner .logo {
+      margin: 0 auto;
+      text-align: center;
+      margin-bottom: 5px;
+      /* Added margin to create space between the logo and content */
+      max-width: 120px;
+      /* Increased max width for the logo */
+      margin-bottom: 30px;
+      /* Added margin below the logo */
+      margin-top: 50px;
+    }
+
+    .contact-section {
+      position: relative;
+      background: url('https://assets.onecompiler.app/42y68y97m/4356m26z3/WhatsApp%20Image%202025-01-05%20at%208.49.43%20PM.jpeg') no-repeat center center/cover;
+      color: #e0e0e0;
+      padding: 100px 20px;
+      text-align: center;
+      width: auto;
+      height: 100%;
+      /* Set your desired height, e.g., 500px */
+      margin-bottom: 0%;
+    }
+
+
+
+
+    .contact-section .content {
+      position: relative;
+      z-index: 2;
+      margin-top: 10px;
+      margin-left: 55%;
+      margin-right: 15%;
+      width: 30%;
+    }
+
+    .contact-section h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #00bcd4;
+      margin-top: 10px;
+    }
+
+    .contact-section p {
+      font-size: 15px;
+      margin-bottom: 20px;
+      margin-top: 10px;
+      margin-left: 15%;
+      color: #fff;
+      margin-right: 10%;
+      width: 70%;
+    }
+
+    .contact-section .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #00bcd4;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    }
+
+    .contact-section .btn:hover {
+      box-shadow: 0 0 15px rgba(0, 188, 212, 0.8);
+      /* Add glowing effect */
+    }
+
+    .contact-section .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      /* Light effect color */
+      transition: left 0.3s ease-in-out;
+    }
+
+    .contact-section .btn:hover::before {
+      left: 100%;
+      /* Slide the light effect across the button */
+    }
+
+    body {
+      background-color: #e0e0e0;
+      /* Light gray background for the entire body */
+    }
+
+    .footer {
+      padding: 40px 20px;
+
+      background: linear-gradient(-45deg, #0056b3, #42a5f5, #81c784, #ffc107);
+      background-size: 300% 300%;
+      /* Enlarges the gradient for smoother animation */
+      animation: gradientAnimation 8s ease infinite;
+      /* Infinite looping animation */
+      text-align: center;
+      margin: 20px;
+      border: 5px solid #0056b3;
+      border-radius: 15px;
+      color: #000;
+      /* Footer text in black */
+    }
+
+    /* Animation for gradient */
+    @keyframes gradientAnimation {
+      0% {
         background-position: 0% 50%;
-    }
-    50% {
+      }
+
+      50% {
         background-position: 100% 50%;
-    }
-    100% {
+      }
+
+      100% {
         background-position: 0% 50%;
+      }
     }
-}
 
-.footer .logo {
-    display: flex;
-    flex-direction: column; /* Stack the logo and company name vertically */
-    align-items: center; /* Center the items horizontally */
-    margin-bottom: 20px;
-}
+    .footer .logo {
+      display: flex;
+      flex-direction: column;
+      /* Stack the logo and company name vertically */
+      align-items: center;
+      /* Center the items horizontally */
+      margin-bottom: 20px;
+    }
 
-.footer .logo-img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-bottom: 10px; /* Adds space between logo and company name */
-}
+    .footer .logo-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      /* Adds space between logo and company name */
+    }
 
-.footer .company-name {
-    font-size: 36px;
-    font-weight: bold;
-    color: #000;
-}
-    
-        .footer .description {
-            font-size: 18px;
-            color: #121212;
-            margin-bottom: 40px;
-        }
-        .footer .social-icons h3 {
-    font-size: 27px; /* Set the font size for the heading */
-    color: #000; /* White color for the heading */
-    margin-bottom: 20px; /* Adds space between the heading and the icons */
-    font-weight: bold; /* Makes the heading bold */
-    
-}
-        .footer .social-icons {
-    display: flex;
-    flex-direction: column; /* Stack rows vertically */
-    align-items: center; /* Center icons horizontally */
-}
+    .footer .company-name {
+      font-size: 36px;
+      font-weight: bold;
+      color: #000;
+    }
 
-.footer .social-icons .row {
-    display: flex;
-    justify-content: center; /* Center icons within each row */
-    margin-bottom: 10px; /* Add spacing between rows */
-}
+    .footer .description {
+      font-size: 18px;
+      color: #121212;
+      margin-bottom: 40px;
+    }
 
-.footer .social-icons a {
-    margin: 0 10px; /* Space between icons */
-    display: inline-flex; /* Ensures proper alignment of the icon */
-    align-items: center; /* Vertically centers the icon */
-    justify-content: center; /* Horizontally centers the icon */
-    text-decoration: none;
-    
-    color: #fff; /* Icon color */
-    font-size: 18px;
-    border: 1px solid black; /* Black circular border */
-    width: 40px;
-    height: 40px; /* Match width and height for a circle */
-    border-radius: 50%; /* Circular border */
-}
+    .footer .social-icons h3 {
+      font-size: 27px;
+      /* Set the font size for the heading */
+      color: #000;
+      /* White color for the heading */
+      margin-bottom: 20px;
+      /* Adds space between the heading and the icons */
+      font-weight: bold;
+      /* Makes the heading bold */
 
-.footer .social-icons a:hover {
-  
-     color: #000; /* Hover border color */
-      
-}
+    }
 
-        .footer .locations {
-            margin: 20px 0;
-            font-size: 14px;
-        }
-        .footer .locations span {
-            margin: 0 10px;
-            cursor: pointer;
-        }
-        .footer .content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            text-align: left;
-            margin-top: 30px;
-            margin-left: 20%;
-            margin-right: 15%;
-        }
-        .footer .content div {
-            flex: 1;
-            margin: 10px;
-            min-width: 200px;
-        }
-        .footer .content div h3 {
-            font-size: 27px;
-            margin-bottom: 20px;
-        }
-        .footer .content div ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            font-size: 30px;
-        }
-        .content i {
-          display: inline-flex; /* Ensures proper alignment of the icon */
-    align-items: center; /* Vertically centers the icon */
-    justify-content: center; /* Horizontally centers the icon */
-    text-decoration: none;
-    background-color: #000;
-    color: #fff; /* Icon color */
-    font-size: 18px;
-          border: 2px solid black; /* Black circular border */
-    width: 35px;
-    height: 35px; /* Match width and height for a circle */
-    border-radius: 50%; /* Circular border */
-        }
-        .content a:hover i {
-    background-color: #fff; /* Hover background color */
-     color: #000; /* Hover border color */
-     border: 2px solid #fff; /* Black circular border */
-}
-        .footer .content div ul li {
-            margin: 10px 0;
-            font-size: 16px;
-        }
-        .footer .content div ul li a {
-            text-decoration: none;
-            color: #fff; /* Links in blue */
-        }
-        .newsletter .newsletter-form .input-container {
-            position: relative;
-            width: 80%;
-            max-width: 400px;
-        }
-        .newsletter .newsletter-form .input-container input {
-          padding: 15px;
+    .footer .social-icons {
+      display: flex;
+      flex-direction: column;
+      /* Stack rows vertically */
+      align-items: center;
+      /* Center icons horizontally */
+    }
+
+    .footer .social-icons .row {
+      display: flex;
+      justify-content: center;
+      /* Center icons within each row */
+      margin-bottom: 10px;
+      /* Add spacing between rows */
+    }
+
+    .footer .social-icons a {
+      margin: 0 10px;
+      /* Space between icons */
+      display: inline-flex;
+      /* Ensures proper alignment of the icon */
+      align-items: center;
+      /* Vertically centers the icon */
+      justify-content: center;
+      /* Horizontally centers the icon */
+      text-decoration: none;
+
+      color: #fff;
+      /* Icon color */
+      font-size: 18px;
+      border: 1px solid black;
+      /* Black circular border */
+      width: 40px;
+      height: 40px;
+      /* Match width and height for a circle */
+      border-radius: 50%;
+      /* Circular border */
+    }
+
+    .footer .social-icons a:hover {
+
+      color: #000;
+      /* Hover border color */
+
+    }
+
+    .footer .locations {
+      margin: 20px 0;
+      font-size: 14px;
+    }
+
+    .footer .locations span {
+      margin: 0 10px;
+      cursor: pointer;
+    }
+
+    .footer .content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      text-align: left;
+      margin-top: 30px;
+      margin-left: 20%;
+      margin-right: 15%;
+    }
+
+    .footer .content div {
+      flex: 1;
+      margin: 10px;
+      min-width: 200px;
+    }
+
+    .footer .content div h3 {
+      font-size: 27px;
+      margin-bottom: 20px;
+    }
+
+    .footer .content div ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 30px;
+    }
+
+    .content i {
+      display: inline-flex;
+      /* Ensures proper alignment of the icon */
+      align-items: center;
+      /* Vertically centers the icon */
+      justify-content: center;
+      /* Horizontally centers the icon */
+      text-decoration: none;
+      background-color: #000;
+      color: #fff;
+      /* Icon color */
+      font-size: 18px;
+      border: 2px solid black;
+      /* Black circular border */
+      width: 35px;
+      height: 35px;
+      /* Match width and height for a circle */
+      border-radius: 50%;
+      /* Circular border */
+    }
+
+    .content a:hover i {
+      background-color: #fff;
+      /* Hover background color */
+      color: #000;
+      /* Hover border color */
+      border: 2px solid #fff;
+      /* Black circular border */
+    }
+
+    .footer .content div ul li {
+      margin: 10px 0;
+      font-size: 16px;
+    }
+
+    .footer .content div ul li a {
+      text-decoration: none;
+      color: #fff;
+      /* Links in blue */
+    }
+
+    .newsletter .newsletter-form .input-container {
+      position: relative;
       width: 80%;
       max-width: 400px;
-      border: 2px solid #fff; /* Added border */
+    }
+
+    .newsletter .newsletter-form .input-container input {
+      padding: 15px;
+      width: 80%;
+      max-width: 400px;
+      border: 2px solid #fff;
+      /* Added border */
       border-radius: 50px;
       font-size: 16px;
       color: #333;
@@ -957,15 +1111,19 @@ body {
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
     }
+
     .newsletter input[type="email"]:focus {
-      border-color: #81c784; /* Border changes on focus */
+      border-color: #81c784;
+      /* Border changes on focus */
       box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
     }
-        .newsletter button {
+
+    .newsletter button {
       padding: 15px 30px;
       margin-top: 10px;
       background: linear-gradient(90deg, #42a5f5, #0056b3);
-      border: 2px solid #fff; /* Added border */
+      border: 2px solid #fff;
+      /* Added border */
       border-radius: 50px;
       color: #fff;
       margin-left: 65px;
@@ -975,41 +1133,47 @@ body {
       transition: all 0.3s ease;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
+
     .newsletter button:hover {
       background: linear-gradient(90deg, #0056b3, #42a5f5);
-      border-color: #81c784; /* Border color changes on hover */
+      border-color: #81c784;
+      /* Border color changes on hover */
       box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
       transform: translateY(-2px);
     }
-        .footer .footer-bottom {
-             
-            font-size: 20px;
-            color: #000; /* Footer bottom text in dark gray */
-            border: 2px solid #fff;
+
+    .footer .footer-bottom {
+
+      font-size: 20px;
+      color: #000;
+      /* Footer bottom text in dark gray */
+      border: 2px solid #fff;
       padding: 20px;
       display: inline-block;
       border-radius: 5px;
       margin-top: 40px;
       color: #fff;
-        }
-        .footer .footer-bottom a {
-            color: #fff;
-            text-decoration: none;
-        }
-        .footer .footer-bottom a:hover {
-            text-decoration: underline;
-        }
-        
-          .rope {
-            position: absolute;
-            top: 0;
-           left: 95%;
-            width: 3px;
-            height: 53%;
-            background-color: #000;
-            transform: translateX(-50%);
-            animation: slideDown 4s ease-in-out;
-        }
+    }
+
+    .footer .footer-bottom a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .footer .footer-bottom a:hover {
+      text-decoration: underline;
+    }
+
+    .rope {
+      position: absolute;
+      top: 0;
+      left: 95%;
+      width: 3px;
+      height: 53%;
+      background-color: #000;
+      transform: translateX(-50%);
+      animation: slideDown 4s ease-in-out;
+    }
 
     .boy {
       position: absolute;
@@ -1021,15 +1185,19 @@ body {
       transition: top 4s ease-in-out;
       animation: moveDown 7s forwards;
     }
- /* Animation to move down and stop at a specific height */
-@keyframes moveDown {
-    0% {
+
+    /* Animation to move down and stop at a specific height */
+    @keyframes moveDown {
+      0% {
         top: 0;
+      }
+
+      100% {
+        top: 38%;
+        /* Adjust this value to the desired stopping point */
+      }
     }
-    100% {
-        top: 38%; /* Adjust this value to the desired stopping point */
-    }
-}
+
     .boy img {
       width: 100px;
     }
@@ -1082,1133 +1250,1225 @@ body {
     .form-container button:hover {
       background-color: #1e88e5;
     }
-               
 
-        
-         /* Responsive Design */
-         @media (max-width: 768px) {
-             
-                header {
-    background: #4a47a3;
-    color: white;
-    padding: 5px 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 95%;
-    height: 40px;
-    z-index: 1000;
-    animation: slideDown 4s ease-in-out;
-}
 
-header .logo {
-    display: flex;
-    align-items: center;
-}
 
-header .logo img {
-    max-height: 70px; /* Adjust logo size */
-    height: 70px;
-    width: 70px;
-    border-radius: 50%;
-    margin-top: 3%;
-}
-
-header nav {
-    display: flex; /* Ensure nav is a flex container */
-    justify-content: flex-end; /* Push links to the right */
-    align-items: center; /* Align links vertically */
-    margin-right: 4%;
-}
-
-header nav a {
-    position: relative;
-    color: white;
-    text-decoration: none;
-    margin: 0 5px;
-    font-size: 12px;
-    
-    transition: color 0.3s ease;
-}
-
-header nav a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: white;
-    transition: width 0.3s ease;
-}
-
-header nav a:hover {
-    color: #00bcd4;
-}
-
-header nav a:hover::after {
-    width: 100%;
-}
-          
-         
-       .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: radial-gradient(circle, #4a47a3, #2b2860);
-            color: white;
-            padding: 60px 20px;
-            height: 140px;
-            width: auto;
-             overflow: hidden;
-            position: relative;
-        }
-        .hero-text {
-            max-width: 50%;
-            margin-top: 30px;
-            
-             
-        }
-
-        .hero h1 {
-            font-size: 0.9em;
-            margin-bottom: 1px;
-            width: 90%;
-            margin-left: 10%;
-            margin-right: 0%;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        .hero p {
-            font-size: 0.6em;
-             margin-bottom: 4px;
-            margin-right: 0%;
-            margin-left: 10%;
-             animation: slideIn 2s ease-in-out;
-        }
-
-        .hero .buttons {
-            margin-top: 3px;
-             
-        }
-         
-
-        .hero img {
-            max-width: 190px;
-            height: auto;
-            margin-top: 30px;
-            border-radius: 10px;
-             margin-right: 1%;
-             margin-left: 0%;
-            animation: zoomIn 2.5s ease-in-out;
-        }
-       .hero .buttons a {
-            display: inline-block;
-            margin-left: 0%;
-            padding: 2px 4px;
-            background: #00bcd4;
-            color: white;
-            margin-right: 0%;
-            border-radius: 2px;
-            font-size: 8px;
-             
-            text-decoration: none;
-             
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero .buttons a:hover {
-            box-shadow: 0 0 15px rgba(0, 188, 212, 0.8);
-        }
-
-        .hero .buttons a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            transition: left 0.3s ease-in-out;
-        }
-
-        .hero .buttons a:hover::before {
-            left: 100%;
-        }
-
-        .outer-frame {
-      padding: 5px; /* Padding between the inner and outer frame */
-      background-color: #e0e0e0; /* Outer frame color */
-      border-radius: 10px; /* Slightly larger border radius for the outer frame */
-      border: 1px solid black;
-      margin-bottom: 0px;
-      margin-top: 20px;
-    }
-
-     .strategies-box {
-    font-size: 15px;
-  
-    padding: 4px 12px;
-  }
-
-  .horizontal-line {
-    width: 55%;
-    margin-top: 0px;
-  }
-
-  .connector {
-    height: 20px;
-  }
-.cards {
-      display: flex;
-      justify-content: space-evenly;
-      gap: 10px; /* Adds gap between cards */
-      margin-top: 30px;
-      margin-bottom: 20px;
-    }
-  /* General Card Styles */
-.card {
-  background-color: #ffffff;
-  border: 2px solid black;
-  border-radius: 10px;
-  width: 80px;
-  height: 80px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  font-size: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transform: scale(0);
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-  opacity: 0;
-}
-.card-icon {
-  font-size: 20px;
-  color: #6a1b9a;
-  margin-bottom: 5px;
-}
-.card-title {
-      font-size: 13px;
-      font-weight: bold;
-      color: #333;
-    }
-/* Cards are fully hidden */
-.card.hidden {
-  display: none;
-}
-
-/* Cards are visible */
-.card.visible {
-  transform: scale(1);
-  opacity: 1;
-  display: flex;
-}
-
-/* Zoom-out effect */
-.card.zoom-out {
-  transform: scale(0.3);
-  opacity: 0;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-  .vertical-line {
-    height: 30px;
-  }
- 
-        .logos {
-    position: relative;
-    text-align: center;
-    padding: 25px 10px;
-    color: #fff;
-     
-    font-size: 20px;
-    font-family: 'Poppins', sans-serif;
-    text-shadow: 
-        2px 2px #4a47a3,  /* Diagonal shadow */
-        -2px -2px #2b2860; /* Opposite diagonal shadow */
-    letter-spacing: 1px;  /* Adds some space between letters for a modern look */
-    overflow: hidden;
-    z-index: 1;
-}
-
-.logos-text {
-    font-size: 18px;  /* You can adjust the font size as needed */
-    font-weight: bold;
-}
-
-.logos .animated-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, #4a47a3, #4a47a3, #2b2860);
-    background-size: 200% 200%;
-    z-index: -1;
-    animation: gradientAnimation 6s infinite ease-in-out;
-}
-
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-/* Styling for the main industry container */
-.industry-container {
-  max-width: 100%;
-  margin: auto;
-  text-align: left;
-  background-color: #e0e0e0;
-  padding: 15px;
-}
-
-/* Styling for the industry title */
-.industry-title {
-  font-size: 30px;
-  margin-left: 6%;
-  margin-right: 6%;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #000;
-}
-
-/* Styling for the industry description */
-.industry-description {
-  font-size: 15px;
-  margin-bottom: 15px;
-  margin-left: 6%;
-  margin-right: 8%;
-  color: #666;
-}
-
-/* Styling for the industry select dropdown */
-.industry-select {
-  width: 80%;
-  padding: 10px;
-  border: 1px solid #000;
-  border-radius: 5px;
-  font-size: 15px;
-  margin-left: 6%;
-  margin-right: 8%;
-  text-align: center;
-  text-align-last: center; /* Centers options in the dropdown */
-  background-color: #fff;
-  cursor: pointer;
-}
-
-/* Styling for dropdown options */
-.industry-select option {
-  text-align: center;
-}
-
-
-        .focus-section {
-            display: flex;
-            justify-content: space-between;
-            padding: 30px;
-            align-items: center;
-            width: auto;
-        }
-
-        .focus-section .text {
-            flex: 1;
-            font-size: 10px;
-            width: 50%;
-            margin-right: 5%;
-        }
-
-        .focus-section img {
-            flex: 1;
-            max-width: 300px;
-             
-        }
-
-
-.left-panel {
-  background: linear-gradient(120deg, #4a47a3, #4a47a3, #2b2860);
-  width: 30%;
-  height: 1200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
-  padding: 0 0;
-}
-
-.left-panel h1 {
-  font-size: 50px; /* Increased font size */
-  font-weight: bold; /* Make the text bold */
-  letter-spacing: 5px; /* Increase letter spacing */
-  color: BLACK; /* Ensure the text is white for visibility */
-  text-transform: uppercase; /* Make text uppercase */
-  padding-left: 10px; /* Optional: add space from the left edge */
-  writing-mode: vertical-lr; /* Makes the text display vertically, top to bottom */
-  transform: rotate(180deg); /* Inverts the text so it goes from bottom to top */
-  white-space: nowrap; /* Prevent text wrapping */
-  margin-top: 10%; /* Adjust top margin for positioning */
-  text-align: center; /* Center-aligns the text horizontally */
-  display: flex;
-  justify-content: center; /* Centers the text horizontally within the panel */
-  align-items: center; /* Centers the text vertically within the panel */
-  height: 100%; /* Ensure the text takes up the full height of the left panel */
-}
-
-.left-panel .offer {
-  font-size: 20px;
-  font-weight: bold;
-  background-color: #121212; /* Match main background color */
-  color: white;
-  letter-spacing: 3px; /* Increase letter spacing */
-  padding: 16px;
-  justify-content: center; /* Center the .offer element horizontally */
-   
-  display: inline-block;
-  text-align: center; /* Align text to the center */
-   
-}
-
-.right-panel {
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-}
-
-.main-section {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.services-container {
-  width: 100%;
-  text-align: center;
-  margin-top: 10px;
-}
-
-.service {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px; /* Space between services */
-}
-
-.service .icon {
-  font-size: 20px; /* Larger icon */
-  padding: 10px;
-  border-radius: 20%;
-  background-color: #1c2a40;
-  color: #fff; /* Default color */
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.service .icon:hover {
-  animation: bounce 0.5s ease;
-  color: #42a5f5; /* Hover color */
-}
-
-.service-title {
-  margin-top: 10px;
-  font-size: 15px; /* Slightly larger text */
-  font-weight: bold;
-}
-
-/* Animations */
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-     /* Banner Section */
-     .banner {
-            text-align: center;
-            background-color: #fdf6f0;
-             height: 220px;
-            position: relative;
-        }
-
-        .banner img {
-            width: 100%;
-            height: 200px;
-        }
-
-        .banner-2 h2 {
-            font-size: 18px;
-            color: #444;
-            margin-bottom: 10px;
-        }
-
-        .banner{
-          height: 100%;
-        }
-
-        .banner p {
-            font-size: 13px;
-            color: #666;
-            margin-bottom: 10px;
-             line-height: 0.9rem;
-            margin-left: 20%;
-            margin-right: 20%;
-        }
-
-        .banner button {
-            background-color: #d4a373;
-            color: white;
-            padding: 4px 8px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 12px;
-        }
-
-        .banner button:hover {
-            background-color: #c18c5d;
-        }
-
-        .banner .logo {
-             margin: 0 auto;
-    text-align: center;
-    margin-bottom: 5px; /* Added margin to create space between the logo and content */
-              max-width: 120px; /* Increased max width for the logo */
-    margin-bottom: 10px; /* Added margin below the logo */
-    margin-top: 10px;
-        }
-
-       .contact-section {
-    position: relative;
-    background: url('https://assets.onecompiler.app/42y68y97m/4356m26z3/WhatsApp%20Image%202025-01-05%20at%208.49.43%20PM.jpeg') no-repeat center center/cover;
-    color: white;
-    padding: 20px 0px;
-    margin-top: 0%;
-    text-align: center;
-    width: 100%; /* Makes sure the width is full */
-    height: 100%; /* Set your desired height, e.g., 500px */
-}
-
-
-        .contact-section .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-          
-            background-color: rgba(0, 0, 0, 0.6);
-        }
-
-        .contact-section .content {
-            position: relative;
-            z-index: 1;
-             margin-left: 50%;
-            margin-right: 5%;
-            width: 45%;
-        }
-
-        .contact-section h1 {
-            font-size: 15px;
-            margin-bottom: 5px;
-            color: #00bcd4;
-              
-        }
-
-        .contact-section p {
-            font-size: 9px;
-            margin-bottom: 5px;
-            line-height: 1.2;
-            margin-top: 2px;
-            margin-left: 15%;
-        }
-
-        .contact-section .btn {
-    display: inline-block;
-    padding: 4px 8px;
-    background-color:  #00bcd4;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 8px;
-    position: relative;
-    overflow: hidden;
-    transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
-}
-
-.contact-section .btn:hover {
-  box-shadow: 0 0 15px rgba(0, 188, 212, 0.8); /* Add glowing effect */
-}
-
-.contact-section .btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.2); /* Light effect color */
-    transition: left 0.3s ease-in-out;
-}
-
-.contact-section .btn:hover::before {
-    left: 100%; /* Slide the light effect across the button */
-}
-
-.footer .company-name {
-    font-size: 18px;
-    font-weight: bold;
-    color: #000;
-}
-            .footer .content {
-              margin-left: 10%;
-              margin-right: 1%;
-            }
-            .footer .description {
-                font-size: 15px;
-                margin-bottom: 10px;
-            }
-            .footer .social-icons h3 {
-              font-size: 19px; /* Set the font size for the heading */
-            }
-            .footer .social-icons {
-    display: flex;
-    flex-direction: column; /* Stack rows vertically */
-    align-items: center; /* Center icons horizontally */
-}
-
-.footer .social-icons .row {
-    display: flex;
-    justify-content: center; /* Center icons within each row */
-    margin-bottom: 0px; /* Add spacing between rows */
-}
-
-            .footer .social-icons a {
-                font-size: 16px;
-                margin: 0 5px;
-               margin-top: 10px;
-               gap: 1px;
-            }
-           .footer .content div h3 {
-    font-size: 19px;
-    text-align: left; /* Align the heading text to the left */
-}
-.content i {
-font-size: 13px;
- width:28px ;
- height:28px;
- border-radius: 50%;
-}
-     .footer .content div ul li {
-        font-size: 16px;
-        text-align: left; /* Align list item text to the left */
-        
-    }
-    .newsletter button {
-      padding: 10px 20px;
-      margin-top: 7px;
-      background: linear-gradient(90deg, #42a5f5, #0056b3);
-      border: 2px solid #fff; /* Added border */
-      border-radius: 50px;
-      color: #fff;
-      margin-left: 61px;
-      font-size: 14px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .newsletter button:hover {
-      background: linear-gradient(90deg, #0056b3, #42a5f5);
-      border-color: #81c784; /* Border color changes on hover */
-      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-      transform: translateY(-2px);
-    }
-
-     .footer .footer-bottom {
-        font-size: 13px;
-        text-align: center; /* Align text to the center */
-        width: 80%; /* Ensure the footer takes up full width */
-        margin-top: 20px; /* Add some space above, if needed */
-        color: #000; /* Footer bottom text in dark gray */
-            border: 2px solid #fff;
-      padding: 15px;
-      display: inline-block;
-      border-radius: 5px;
-        color: #fff;
-         
-        }
-   
-     .rope {
-            position: absolute;
-            top: 0;
-            left: 92%;
-            width: 1px;
-            height: 24%;
-            background-color: #000;
-            transform: translateX(-50%);
-            animation: slideDown 4s ease-in-out;
-             
-        }
-    .boy {
-    position: absolute;
-    top: 0;
-    left: 91.8%;
-    height: 25%;
-    width: 50px;
-    transform: translateX(-50%);
-    transition: top 4s ease-in-out;
-     animation: moveDown 8s forwards;
-}
-/* Animation to move down and stop at a specific height */
-@keyframes moveDown {
-    0% {
+    /* Responsive Design */
+    @media (max-width: 768px) {
+
+      header {
+        background: #4a47a3;
+        color: white;
+        padding: 5px 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        width: 95%;
+        height: 40px;
+        z-index: 1000;
+        animation: slideDown 4s ease-in-out;
+      }
+
+      header .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      header .logo img {
+        max-height: 70px;
+        /* Adjust logo size */
+        height: 70px;
+        width: 70px;
+        border-radius: 50%;
+        margin-top: 3%;
+      }
+
+      header nav {
+        display: flex;
+        /* Ensure nav is a flex container */
+        justify-content: flex-end;
+        /* Push links to the right */
+        align-items: center;
+        /* Align links vertically */
+        margin-right: 4%;
+      }
+
+      header nav a {
+        position: relative;
+        color: white;
+        text-decoration: none;
+        margin: 0 5px;
+        font-size: 12px;
+
+        transition: color 0.3s ease;
+      }
+
+      header nav a::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: white;
+        transition: width 0.3s ease;
+      }
+
+      header nav a:hover {
+        color: #00bcd4;
+      }
+
+      header nav a:hover::after {
+        width: 100%;
+      }
+
+
+      .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: radial-gradient(circle, #4a47a3, #2b2860);
+        color: white;
+        padding: 60px 20px;
+        height: 140px;
+        width: auto;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .hero-text {
+        max-width: 50%;
+        margin-top: 30px;
+
+
+      }
+
+      .hero h1 {
+        font-size: 0.9em;
+        margin-bottom: 1px;
+        width: 90%;
+        margin-left: 10%;
+        margin-right: 0%;
+        animation: fadeIn 2s ease-in-out;
+      }
+
+      .hero p {
+        font-size: 0.6em;
+        margin-bottom: 4px;
+        margin-right: 0%;
+        margin-left: 10%;
+        animation: slideIn 2s ease-in-out;
+      }
+
+      .hero .buttons {
+        margin-top: 3px;
+
+      }
+
+
+      .hero img {
+        max-width: 190px;
+        height: auto;
+        margin-top: 30px;
+        border-radius: 10px;
+        margin-right: 1%;
+        margin-left: 0%;
+        animation: zoomIn 2.5s ease-in-out;
+      }
+
+      .hero .buttons a {
+        display: inline-block;
+        margin-left: 0%;
+        padding: 2px 4px;
+        background: #00bcd4;
+        color: white;
+        margin-right: 0%;
+        border-radius: 2px;
+        font-size: 8px;
+
+        text-decoration: none;
+
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero .buttons a:hover {
+        box-shadow: 0 0 15px rgba(0, 188, 212, 0.8);
+      }
+
+      .hero .buttons a::before {
+        content: '';
+        position: absolute;
         top: 0;
-    }
-    100% {
-        top: 13%; /* Adjust this value to the desired stopping point */
-    }
-}
-    .boy img {
-      width: 50px;
-      
-    }
-         } 
- 
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        transition: left 0.3s ease-in-out;
+      }
 
-    </style>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+      .hero .buttons a:hover::before {
+        left: 100%;
+      }
+
+      .outer-frame {
+        padding: 5px;
+        /* Padding between the inner and outer frame */
+        background-color: #e0e0e0;
+        /* Outer frame color */
+        border-radius: 10px;
+        /* Slightly larger border radius for the outer frame */
+        border: 1px solid black;
+        margin-bottom: 0px;
+        margin-top: 20px;
+      }
+
+      .strategies-box {
+        font-size: 15px;
+
+        padding: 4px 12px;
+      }
+
+      .horizontal-line {
+        width: 55%;
+        margin-top: 0px;
+      }
+
+      .connector {
+        height: 20px;
+      }
+
+      .cards {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 10px;
+        /* Adds gap between cards */
+        margin-top: 30px;
+        margin-bottom: 20px;
+      }
+
+      /* General Card Styles */
+      .card {
+        background-color: #ffffff;
+        border: 2px solid black;
+        border-radius: 10px;
+        width: 80px;
+        height: 80px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        font-size: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transform: scale(0);
+        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        opacity: 0;
+      }
+
+      .card-icon {
+        font-size: 20px;
+        color: #6a1b9a;
+        margin-bottom: 5px;
+      }
+
+      .card-title {
+        font-size: 13px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      /* Cards are fully hidden */
+      .card.hidden {
+        display: none;
+      }
+
+      /* Cards are visible */
+      .card.visible {
+        transform: scale(1);
+        opacity: 1;
+        display: flex;
+      }
+
+      /* Zoom-out effect */
+      .card.zoom-out {
+        transform: scale(0.3);
+        opacity: 0;
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      }
+
+      .vertical-line {
+        height: 30px;
+      }
+
+      .logos {
+        position: relative;
+        text-align: center;
+        padding: 25px 10px;
+        color: #fff;
+
+        font-size: 20px;
+        font-family: 'Poppins', sans-serif;
+        text-shadow:
+          2px 2px #4a47a3,
+          /* Diagonal shadow */
+          -2px -2px #2b2860;
+        /* Opposite diagonal shadow */
+        letter-spacing: 1px;
+        /* Adds some space between letters for a modern look */
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .logos-text {
+        font-size: 18px;
+        /* You can adjust the font size as needed */
+        font-weight: bold;
+      }
+
+      .logos .animated-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(120deg, #4a47a3, #4a47a3, #2b2860);
+        background-size: 200% 200%;
+        z-index: -1;
+        animation: gradientAnimation 6s infinite ease-in-out;
+      }
+
+      @keyframes gradientAnimation {
+        0% {
+          background-position: 0% 50%;
+        }
+
+        50% {
+          background-position: 100% 50%;
+        }
+
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Styling for the main industry container */
+      .industry-container {
+        max-width: 100%;
+        margin: auto;
+        text-align: left;
+        background-color: #e0e0e0;
+        padding: 15px;
+      }
+
+      /* Styling for the industry title */
+      .industry-title {
+        font-size: 30px;
+        margin-left: 6%;
+        margin-right: 6%;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #000;
+      }
+
+      /* Styling for the industry description */
+      .industry-description {
+        font-size: 15px;
+        margin-bottom: 15px;
+        margin-left: 6%;
+        margin-right: 8%;
+        color: #666;
+      }
+
+      /* Styling for the industry select dropdown */
+      .industry-select {
+        width: 80%;
+        padding: 10px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        font-size: 15px;
+        margin-left: 6%;
+        margin-right: 8%;
+        text-align: center;
+        text-align-last: center;
+        /* Centers options in the dropdown */
+        background-color: #fff;
+        cursor: pointer;
+      }
+
+      /* Styling for dropdown options */
+      .industry-select option {
+        text-align: center;
+      }
+
+
+      .focus-section {
+        display: flex;
+        justify-content: space-between;
+        padding: 30px;
+        align-items: center;
+        width: auto;
+      }
+
+      .focus-section .text {
+        flex: 1;
+        font-size: 10px;
+        width: 50%;
+        margin-right: 5%;
+      }
+
+      .focus-section img {
+        flex: 1;
+        max-width: 300px;
+
+      }
+
+
+      .left-panel {
+        background: linear-gradient(120deg, #4a47a3, #4a47a3, #2b2860);
+        width: 30%;
+        height: 1200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        padding: 0 0;
+      }
+
+      .left-panel h1 {
+        font-size: 50px;
+        /* Increased font size */
+        font-weight: bold;
+        /* Make the text bold */
+        letter-spacing: 5px;
+        /* Increase letter spacing */
+        color: BLACK;
+        /* Ensure the text is white for visibility */
+        text-transform: uppercase;
+        /* Make text uppercase */
+        padding-left: 10px;
+        /* Optional: add space from the left edge */
+        writing-mode: vertical-lr;
+        /* Makes the text display vertically, top to bottom */
+        transform: rotate(180deg);
+        /* Inverts the text so it goes from bottom to top */
+        white-space: nowrap;
+        /* Prevent text wrapping */
+        margin-top: 10%;
+        /* Adjust top margin for positioning */
+        text-align: center;
+        /* Center-aligns the text horizontally */
+        display: flex;
+        justify-content: center;
+        /* Centers the text horizontally within the panel */
+        align-items: center;
+        /* Centers the text vertically within the panel */
+        height: 100%;
+        /* Ensure the text takes up the full height of the left panel */
+      }
+
+      .left-panel .offer {
+        font-size: 20px;
+        font-weight: bold;
+        background-color: #121212;
+        /* Match main background color */
+        color: white;
+        letter-spacing: 3px;
+        /* Increase letter spacing */
+        padding: 16px;
+        justify-content: center;
+        /* Center the .offer element horizontally */
+
+        display: inline-block;
+        text-align: center;
+        /* Align text to the center */
+
+      }
+
+      .right-panel {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+      }
+
+      .main-section {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      .services-container {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .service {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        /* Space between services */
+      }
+
+      .service .icon {
+        font-size: 20px;
+        /* Larger icon */
+        padding: 10px;
+        border-radius: 20%;
+        background-color: #1c2a40;
+        color: #fff;
+        /* Default color */
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
+
+      .service .icon:hover {
+        animation: bounce 0.5s ease;
+        color: #42a5f5;
+        /* Hover color */
+      }
+
+      .service-title {
+        margin-top: 10px;
+        font-size: 15px;
+        /* Slightly larger text */
+        font-weight: bold;
+      }
+
+      /* Animations */
+      @keyframes bounce {
+
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      /* Banner Section */
+      .banner {
+        text-align: center;
+        background-color: #fdf6f0;
+        height: 220px;
+        position: relative;
+      }
+
+      .banner img {
+        width: 100%;
+        height: 200px;
+      }
+
+      .banner-2 h2 {
+        font-size: 18px;
+        color: #444;
+        margin-bottom: 10px;
+      }
+
+      .banner {
+        height: 100%;
+      }
+
+      .banner p {
+        font-size: 13px;
+        color: #666;
+        margin-bottom: 10px;
+        line-height: 0.9rem;
+        margin-left: 20%;
+        margin-right: 20%;
+      }
+
+      .banner button {
+        background-color: #d4a373;
+        color: white;
+        padding: 4px 8px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 12px;
+      }
+
+      .banner button:hover {
+        background-color: #c18c5d;
+      }
+
+      .banner .logo {
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 5px;
+        /* Added margin to create space between the logo and content */
+        max-width: 120px;
+        /* Increased max width for the logo */
+        margin-bottom: 10px;
+        /* Added margin below the logo */
+        margin-top: 10px;
+      }
+
+      .contact-section {
+        position: relative;
+        background: url('https://assets.onecompiler.app/42y68y97m/4356m26z3/WhatsApp%20Image%202025-01-05%20at%208.49.43%20PM.jpeg') no-repeat center center/cover;
+        color: white;
+        padding: 20px 0px;
+        margin-top: 0%;
+        text-align: center;
+        width: 100%;
+        /* Makes sure the width is full */
+        height: 100%;
+        /* Set your desired height, e.g., 500px */
+      }
+
+
+      .contact-section .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+
+      .contact-section .content {
+        position: relative;
+        z-index: 1;
+        margin-left: 50%;
+        margin-right: 5%;
+        width: 45%;
+      }
+
+      .contact-section h1 {
+        font-size: 15px;
+        margin-bottom: 5px;
+        color: #00bcd4;
+
+      }
+
+      .contact-section p {
+        font-size: 9px;
+        margin-bottom: 5px;
+        line-height: 1.2;
+        margin-top: 2px;
+        margin-left: 15%;
+      }
+
+      .contact-section .btn {
+        display: inline-block;
+        padding: 4px 8px;
+        background-color: #00bcd4;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 8px;
+        position: relative;
+        overflow: hidden;
+        transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+      }
+
+      .contact-section .btn:hover {
+        box-shadow: 0 0 15px rgba(0, 188, 212, 0.8);
+        /* Add glowing effect */
+      }
+
+      .contact-section .btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        /* Light effect color */
+        transition: left 0.3s ease-in-out;
+      }
+
+      .contact-section .btn:hover::before {
+        left: 100%;
+        /* Slide the light effect across the button */
+      }
+
+      .footer .company-name {
+        font-size: 18px;
+        font-weight: bold;
+        color: #000;
+      }
+
+      .footer .content {
+        margin-left: 10%;
+        margin-right: 1%;
+      }
+
+      .footer .description {
+        font-size: 15px;
+        margin-bottom: 10px;
+      }
+
+      .footer .social-icons h3 {
+        font-size: 19px;
+        /* Set the font size for the heading */
+      }
+
+      .footer .social-icons {
+        display: flex;
+        flex-direction: column;
+        /* Stack rows vertically */
+        align-items: center;
+        /* Center icons horizontally */
+      }
+
+      .footer .social-icons .row {
+        display: flex;
+        justify-content: center;
+        /* Center icons within each row */
+        margin-bottom: 0px;
+        /* Add spacing between rows */
+      }
+
+      .footer .social-icons a {
+        font-size: 16px;
+        margin: 0 5px;
+        margin-top: 10px;
+        gap: 1px;
+      }
+
+      .footer .content div h3 {
+        font-size: 19px;
+        text-align: left;
+        /* Align the heading text to the left */
+      }
+
+      .content i {
+        font-size: 13px;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+      }
+
+      .footer .content div ul li {
+        font-size: 16px;
+        text-align: left;
+        /* Align list item text to the left */
+
+      }
+
+      .newsletter button {
+        padding: 10px 20px;
+        margin-top: 7px;
+        background: linear-gradient(90deg, #42a5f5, #0056b3);
+        border: 2px solid #fff;
+        /* Added border */
+        border-radius: 50px;
+        color: #fff;
+        margin-left: 61px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .newsletter button:hover {
+        background: linear-gradient(90deg, #0056b3, #42a5f5);
+        border-color: #81c784;
+        /* Border color changes on hover */
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        transform: translateY(-2px);
+      }
+
+      .footer .footer-bottom {
+        font-size: 13px;
+        text-align: center;
+        /* Align text to the center */
+        width: 80%;
+        /* Ensure the footer takes up full width */
+        margin-top: 20px;
+        /* Add some space above, if needed */
+        color: #000;
+        /* Footer bottom text in dark gray */
+        border: 2px solid #fff;
+        padding: 15px;
+        display: inline-block;
+        border-radius: 5px;
+        color: #fff;
+
+      }
+
+      .rope {
+        position: absolute;
+        top: 0;
+        left: 92%;
+        width: 1px;
+        height: 24%;
+        background-color: #000;
+        transform: translateX(-50%);
+        animation: slideDown 4s ease-in-out;
+
+      }
+
+      .boy {
+        position: absolute;
+        top: 0;
+        left: 91.8%;
+        height: 25%;
+        width: 50px;
+        transform: translateX(-50%);
+        transition: top 4s ease-in-out;
+        animation: moveDown 8s forwards;
+      }
+
+      /* Animation to move down and stop at a specific height */
+      @keyframes moveDown {
+        0% {
+          top: 0;
+        }
+
+        100% {
+          top: 13%;
+          /* Adjust this value to the desired stopping point */
+        }
+      }
+
+      .boy img {
+        width: 50px;
+
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
+
 <body>
-    <header>
+  <header>
     <div class="logo">
-        <img src="https://assets.onecompiler.app/42y68y97m/4359nzr9t/file.png" alt="Logo" />
+      <img src="https://assets.onecompiler.app/42y68y97m/4359nzr9t/file.png" alt="Logo" />
     </div>
     <nav>
-        <a href="index.html">Home</a>
-        <a href=" ">Services</a>
-        <a href="chartbot.html">Help Desk</a>
-        <a href="#">Contact</a>
-        <a href="aboutus.html">About Us</a>
+      <a href="index.html">Home</a>
+      <a href="#left-panel">Services</a>
+      <a href="chartbot.html">Help Desk</a>
+      <a href="#">Contact</a>
+      <a href="aboutus.html">About Us</a>
     </nav>
-</header>
-     
-    <section class="hero">
-        <div class="hero-text">
-            <h1>We solve <br> business problems <br>with technology.</h1>
-            <p>Our performance is your success. Our passion is innovation. Our expertise is unmatched. We get you more.</p>
-            <div class="buttons">
-                <a style="margin-left: 10%;" href="#">Get Started</a>
-                <a href="#" class="secondary">View Case Study</a>
-            </div>
-        </div>
-        <img src="https://assets.onecompiler.app/42y68y97m/4344kpadn/Diploma_Translation_Services-removebg-preview.png" alt="Hero Section">
-    </section>
-        <!-- Rope and Boy Animations -->
-    <div class="rope"></div>
-    <div class="boy">
-        <img src="https://assets.onecompiler.app/42y68y97m/43479ey5k/WhatsApp_Image_2024-12-26_at_7.11.56_PM-removebg-preview.png" alt="Boy Sliding Down">
-    </div>
-    
-    <section class="our-strategies">
-      <div class="outer-frame">
-          <div class="strategies-box">KEY FEATURES</div>
-      </div>
-      <div class="vertical-line"></div>
-      <div class="horizontal-line">
-          <div class="connector left">
-              <div class="intersection-dot"></div>
-          </div>
-          <div class="connector middle">
-              <div class="intersection-dot"></div>
-          </div>
-          <div class="connector right">
-              <div class="intersection-dot"></div>
-          </div>
-          <div class="connector fourth">
-              <div class="intersection-dot"></div>
-          </div>
-      </div>
-      <div class="cards-container">
-          <div class="cards">
-              <div class="card">
-                  <div class="card-icon">💬</div>
-                  <div class="card-title">Friendly Support</div>
-              </div>
-              <div class="card">
-                  <div class="card-icon">🔍</div>
-                  <div class="card-title">Search Engine Optimised</div>
-              </div>
-              <div class="card">
-                  <div class="card-icon">🅰️</div>
-                  <div class="card-title">Custom Typography</div>
-              </div>
-              <div class="card">
-                  <div class="card-icon">📄</div>
-                  <div class="card-title">Essential Inner Pages</div>
-              </div>
-              <div class="card">
-                  <div class="card-icon">💻</div>
-                  <div class="card-title">Modern Technologies</div>
-              </div>
-              <div class="card">
-                  <div class="card-icon">⚡</div>
-                  <div class="card-title">High-Speed Performance</div>
-              </div>
-              <div class="card">
-                  <div class="card-icon">🔄</div>
-                  <div class="card-title">Lifetime Updates</div>
-              </div>
-              <div class="card">
-                  <div class="card-icon">🔧</div>
-                  <div class="card-title">Highly Customisable</div>
-              </div>
-              <div class="card">
-                  <div class="card-icon">📊</div>
-                  <div class="card-title">Analytics Tools</div>
-              </div>
-          </div>
-      </div>
-  </section>
-  
+  </header>
 
- <section class="logos"> 
-        <div class="animated-background"></div>
-        <div class="logos-text">
-            A PLATFORM TO UNLOCK NEW OPPORTUNITIES FOR YOUR BUSINESS.
-        </div>
-    </section>
-    
-    <div class="industry-container">
-      <h1 class="industry-title">Website Design for Software and Technology Companies</h1>
-      <p class="industry-description">
-        Vspaze designs websites for software and technology companies that need to perform at the highest level.
-        Our team of experienced web specialists design and develop sites that inform and convert visitors.
-      </p>
-    
-      <select class="industry-select" id="industry"  onchange="openFormPage()">
-        <option value="" disabled selected>-- Select Industry --</option>
-        <option value="E-Commerce and Retail">E-Commerce and Retail</option>
-        <option value="Trivial">Trivial</option>
-        <option value="Fintech">Fintech</option>
-        <option value="Education Technology">Education Technology</option>
-        <option value="Health Tech">Health Tech</option>
-        <option value="Entertainment and Media">Entertainment and Media</option>
-        <option value="Hospitality">Hospitality</option>
-        <option value="Enterprise Software">Enterprise Software</option>
-        <option value="Logistics and Supply Chain">Logistics and Supply Chain</option>
-        <option value="Social Media and Networking">Social Media and Networking</option>
-        <option value="Property Technology">Property Technology</option>
-        <option value="Cyber Security">Cyber Security</option>
-        <option value="Cloud Computing and Storage">Cloud Computing and Storage</option>
-        <option value="Other">Other</option>
-    </select>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>We solve <br> business problems <br>with technology.</h1>
+      <p>Our performance is your success. Our passion is innovation. Our expertise is unmatched. We get you more.</p>
+      <div class="buttons">
+        <a style="margin-left: 10%;" href="#">Get Started</a>
+        <a href="#" class="secondary">View Case Study</a>
+      </div>
     </div>
-    
- 
-    
+    <img src="https://assets.onecompiler.app/42y68y97m/4344kpadn/Diploma_Translation_Services-removebg-preview.png"
+      alt="Hero Section">
+  </section>
+  <!-- Rope and Boy Animations -->
+  <div class="rope"></div>
+  <div class="boy">
+    <img
+      src="https://assets.onecompiler.app/42y68y97m/43479ey5k/WhatsApp_Image_2024-12-26_at_7.11.56_PM-removebg-preview.png"
+      alt="Boy Sliding Down">
+  </div>
+
+  <section class="our-strategies">
+    <div class="outer-frame">
+      <div class="strategies-box">KEY FEATURES</div>
+    </div>
+    <div class="vertical-line"></div>
+    <div class="horizontal-line">
+      <div class="connector left">
+        <div class="intersection-dot"></div>
+      </div>
+      <div class="connector middle">
+        <div class="intersection-dot"></div>
+      </div>
+      <div class="connector right">
+        <div class="intersection-dot"></div>
+      </div>
+      <div class="connector fourth">
+        <div class="intersection-dot"></div>
+      </div>
+    </div>
+    <div class="cards-container">
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">💬</div>
+          <div class="card-title">Friendly Support</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔍</div>
+          <div class="card-title">Search Engine Optimised</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🅰️</div>
+          <div class="card-title">Custom Typography</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">📄</div>
+          <div class="card-title">Essential Inner Pages</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">💻</div>
+          <div class="card-title">Modern Technologies</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <div class="card-title">High-Speed Performance</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔄</div>
+          <div class="card-title">Lifetime Updates</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔧</div>
+          <div class="card-title">Highly Customisable</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">📊</div>
+          <div class="card-title">Analytics Tools</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="logos">
+    <div class="animated-background"></div>
+    <div class="logos-text">
+      A PLATFORM TO UNLOCK NEW OPPORTUNITIES FOR YOUR BUSINESS.
+    </div>
+  </section>
+
+  <div class="industry-container">
+    <h1 class="industry-title">Website Design for Software and Technology Companies</h1>
+    <p class="industry-description">
+      Vspaze designs websites for software and technology companies that need to perform at the highest level.
+      Our team of experienced web specialists design and develop sites that inform and convert visitors.
+    </p>
+
+    <select class="industry-select" id="industry" onchange="openFormPage()">
+      <option value="" disabled selected>-- Select Industry --</option>
+      <option value="E-Commerce and Retail">E-Commerce and Retail</option>
+      <option value="Trivial">Travel</option>
+      <option value="Fintech">Fintech</option>
+      <option value="Education Technology">Education Technology</option>
+      <option value="Health Tech">Health Tech</option>
+      <option value="Entertainment and Media">Entertainment and Media</option>
+      <option value="Hospitality">Hospitality</option>
+      <option value="Enterprise Software">Enterprise Software</option>
+      <option value="Logistics and Supply Chain">Logistics and Supply Chain</option>
+      <option value="Social Media and Networking">Social Media and Networking</option>
+      <option value="Property Technology">Property Technology</option>
+      <option value="Cyber Security">Cyber Security</option>
+      <option value="Cloud Computing and Storage">Cloud Computing and Storage</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+
+
+
   <div class="container-flex">
     <section class="main-section">
-        <div class="left-panel">
-            <h1>OUR SERVICES</h1>
-            <div class="offer">VSPAZE</div>
+      <div class="left-panel">
+        <h1>OUR SERVICES</h1>
+        <div class="offer">VSPAZE</div>
+      </div>
+
+      <div class="right-panel">
+        <div class="services-container">
+          <!-- Development Service -->
+          <div class="service">
+            <div class="icon"><i class="fas fa-code"></i></div>
+            <h2 class="service-title">Development Service</h2>
+          </div>
+
+          <!-- IT Infrastructure Service -->
+          <div class="service">
+            <div class="icon"><i class="fas fa-server"></i></div>
+            <h2 class="service-title">IT Infrastructure Service</h2>
+          </div>
+
+          <!-- Consulting & Strategy Service -->
+          <div class="service">
+            <div class="icon"><i class="fas fa-lightbulb"></i></div>
+            <h2 class="service-title">Consulting & Strategy Service</h2>
+          </div>
+
+          <!-- Data Service -->
+          <div class="service">
+            <div class="icon"><i class="fas fa-database"></i></div>
+            <h2 class="service-title">Data Service</h2>
+          </div>
+
+          <!-- Cyber Security Service -->
+          <div class="service">
+            <div class="icon"><i class="fas fa-shield-alt"></i></div>
+            <h2 class="service-title">Cyber Security Service</h2>
+          </div>
+
+          <!-- Design and UX/UI Service -->
+          <div class="service">
+            <div class="icon"><i class="fas fa-pencil-ruler"></i></div>
+            <h2 class="service-title">Design and UX/UI Service</h2>
+          </div>
+
+          <!-- Software Testing and QA -->
+          <div class="service">
+            <div class="icon"><i class="fas fa-vial"></i></div>
+            <h2 class="service-title">Software Testing and QA</h2>
+          </div>
+
+          <!-- E-commerce Solutions -->
+          <div class="service">
+            <div class="icon"><i class="fas fa-shopping-cart"></i></div>
+            <h2 class="service-title">E-commerce Solutions</h2>
+          </div>
+
+          <!-- Enterprise Software Solutions -->
+          <div class="service">
+            <div class="icon"><i class="fas fa-building"></i></div>
+            <h2 class="service-title">Enterprise Software Solutions</h2>
+          </div>
+
+          <!-- Emerging Technologies -->
+          <div class="service">
+            <div class="icon"><i class="fas fa-robot"></i></div>
+            <h2 class="service-title">Emerging Technologies</h2>
+          </div>
+
+          <!-- Digital Marketing and SEO -->
+          <div class="service">
+            <div class="icon"><i class="fas fa-chart-line"></i></div>
+            <h2 class="service-title">Digital Marketing and SEO</h2>
+          </div>
         </div>
-
-        <div class="right-panel">
-            <div class="services-container">
-                <!-- Development Service -->
-                <div class="service">
-                    <div class="icon"><i class="fas fa-code"></i></div>
-                    <h2 class="service-title">Development Service</h2>
-                </div>
-
-                <!-- IT Infrastructure Service -->
-                <div class="service">
-                    <div class="icon"><i class="fas fa-server"></i></div>
-                    <h2 class="service-title">IT Infrastructure Service</h2>
-                </div>
-
-                <!-- Consulting & Strategy Service -->
-                <div class="service">
-                    <div class="icon"><i class="fas fa-lightbulb"></i></div>
-                    <h2 class="service-title">Consulting & Strategy Service</h2>
-                </div>
-
-                <!-- Data Service -->
-                <div class="service">
-                    <div class="icon"><i class="fas fa-database"></i></div>
-                    <h2 class="service-title">Data Service</h2>
-                </div>
-
-                <!-- Cyber Security Service -->
-                <div class="service">
-                    <div class="icon"><i class="fas fa-shield-alt"></i></div>
-                    <h2 class="service-title">Cyber Security Service</h2>
-                </div>
-
-                <!-- Design and UX/UI Service -->
-                <div class="service">
-                    <div class="icon"><i class="fas fa-pencil-ruler"></i></div>
-                    <h2 class="service-title">Design and UX/UI Service</h2>
-                </div>
-
-                <!-- Software Testing and QA -->
-                <div class="service">
-                    <div class="icon"><i class="fas fa-vial"></i></div>
-                    <h2 class="service-title">Software Testing and QA</h2>
-                </div>
-
-                <!-- E-commerce Solutions -->
-                <div class="service">
-                    <div class="icon"><i class="fas fa-shopping-cart"></i></div>
-                    <h2 class="service-title">E-commerce Solutions</h2>
-                </div>
-
-                <!-- Enterprise Software Solutions -->
-                <div class="service">
-                    <div class="icon"><i class="fas fa-building"></i></div>
-                    <h2 class="service-title">Enterprise Software Solutions</h2>
-                </div>
-
-                <!-- Emerging Technologies -->
-                <div class="service">
-                    <div class="icon"><i class="fas fa-robot"></i></div>
-                    <h2 class="service-title">Emerging Technologies</h2>
-                </div>
-
-                <!-- Digital Marketing and SEO -->
-                <div class="service">
-                    <div class="icon"><i class="fas fa-chart-line"></i></div>
-                    <h2 class="service-title">Digital Marketing and SEO</h2>
-                </div>
-            </div>
-        </div>
+      </div>
     </section>
-</div>
+  </div>
   <!-- Banner Section with Image -->
   <div class="banner">
-    <img src="https://res.cloudinary.com/dagkvnqd9/image/upload/v1737966077/Untitled_design_20250127_133052_0000_pgsrqo.jpg" alt="Woman at desk">
+    <img
+      src="https://res.cloudinary.com/dagkvnqd9/image/upload/v1737966077/Untitled_design_20250127_133052_0000_pgsrqo.jpg"
+      alt="Woman at desk">
     <div class="banner-2">
       <h2>It's Time to IMPLEMENT!</h2>
-      <p>We implement corporate performance solutions, and VSpaze takes responsibility for transforming your business into a top brand position.</p>
+      <p>We implement corporate performance solutions, and VSpaze takes responsibility for transforming your business
+        into a top brand position.</p>
       <button>Learn More</button>
     </div>
   </div>
 
 
-     <section class="contact-section">
-        <div class="content">
-          <h1>VSPAZE TECHNOLOGIES CONTACT US TODAY!</h1>
-           <p>Get in touch with us if you want to optimize your controlling and accounting processes with system support. We would be happy to present our solution portfolio to you and support you as a partner in the design and implementation.</p>
-           <a href="tel:+919908581431" class="btn">Contact Us Now</a>
-        </div>
-    </section>
-
-    <div class="footer">
-      <div class="logo">
-          <img src="https://assets.onecompiler.app/42y68y97m/433zxpj73/WhatsApp%20Image%202024-12-25%20at%2012.45.50%20AM.jpeg" alt="Logo" class="logo-img"> 
-          <span class="company-name">VSPAZE TECHNOLOGIES</span>
-      </div>
-      <div class="description">
-          We provide various services to make your business grow and get bigger. Your satisfaction is our first priority.
-      </div>
-      <div class="social-icons">
-        <h3>Follow Us</h3>
-        <div class="row">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/vspaze_technologies?igsh=MWR3cnBpOGdpYnRyeA=="><i class="fab fa-instagram"></i></a>
-            <a href="https://in.linkedin.com/in/vspaze-technologies-41a150326"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-        <div class="row">
-            <a href="https://youtube.com/@vspaze_technologies?si=KS349G4HWm_fCnE0"><i class="fab fa-youtube"></i></a>
-            <a href="https://x.com/VSPAZE_TECH?t=QL6c-1lGl1_UGtDTJbzGKA&s=09"><i class="fab fa-twitter"></i></a>
-            <a href="https://x.com/VSPAZE_TECH?s=09"><i class="bi bi-threads"></i></a>
-        </div>
+  <section class="contact-section">
+    <div class="content">
+      <h1>VSPAZE TECHNOLOGIES CONTACT US TODAY!</h1>
+      <p>Get in touch with us if you want to optimize your controlling and accounting processes with system support. We
+        would be happy to present our solution portfolio to you and support you as a partner in the design and
+        implementation.</p>
+      <a href="tel:+919908581431" class="btn">Contact Us Now</a>
     </div>
-      <div class="locations">
-          <span>India</span> | <span>South Africa</span> | <span>UAE</span> | <span>USA</span>
+  </section>
+
+  <div class="footer">
+    <div class="logo">
+      <img
+        src="https://assets.onecompiler.app/42y68y97m/433zxpj73/WhatsApp%20Image%202024-12-25%20at%2012.45.50%20AM.jpeg"
+        alt="Logo" class="logo-img">
+      <span class="company-name">VSPAZE TECHNOLOGIES</span>
+    </div>
+    <div class="description">
+      We provide various services to make your business grow and get bigger. Your satisfaction is our first priority.
+    </div>
+    <div class="social-icons">
+      <h3>Follow Us</h3>
+      <div class="row">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/vspaze_technologies?igsh=MWR3cnBpOGdpYnRyeA=="><i
+            class="fab fa-instagram"></i></a>
+        <a href="https://in.linkedin.com/in/vspaze-technologies-41a150326"><i class="fab fa-linkedin-in"></i></a>
       </div>
-      <div class="content">
-          <div>
-              <h3>Company</h3>
-              <ul>
-                  <li><a href="#"><i class="fas fa-angle-right"></i> Branding</a></li>
-                  <li><a href="#"><i class="fas fa-angle-right"></i> Digital Marketing</a></li>
-                  <li><a href="#"><i class="fas fa-angle-right"></i> Web & App Development</a></li>
-                
-                  <li><a href="#"><i class="fas fa-angle-right"></i> Portfolio</a></li>
-                  <li><a href="#"><i class="fas fa-angle-right"></i> Blog</a></li>
-                  <li><a href="#"><i class="fas fa-angle-right"></i> Contact Us</a></li>
-              </ul>
+      <div class="row">
+        <a href="https://youtube.com/@vspaze_technologies?si=KS349G4HWm_fCnE0"><i class="fab fa-youtube"></i></a>
+        <a href="https://x.com/VSPAZE_TECH?t=QL6c-1lGl1_UGtDTJbzGKA&s=09"><i class="fab fa-twitter"></i></a>
+        <a href="https://x.com/VSPAZE_TECH?s=09"><i class="bi bi-threads"></i></a>
+      </div>
+    </div>
+
+    <div class="content">
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="#"><i class="fas fa-angle-right"></i> Branding</a></li>
+          <li><a href="#"><i class="fas fa-angle-right"></i> Digital Marketing</a></li>
+          <li><a href="#"><i class="fas fa-angle-right"></i> Web & App Development</a></li>
+
+          <li><a href="#"><i class="fas fa-angle-right"></i> Portfolio</a></li>
+          <li><a href="#"><i class="fas fa-angle-right"></i> Blog</a></li>
+          <li><a href="#"><i class="fas fa-angle-right"></i> Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact Info</h3>
+        <ul>
+          <li>
+            <a href=" " target="_blank">
+              <i class="fas fa-map-marker-alt"></i> Jadcherla, Telangana, India
+            </a><br><br>
+          </li>
+          <li>
+            <a href="mailto:support@vspaze.com">
+              <i class="fas fa-envelope"></i> support@vspaze.com
+            </a><br><br>
+          </li>
+          <li>
+
+            <a href="tel:+919640190090">
+              <i class="fas fa-phone"></i> +91 9908581431
+            </a><br><br>
+          </li>
+        </ul>
+      </div>
+      <div class="newsletter">
+        <h3>Newsletter</h3>
+        <p>Join our subscribers list to get the latest news and special offers</p>
+        <form class="newsletter-form">
+          <div class="input-container">
+            <input type="email" placeholder="Enter Email Address" required>
           </div>
-          <div>
-              <h3>Contact Info</h3>
-              <ul>
-                  <li>
-                    <a href=" " target="_blank">
-                      <i class="fas fa-map-marker-alt"></i> Jadcherla, Telangana, India
-                    </a><br><br>
-                  </li>
-                    <li>
-                      <a href="mailto:support@vspaze.com">
-                        <i class="fas fa-envelope"></i> support@vspaze.com
-                      </a><br><br>
-                  </li>
-                   <li>
-                     
-                    <a href="tel:+919640190090">
-                      <i class="fas fa-phone"></i> +91 9908581431
-                    </a><br><br>
-                  </li>
-              </ul>
-          </div>
-          <div class="newsletter">
-            <h3>Newsletter</h3>
-            <p>Join our subscribers list to get the latest news and special offers</p>
-            <form class="newsletter-form">
-                <div class="input-container">
-                    <input type="email" placeholder="Enter Email Address" required>
-                  </div>
-                    <button type="submit">Subscribe</button>
-                 
-            </form>
-        </div>
+          <button type="submit">Subscribe</button>
+
+        </form>
+      </div>
     </div>
     <div class="footer-bottom">
-        © 2024 Vspaze Technologies. All rights reserved  
+      © 2024 Vspaze Technologies. All rights reserved
     </div>
-</footer>
+    </footer>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
-      
-    const boy = document.querySelector('.boy');
 
-    // Start the animation after the page loads
-    setTimeout(() => {
-      boy.style.top = '60%'; // Adjust the final position as needed
-    }, 100); // Delay before animation starts
-  
-    
-    document.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll(".card");
-  const connectors = document.querySelectorAll(".connector");
-  const totalCards = cards.length;
-  const totalConnectors = connectors.length;
-  
-  // Adjust cardsPerSet based on screen width
-  const cardsPerSet = window.innerWidth >= 768 ? 4 : 3; // 4 cards for larger screens and 3 for mobile
-  let currentIndex = 0;
+      const boy = document.querySelector('.boy');
 
-  function showNextSet() {
-    // Add zoom-out effect to the current visible cards
-    cards.forEach((card) => {
-      if (card.classList.contains("visible")) {
-        card.classList.add("zoom-out");
-      }
-    });
+      // Start the animation after the page loads
+      setTimeout(() => {
+        boy.style.top = '60%'; // Adjust the final position as needed
+      }, 100); // Delay before animation starts
 
-    // Wait for the zoom-out animation to complete before switching cards
-    setTimeout(() => {
-      // Reset all cards to hidden state after the zoom-out transition
-      cards.forEach((card) => {
-        card.classList.remove("visible", "zoom-out");
-        card.classList.add("hidden");
-      });
 
-      // Reset connectors visibility based on the number of cards per row
-      connectors.forEach((connector, index) => {
-        if (index < cardsPerSet) {
-          connector.style.display = 'block';
-        } else {
-          connector.style.display = 'none';
+      document.addEventListener("DOMContentLoaded", () => {
+        const cards = document.querySelectorAll(".card");
+        const connectors = document.querySelectorAll(".connector");
+        const totalCards = cards.length;
+        const totalConnectors = connectors.length;
+
+        // Adjust cardsPerSet based on screen width
+        const cardsPerSet = window.innerWidth >= 768 ? 4 : 3; // 4 cards for larger screens and 3 for mobile
+        let currentIndex = 0;
+
+        function showNextSet() {
+          // Add zoom-out effect to the current visible cards
+          cards.forEach((card) => {
+            if (card.classList.contains("visible")) {
+              card.classList.add("zoom-out");
+            }
+          });
+
+          // Wait for the zoom-out animation to complete before switching cards
+          setTimeout(() => {
+            // Reset all cards to hidden state after the zoom-out transition
+            cards.forEach((card) => {
+              card.classList.remove("visible", "zoom-out");
+              card.classList.add("hidden");
+            });
+
+            // Reset connectors visibility based on the number of cards per row
+            connectors.forEach((connector, index) => {
+              if (index < cardsPerSet) {
+                connector.style.display = 'block';
+              } else {
+                connector.style.display = 'none';
+              }
+            });
+
+            // Show the next set of cards with smooth transition
+            for (let i = 0; i < cardsPerSet; i++) {
+              const index = (currentIndex + i) % totalCards; // Ensure the index loops
+              cards[index].classList.add("visible");
+              cards[index].classList.remove("hidden");
+            }
+
+            // Update the index for the next set
+            currentIndex = (currentIndex + cardsPerSet) % totalCards;
+          }, 500); // Duration of the zoom-out effect (matching CSS transition time)
         }
+
+        // Initialize the animation (apply the behavior from the start)
+        showNextSet();
+        setInterval(showNextSet, 3000); // Switch every 3 seconds
+
+        // Apply zoom-out effect when the page is refreshed, ensuring behavior consistency
+        window.addEventListener('beforeunload', () => {
+          cards.forEach(card => {
+            card.classList.remove("visible");
+            card.classList.add("zoom-out");
+          });
+        });
       });
 
-      // Show the next set of cards with smooth transition
-      for (let i = 0; i < cardsPerSet; i++) {
-        const index = (currentIndex + i) % totalCards; // Ensure the index loops
-        cards[index].classList.add("visible");
-        cards[index].classList.remove("hidden");
-      }
+      document.addEventListener("DOMContentLoaded", () => {
+        const services = document.querySelectorAll(".service .icon"); // Select all icons
 
-      // Update the index for the next set
-      currentIndex = (currentIndex + cardsPerSet) % totalCards;
-    }, 500); // Duration of the zoom-out effect (matching CSS transition time)
-  }
+        // Define the bouncing order groups
+        const bounceGroups = [
+          [0, 2], // 1 and 3 (0-indexed)
+          [4, 6], // 5 and 7
+          [8, 10], // 9 and 11
+          [1, 3], // 2 and 4
+          [5, 7], // 6 and 8
+          [9] // 10
+        ];
 
-  // Initialize the animation (apply the behavior from the start)
-  showNextSet();
-  setInterval(showNextSet, 3000); // Switch every 3 seconds
+        let currentGroupIndex = 0;
 
-  // Apply zoom-out effect when the page is refreshed, ensuring behavior consistency
-  window.addEventListener('beforeunload', () => {
-    cards.forEach(card => {
-      card.classList.remove("visible");
-      card.classList.add("zoom-out");
-    });
-  });
-});
+        const bounceIcons = () => {
+          // Reset all icons to their default state
+          services.forEach((icon) => {
+            icon.style.transform = "translateY(0)";
+            icon.style.color = "#fff";
+            icon.style.transition = "transform 0.3s ease, color 0.3s ease";
+          });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const services = document.querySelectorAll(".service .icon"); // Select all icons
+          // Get the current bounce group
+          const currentGroup = bounceGroups[currentGroupIndex];
 
-  // Define the bouncing order groups
-  const bounceGroups = [
-    [0, 2], // 1 and 3 (0-indexed)
-    [4, 6], // 5 and 7
-    [8, 10], // 9 and 11
-    [1, 3], // 2 and 4
-    [5, 7], // 6 and 8
-    [9] // 10
-  ];
+          // Apply bounce effect to the current group
+          currentGroup.forEach((index) => {
+            const icon = services[index];
+            icon.style.transform = "translateY(-10px)"; // Bounce effect
+            icon.style.color = "#42a5f5"; // Change color
+          });
 
-  let currentGroupIndex = 0;
+          // Move to the next group in the sequence
+          currentGroupIndex = (currentGroupIndex + 1) % bounceGroups.length;
+        };
 
-  const bounceIcons = () => {
-    // Reset all icons to their default state
-    services.forEach((icon) => {
-      icon.style.transform = "translateY(0)";
-      icon.style.color = "#fff";
-      icon.style.transition = "transform 0.3s ease, color 0.3s ease";
-    });
+        // Run the bounceIcons function every 500ms
+        setInterval(bounceIcons, 500);
+      });
 
-    // Get the current bounce group
-    const currentGroup = bounceGroups[currentGroupIndex];
+      // CSS Styles
 
-    // Apply bounce effect to the current group
-    currentGroup.forEach((index) => {
-      const icon = services[index];
-      icon.style.transform = "translateY(-10px)"; // Bounce effect
-      icon.style.color = "#42a5f5"; // Change color
-    });
-
-    // Move to the next group in the sequence
-    currentGroupIndex = (currentGroupIndex + 1) % bounceGroups.length;
-  };
-
-  // Run the bounceIcons function every 500ms
-  setInterval(bounceIcons, 500);
-});
-
-// CSS Styles
-
-const style = document.createElement("style");
-style.textContent = `
+      const style = document.createElement("style");
+      style.textContent = `
   .service .icon {
     font-size: 2rem; /* Larger icon */
     padding: 1.5rem;
@@ -2252,30 +2512,30 @@ style.textContent = `
 }
   }
 `;
-document.head.appendChild(style);
+      document.head.appendChild(style);
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    const industrySelect = document.getElementById('industry-select');
-    const formContainer = document.getElementById('form-container');
-    const industryInput = document.getElementById('industry');
+      document.addEventListener('DOMContentLoaded', () => {
+        const industrySelect = document.getElementById('industry-select');
+        const formContainer = document.getElementById('form-container');
+        const industryInput = document.getElementById('industry');
 
-    // Show the form when an industry is selected
-    industrySelect.addEventListener('change', (event) => {
-      formContainer.style.display = 'block';
-      industryInput.value = event.target.options[event.target.selectedIndex].text;
-    });
+        // Show the form when an industry is selected
+        industrySelect.addEventListener('change', (event) => {
+          formContainer.style.display = 'block';
+          industryInput.value = event.target.options[event.target.selectedIndex].text;
+        });
 
-    // Handle form submission
-    document.getElementById('design-form').addEventListener('submit', (event) => {
-      event.preventDefault(); // Prevent default form submission
+        // Handle form submission
+        document.getElementById('design-form').addEventListener('submit', (event) => {
+          event.preventDefault(); // Prevent default form submission
 
-      // Collect form data
-      const formData = new FormData(event.target);
-      const formObj = Object.fromEntries(formData.entries());
+          // Collect form data
+          const formData = new FormData(event.target);
+          const formObj = Object.fromEntries(formData.entries());
 
-      // Prepare email content
-      const emailContent = `
+          // Prepare email content
+          const emailContent = `
         Name: ${formObj.name}\n
         Mobile Number: ${formObj.mobile}\n
         Industry: ${formObj.industry}\n
@@ -2283,29 +2543,30 @@ document.addEventListener('DOMContentLoaded', () => {
         Message: ${formObj.message}
       `;
 
-      // Send email to admin (example: integrate with a server or email API here)
-      console.log("Email Content:", emailContent);
-      alert('Your response has been submitted!');
+          // Send email to admin (example: integrate with a server or email API here)
+          console.log("Email Content:", emailContent);
+          alert('Your response has been submitted!');
 
-      // Reset the form
-      event.target.reset();
-      formContainer.style.display = 'none';
-    });
-  });
+          // Reset the form
+          event.target.reset();
+          formContainer.style.display = 'none';
+        });
+      });
 
 
-  function openFormPage() {
+      function openFormPage() {
         var industry = document.getElementById("industry").value;
         if (industry) {
-            window.location.href = "application.html?industry=" + encodeURIComponent(industry);
+          window.location.href = "application.html?industry=" + encodeURIComponent(industry);
         } else {
-            alert("Please select an industry first!");
+          alert("Please select an industry first!");
         }
-    }
+      }
 
-    
+
 
     </script>
-    
+
 </body>
+
 </html>
