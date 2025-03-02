@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+    <link rel="stylesheet" href="application.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2 id="formTitle">Application Form</h2>
+        <form id="your-form">
+            <input type="hidden" id="industryInput" name="industry">
+            <input type="text" id="name" name="name" placeholder="Full Name" required>
+            <input type="email" id="email" name="email" placeholder="Email Address" required>
+            <input type="tel" id="contact" name="contact" placeholder="Phone Number" required>
+            <input type="text" id="industrytype" name="industrytype" placeholder="Nature Of Business" required>
+            <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div class="popup-overlay" id="popup-overlay">
+        <div class="popup">
+            <img src="https://assets.onecompiler.app/42y68y97m/43a86mbvc/submit_success.png" alt="Success">
+            <p> Your submission was received :)</p>
+            <span>Thanks for the message</span>
+            <a href="index.html" onclick="hidePopup()">Back To Home</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="application.js"></script>
+</body>
+
+</html>
