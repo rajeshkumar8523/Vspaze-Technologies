@@ -2555,9 +2555,9 @@
 
 
       function openFormPage() {
-        var industry = document.getElementById("industry").value;
+        var industry = document.getElementById("industry").value;   /* application.html?industry=*/
         if (industry) {
-          window.location.href = "application.html?industry=" + encodeURIComponent(industry);
+          window.location.href = "./APPLYFORM/application.html?industry=" + encodeURIComponent(industry);
         } else {
           alert("Please select an industry first!");
         }
