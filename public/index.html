@@ -2051,9 +2051,10 @@
     </div>
     <nav>
       <a href="index.html">Home</a>
-      <a href="#left-panel">Services</a>
+       
+
       <a href="CHARTBOT/chartbot.html">Help Desk</a>
-      <a href="#">Contact</a>
+      <a href="CONTACTUS/contactus.html">Contact Us</a>
       <a href="ABOUTUS/aboutus.html">About Us</a>
     </nav>
   </header>
@@ -2063,8 +2064,8 @@
       <h1>We solve <br> business problems <br>with technology.</h1>
       <p>Our performance is your success. Our passion is innovation. Our expertise is unmatched. We get you more.</p>
       <div class="buttons">
-        <a style="margin-left: 10%;" href="#">Get Started</a>
-        <a href="#" class="secondary">View Case Study</a>
+        <a style="margin-left: 10%;" href="GETSTARTED/start.html">Get Started</a>
+        <a href="VIEW Optimizing/view.html" class="secondary">View Optimizing</a>
       </div>
     </div>
     <img src="https://assets.onecompiler.app/42y68y97m/4344kpadn/Diploma_Translation_Services-removebg-preview.png"
@@ -2260,9 +2261,11 @@
       alt="Woman at desk">
     <div class="banner-2">
       <h2>It's Time to IMPLEMENT!</h2>
-      <p>We implement corporate performance solutions, and VSpaze takes responsibility for transforming your business
+      <p>We implement corporate performance solutions, and Vspaze takes responsibility for transforming your business
         into a top brand position.</p>
-      <button>Learn More</button>
+      <button  >
+        <a href="./LEARNMORE/more.html" style="color: #fff; text-decoration: none;"> Learn More</a>
+        </button>
     </div>
   </div>
 
@@ -2307,7 +2310,7 @@
         <h3>Company</h3>
         <ul>
           <li><a href="#"><i class="fas fa-angle-right"></i> Branding</a></li>
-          <li><a href="#"><i class="fas fa-angle-right"></i> Digital Marketing</a></li>
+          <li><a href="#"><i class="fas fa-angle-right"></i> Digital Marketing / SEO</a></li>
           <li><a href="#"><i class="fas fa-angle-right"></i> Web & App Development</a></li>
 
           <li><a href="#"><i class="fas fa-angle-right"></i> Portfolio</a></li>
@@ -2320,7 +2323,7 @@
         <ul>
           <li>
             <a href=" " target="_blank">
-              <i class="fas fa-map-marker-alt"></i> Jadcherla, Telangana, India
+              <i class="fas fa-map-marker-alt"></i> Hyderabad, Telangana, India.
             </a><br><br>
           </li>
           <li>
@@ -2330,7 +2333,7 @@
           </li>
           <li>
 
-            <a href="tel:+919640190090">
+            <a href="tel:+919908581431">
               <i class="fas fa-phone"></i> +91 9908581431
             </a><br><br>
           </li>
@@ -2566,7 +2569,22 @@
 
 
     </script>
-
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
+      const form = document.querySelector(".newsletter-form");
+      const input = form.querySelector("input[type='email']");
+      const button = form.querySelector("button");
+  
+      form.addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent form submission
+          button.textContent = "Subscribed"; // Change button text
+          button.style.opacity = "0.8"; // Slight opacity change to indicate action
+          button.style.cursor = "default"; // Disable pointer cursor
+          button.disabled = true; // Disable further clicks
+          input.value = ""; // Clear input field
+      });
+  });
+  </script>
 </body>
 
 </html>
