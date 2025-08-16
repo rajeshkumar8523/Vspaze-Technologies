@@ -73,33 +73,44 @@
       /* Align links vertically */
     }
 
-    header nav a {
-      position: relative;
-      color: white;
-      text-decoration: none;
-      margin: 0 13px;
-      font-size: 1rem;
-      transition: color 0.3s ease;
-    }
+header nav a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    margin: 0 13px;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
 
-    header nav a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: white;
-      transition: width 0.3s ease;
-    }
+header nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+}
 
-    header nav a:hover {
-      color: #00bcd4;
-    }
+/* Hover */
+header nav a:hover {
+    color: #00bcd4;
+}
 
-    header nav a:hover::after {
-      width: 100%;
-    }
+header nav a:hover::after {
+    width: 100%;
+}
+
+/* Active */
+header nav a.active {
+    color: #00bcd4;
+}
+
+header nav a.active::after {
+    width: 100%;
+}
+
 
     .hero {
       display: flex;
@@ -816,7 +827,7 @@
 
     .contact-section {
       position: relative;
-      background: url('https://assets.onecompiler.app/42y68y97m/4356m26z3/WhatsApp%20Image%202025-01-05%20at%208.49.43%20PM.jpeg') no-repeat center center/cover;
+      background: url('./bannerimg.jpeg') no-repeat center center/cover;
       color: #e0e0e0;
       padding: 100px 20px;
       text-align: center;
@@ -1296,33 +1307,43 @@
       }
 
       header nav a {
-        position: relative;
-        color: white;
-        text-decoration: none;
-        margin: 0 5px;
-        font-size: 12px;
+    position: relative;
+    color: white;
+    text-decoration: none;
+    margin: 5px;
+    font-size: 12px;
+    transition: color 0.3s ease;
+}
 
-        transition: color 0.3s ease;
-      }
+header nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+}
 
-      header nav a::after {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: white;
-        transition: width 0.3s ease;
-      }
+/* Hover */
+header nav a:hover {
+    color: #00bcd4;
+}
 
-      header nav a:hover {
-        color: #00bcd4;
-      }
+header nav a:hover::after {
+    width: 100%;
+}
 
-      header nav a:hover::after {
-        width: 100%;
-      }
+/* Active */
+header nav a.active {
+    color: #00bcd4;
+}
+
+header nav a.active::after {
+    width: 100%;
+}
+
 
 
       .hero {
@@ -1815,7 +1836,7 @@
 
       .contact-section {
         position: relative;
-        background: url('https://assets.onecompiler.app/42y68y97m/4356m26z3/WhatsApp%20Image%202025-01-05%20at%208.49.43%20PM.jpeg') no-repeat center center/cover;
+        background: url('./bannerimg.jpeg') no-repeat center center/cover;
         color: white;
         padding: 20px 0px;
         margin-top: 0%;
@@ -2049,12 +2070,12 @@
   <header>
     <div class="logo">
   <a href="index.html">
-    <img src="https://assets.onecompiler.app/42y68y97m/4359nzr9t/file.png" alt="Logo" />
+    <img src="vspazelogo.png" alt="Logo" />
   </a>
 </div>
 
     <nav>
-      <a href="index.html">Home</a>
+      <a href="index.html" class="active">Home</a>
        
 
       <a href="CHARTBOT/chartbot.html">Help Desk</a>
@@ -2072,14 +2093,14 @@
         <a href="VIEW Optimizing/view.html" class="secondary">View Optimizing</a>
       </div>
     </div>
-    <img src="https://assets.onecompiler.app/42y68y97m/4344kpadn/Diploma_Translation_Services-removebg-preview.png"
+    <img src="heroimg.png"
       alt="Hero Section">
   </section>
   <!-- Rope and Boy Animations -->
   <div class="rope"></div>
   <div class="boy">
     <img
-      src="https://assets.onecompiler.app/42y68y97m/43479ey5k/WhatsApp_Image_2024-12-26_at_7.11.56_PM-removebg-preview.png"
+      src="boyimg2.png"
       alt="Boy Sliding Down">
   </div>
 
@@ -2287,7 +2308,7 @@
   <div class="footer">
     <div class="logo">
       <img
-        src="https://assets.onecompiler.app/42y68y97m/433zxpj73/WhatsApp%20Image%202024-12-25%20at%2012.45.50%20AM.jpeg"
+        src="vspazelogo.png"
         alt="Logo" class="logo-img">
       <span class="company-name">VSPAZE TECHNOLOGIES</span>
     </div>

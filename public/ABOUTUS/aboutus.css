@@ -35,7 +35,7 @@ header .logo img {
     width: 100px;
     border-radius: 50%;
     margin-top: 2%;
-    margin-left: 15%;
+    margin-left: 1%;
 }
 
 header nav {
@@ -47,7 +47,6 @@ header nav {
     /* Align links vertically */
     margin-right: 2%;
 }
-
 header nav a {
     position: relative;
     color: white;
@@ -55,7 +54,6 @@ header nav a {
     margin: 0 13px;
     font-size: 1rem;
     transition: color 0.3s ease;
-
 }
 
 header nav a::after {
@@ -69,6 +67,7 @@ header nav a::after {
     transition: width 0.3s ease;
 }
 
+/* Hover */
 header nav a:hover {
     color: #00bcd4;
 }
@@ -76,6 +75,16 @@ header nav a:hover {
 header nav a:hover::after {
     width: 100%;
 }
+
+/* Active */
+header nav a.active {
+    color: #00bcd4;
+}
+
+header nav a.active::after {
+    width: 100%;
+}
+
 
 .about {
     text-align: center;
