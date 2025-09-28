@@ -1,5 +1,7 @@
 {
   "projects": {
+ 
     "default": "vspaze-technologies-6e98d"
+    "default": "vspaze-technologies"
   }
 }
